@@ -1,0 +1,174 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Hero content animation */
+.animate-hero-content {
+  animation: hero-content-reveal 0.9s
+    cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes hero-content-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-hero-content {
+    animation: none;
+  }
+}
+
+/* Blog article typography */
+.blog-content {
+  color: #4a4a4a;
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+.blog-content h1 {
+  margin: 2rem 0 1rem;
+  color: #171717;
+  font-size: 44px;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.blog-content h2 {
+  margin: 2rem 0 1rem;
+  color: #1b1b1b;
+  font-size: 36px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.blog-content h3 {
+  margin: 1.75rem 0 0.75rem;
+  color: #1b1b1b;
+  font-size: 28px;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.blog-content h4,
+.blog-content h5,
+.blog-content h6 {
+  margin: 1.5rem 0 0.6rem;
+  color: #1b1b1b;
+  font-weight: 700;
+}
+
+.blog-content p {
+  margin: 0 0 1.15rem;
+}
+
+.blog-content ul,
+.blog-content ol {
+  margin: 0 0 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.blog-content li {
+  margin: 0.35rem 0;
+}
+
+.blog-content strong {
+  color: #21143a;
+  font-weight: 700;
+}
+
+.blog-content a {
+  color: #6030c6;
+  text-decoration: underline;
+}
+
+.blog-content blockquote {
+  margin: 1.5rem 0;
+  border-left: 4px solid #ff8626;
+  padding: 0.75rem 1.25rem;
+  color: #5a4d72;
+  background: #faf7ff;
+}
+
+.blog-content img {
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem 0;
+  border-radius: 1rem;
+}
+
+.blog-content table {
+  width: 100%;
+  margin: 1.5rem 0;
+  border-collapse: collapse;
+}
+
+.blog-content th,
+.blog-content td {
+  border: 1px solid #e5dff0;
+  padding: 0.7rem;
+  text-align: left;
+}
+
+.blog-content th {
+  color: #21143a;
+  background: #f6f1fc;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .blog-content {
+    font-size: 16px;
+  }
+
+  .blog-content h1 {
+    font-size: 34px;
+  }
+
+  .blog-content h2 {
+    font-size: 29px;
+  }
+
+  .blog-content h3 {
+    font-size: 24px;
+  }
+}
