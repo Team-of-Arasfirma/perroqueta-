@@ -53,7 +53,7 @@ const depots = [
 const headOffice = {
   address:
     "D.No-4/333/18, Chinnathottam, Avinashilingampalayam, Palangarai, Avinashi, Tiruppur, Tamil Nadu - 641 654.",
-  phone: "+91 74492 77787",
+  phone: "+91 95140 77787",
 };
 
 export default function DepotSection() {

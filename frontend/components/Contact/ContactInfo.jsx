@@ -29,8 +29,14 @@ const contactItems = [
   {
     icon: Phone,
     title: "Call Us",
-    lines: ["+91 74492 77787"],
-    href: "tel:+917449277787",
+    lines: [
+      "+91 95140 77787",
+      "+91 95145 77787",
+    ],
+    phoneLinks: [
+      "tel:+919514077787",
+      "tel:+919514577787",
+    ],
     tone: "orange",
   },
   {
@@ -67,11 +73,11 @@ export default function ContactInfo() {
 
       {/* Timeline + Contact Cards */}
       <div className="relative mt-7">
-        {/* Vertical line */}
+        {/* Vertical Line */}
         <div className="absolute bottom-6 left-[10px] top-6 w-px bg-[#DDD8E8]" />
 
         <div className="space-y-3">
-          {contactItems.map((item, index) => {
+          {contactItems.map((item) => {
             const Icon = item.icon;
 
             const iconBg =
@@ -84,48 +90,55 @@ export default function ContactInfo() {
                 ? "bg-[#FF8626]"
                 : "bg-[#6030C6]";
 
-            const Content = (
-              <div className="group relative ml-7 flex min-h-[94px] items-center gap-4 rounded-[13px] bg-white px-4 py-4 shadow-[0_4px_18px_rgba(0,0,0,0.04)] transition duration-300 hover:-translate-y-0.5 hover:shadow-md">
-                {/* Icon */}
-                <div
-                  className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-white ${iconBg}`}
-                >
-                  <Icon className="h-5 w-5" strokeWidth={1.8} />
-                </div>
-
-                {/* Text */}
-                <div className="min-w-0 flex-1">
-                  <h3 className="text-[14px] font-semibold text-[#1B1B1B]">
-                    {item.title}
-                  </h3>
-
-                  <div className="mt-1">
-                    {item.lines.map((line) => (
-                      <p
-                        key={line}
-                        className="text-[12px] leading-[1.55] text-[#555555]"
-                      >
-                        {line}
-                      </p>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Arrow */}
-                {item.href && (
-                  <ArrowRight className="h-5 w-5 shrink-0 text-[#FF8626] transition duration-300 group-hover:translate-x-1" />
-                )}
-              </div>
-            );
-
             return (
-              <div key={item.title} className="relative">
+              <div
+                key={item.title}
+                className="relative"
+              >
                 {/* Timeline Dot */}
                 <div
                   className={`absolute left-[6px] top-1/2 z-10 h-[9px] w-[9px] -translate-y-1/2 rounded-full border-2 border-[#FBFAFD] ${dotBg}`}
                 />
 
-                {item.href ? (
+                {/* Call Us */}
+                {item.title === "Call Us" ? (
+                  <div className="group relative ml-7 flex min-h-[94px] items-center gap-4 rounded-[13px] bg-white px-4 py-4 shadow-[0_4px_18px_rgba(0,0,0,0.04)] transition duration-300 hover:-translate-y-0.5 hover:shadow-md">
+                    {/* Icon */}
+                    <div
+                      className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-white ${iconBg}`}
+                    >
+                      <Icon
+                        className="h-5 w-5"
+                        strokeWidth={1.8}
+                      />
+                    </div>
+
+                    {/* Phone Numbers */}
+                    <div className="min-w-0 flex-1">
+                      <h3 className="text-[14px] font-semibold text-[#1B1B1B]">
+                        {item.title}
+                      </h3>
+
+                      <div className="mt-1 flex flex-col">
+                        <a
+                          href={item.phoneLinks[0]}
+                          className="w-fit text-[12px] leading-[1.7] text-[#555555] transition hover:text-[#6030C6]"
+                        >
+                          +91 95140 77787
+                        </a>
+
+                        <a
+                          href={item.phoneLinks[1]}
+                          className="w-fit text-[12px] leading-[1.7] text-[#555555] transition hover:text-[#6030C6]"
+                        >
+                          +91 95145 77787
+                        </a>
+                      </div>
+                    </div>
+
+                    <Phone className="h-5 w-5 shrink-0 text-[#FF8626]" />
+                  </div>
+                ) : item.href ? (
                   <a
                     href={item.href}
                     target={
@@ -135,14 +148,72 @@ export default function ContactInfo() {
                     }
                     rel={
                       item.title === "Head Office"
-                        ? "noreferrer"
+                        ? "noopener noreferrer"
                         : undefined
                     }
+                    className="group relative ml-7 flex min-h-[94px] items-center gap-4 rounded-[13px] bg-white px-4 py-4 shadow-[0_4px_18px_rgba(0,0,0,0.04)] transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
                   >
-                    {Content}
+                    {/* Icon */}
+                    <div
+                      className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-white ${iconBg}`}
+                    >
+                      <Icon
+                        className="h-5 w-5"
+                        strokeWidth={1.8}
+                      />
+                    </div>
+
+                    {/* Text */}
+                    <div className="min-w-0 flex-1">
+                      <h3 className="text-[14px] font-semibold text-[#1B1B1B]">
+                        {item.title}
+                      </h3>
+
+                      <div className="mt-1">
+                        {item.lines.map((line) => (
+                          <p
+                            key={line}
+                            className="text-[12px] leading-[1.55] text-[#555555]"
+                          >
+                            {line}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Arrow */}
+                    <ArrowRight className="h-5 w-5 shrink-0 text-[#FF8626] transition duration-300 group-hover:translate-x-1" />
                   </a>
                 ) : (
-                  Content
+                  <div className="group relative ml-7 flex min-h-[94px] items-center gap-4 rounded-[13px] bg-white px-4 py-4 shadow-[0_4px_18px_rgba(0,0,0,0.04)] transition duration-300 hover:-translate-y-0.5 hover:shadow-md">
+                    {/* Icon */}
+                    <div
+                      className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-white ${iconBg}`}
+                    >
+                      <Icon
+                        className="h-5 w-5"
+                        strokeWidth={1.8}
+                      />
+                    </div>
+
+                    {/* Text */}
+                    <div className="min-w-0 flex-1">
+                      <h3 className="text-[14px] font-semibold text-[#1B1B1B]">
+                        {item.title}
+                      </h3>
+
+                      <div className="mt-1">
+                        {item.lines.map((line) => (
+                          <p
+                            key={line}
+                            className="text-[12px] leading-[1.55] text-[#555555]"
+                          >
+                            {line}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 )}
               </div>
             );
@@ -157,10 +228,11 @@ export default function ContactInfo() {
         </p>
 
         <div className="mt-4 flex flex-wrap items-center gap-3">
+          {/* WhatsApp - First Number */}
           <a
-            href="https://wa.me/917449277787"
+            href="https://wa.me/919514077787"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             aria-label="WhatsApp"
             className="flex h-9 w-9 items-center justify-center rounded-full bg-[#25D366] text-white transition hover:-translate-y-1"
           >

@@ -76,6 +76,7 @@ export default function ContactForm() {
       });
     } catch (error) {
       console.error("Contact inquiry submit error:", error);
+
       setSubmitStatus(
         error.message || "Unable to submit inquiry. Please try again."
       );
@@ -233,12 +234,14 @@ export default function ContactForm() {
           />
         </div>
 
+        {/* Success Message */}
         {submitStatus === "success" && (
           <p className="rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-sm font-medium text-green-700">
             Inquiry submitted successfully. Our team will contact you shortly.
           </p>
         )}
 
+        {/* Error Message */}
         {submitStatus && submitStatus !== "success" && (
           <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-600">
             {submitStatus}
@@ -247,11 +250,11 @@ export default function ContactForm() {
 
         {/* Actions */}
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          {/* Real WhatsApp Brand Button */}
+          {/* WhatsApp */}
           <a
-            href="https://wa.me/917449277787"
+            href="https://wa.me/919514077787"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 rounded-[8px] border border-[#25D366] px-5 py-[13px] text-[13px] font-medium text-[#25D366] transition duration-300 hover:bg-[#25D366] hover:text-white"
           >
             <FaWhatsapp className="h-5 w-5" />
@@ -265,6 +268,7 @@ export default function ContactForm() {
             className="inline-flex min-w-[200px] items-center justify-center gap-3 rounded-[8px] bg-gradient-to-r from-[#FF8626] to-[#FF4F2E] px-6 py-[13px] text-[13px] font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-70"
           >
             <Send className="h-4 w-4" />
+
             {isSubmitting ? "Sending..." : "Send Message"}
 
             {!isSubmitting && (

@@ -85,7 +85,7 @@ export default function Footer() {
             {/* Social Icons */}
             <div className="mt-5 flex items-center gap-4">
               <a
-                href="https://wa.me/917449277787"
+                href="https://wa.me/919514077787"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
@@ -171,6 +171,7 @@ export default function Footer() {
             </h3>
 
             <div className="mt-4 space-y-4 text-[14px] leading-6 text-white/75">
+
               {/* Address */}
               <a
                 href="https://www.google.com/maps/place/Perroqueta+Materials+Science+I+Private+Limited+-+Avinashi/@11.1861683,77.2864394,19.63z/data=!4m6!3m5!1s0x3ba9030074cec3bf:0xacdd3bd52c27ff2b!8m2!3d11.1864612!4d77.2863818!16s%2Fg%2F11wy74llm7"
@@ -208,18 +209,30 @@ export default function Footer() {
               </a>
 
               {/* Phone */}
-              <a
-                href="tel:+917449277787"
-                className="flex items-center gap-3 transition duration-300 hover:text-white"
-              >
+              <div className="flex items-start gap-3">
                 <Phone
                   size={20}
                   strokeWidth={1.8}
-                  className="shrink-0 text-white"
+                  className="mt-1 shrink-0 text-white"
                 />
 
-                <span>+91 74492 77787</span>
-              </a>
+                <div className="flex flex-col gap-1">
+                  <a
+                    href="tel:+919514077787"
+                    className="transition duration-300 hover:text-white"
+                  >
+                    +91 95140 77787
+                  </a>
+
+                  <a
+                    href="tel:+919514577787"
+                    className="transition duration-300 hover:text-white"
+                  >
+                    +91 95145 77787
+                  </a>
+                </div>
+              </div>
+
             </div>
           </div>
 
