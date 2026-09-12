@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
-const excluded = /^(\/admin|\/api|\/_next|\/favicon\.ico|\/robots\.txt|\/sitemap\.xml)/;
+const excluded = /^(\/admin|\/api|\/_next|\/favicon\.ico|\/robots\.txt|\/sitemap(?:-pages|-products|-blog)?\.xml)/;
 const asset = /\.(png|jpe?g|webp|svg|gif|ico|css|js|map|pdf|woff2?|ttf)$/i;
 
 export async function proxy(request) {
