@@ -1,6 +1,9 @@
 import mongoose from "mongoose";
 import Inquiry from "../models/Inquiry.js";
 
+/* =========================================================
+   CREATE INQUIRY
+========================================================= */
 export const createInquiry = async (req, res) => {
   try {
     const {
@@ -17,55 +20,142 @@ export const createInquiry = async (req, res) => {
       page = "",
     } = req.body;
 
-    const normalizedName = String(fullName || name || "").trim();
-    const normalizedPhone = String(phone || mobileNumber || "").replace(/D/g, "");
-    const normalizedEmail = String(email || "").trim().toLowerCase();
-    const normalizedSource = String(source || "Website").trim() || "Website";
+    const normalizedName = String(
+      fullName || name || ""
+    ).trim();
+
+    const normalizedPhone = String(
+      phone || mobileNumber || ""
+    ).replace(/\D/g, "");
+
+    const normalizedEmail = String(
+      email || ""
+    )
+      .trim()
+      .toLowerCase();
+
+    const normalizedSource =
+      String(
+        source || "Website"
+      ).trim() || "Website";
 
     if (!normalizedName) {
-      return res.status(400).json({ success: false, message: "Full name is required." });
+      return res.status(400).json({
+        success: false,
+        message:
+          "Full name is required.",
+      });
     }
 
-    if (!/^[^s@]+@[^s@]+.[^s@]+$/.test(normalizedEmail)) {
-      return res.status(400).json({ success: false, message: "A valid email address is required." });
+    if (
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(
+        normalizedEmail
+      )
+    ) {
+      return res.status(400).json({
+        success: false,
+        message:
+          "A valid email address is required.",
+      });
     }
 
-    if (!/^[0-9]{10}$/.test(normalizedPhone)) {
-      return res.status(400).json({ success: false, message: "Enter a valid 10-digit mobile number." });
+    if (
+      !/^[0-9]{10}$/.test(
+        normalizedPhone
+      )
+    ) {
+      return res.status(400).json({
+        success: false,
+        message:
+          "Enter a valid 10-digit mobile number.",
+      });
     }
 
-    if (!String(location || "").trim()) {
-      return res.status(400).json({ success: false, message: "Location is required." });
+    if (
+      !String(
+        location || ""
+      ).trim()
+    ) {
+      return res.status(400).json({
+        success: false,
+        message:
+          "Location is required.",
+      });
     }
 
-    const inquiry = await Inquiry.create({
-      fullName: normalizedName,
-      email: normalizedEmail,
-      phone: normalizedPhone,
-      mobileNumber: normalizedPhone,
-      location: String(location).trim(),
-      productInterest: String(productInterest || "").trim(),
-      productName: String(productName || "").trim(),
-      message: String(message || "").trim(),
-      source: normalizedSource,
-      page: String(page || "").trim(),
-    });
+    const inquiry =
+      await Inquiry.create({
+        fullName:
+          normalizedName,
+
+        email:
+          normalizedEmail,
+
+        phone:
+          normalizedPhone,
+
+        mobileNumber:
+          normalizedPhone,
+
+        location:
+          String(
+            location
+          ).trim(),
+
+        productInterest:
+          String(
+            productInterest || ""
+          ).trim(),
+
+        productName:
+          String(
+            productName || ""
+          ).trim(),
+
+        message:
+          String(
+            message || ""
+          ).trim(),
+
+        source:
+          normalizedSource,
+
+        page:
+          String(
+            page || ""
+          ).trim(),
+
+        status:
+          "Unread",
+      });
 
     return res.status(201).json({
       success: true,
-      message: "Inquiry submitted successfully.",
+      message:
+        "Inquiry submitted successfully.",
       inquiry,
     });
   } catch (error) {
-    console.error("Create inquiry error:", error);
+    console.error(
+      "Create inquiry error:",
+      error
+    );
 
     return res.status(500).json({
       success: false,
-      message: "Unable to submit inquiry.",
+      message:
+        "Unable to submit inquiry.",
     });
   }
 };
-export const getInquiries = async (req, res) => {
+
+/* =========================================================
+   GET ALL INQUIRIES
+========================================================= */
+export const getInquiries = async (
+  req,
+  res
+) => {
   try {
     const {
       search = "",
@@ -77,68 +167,130 @@ export const getInquiries = async (req, res) => {
 
     const filter = {};
 
+    /* Status Filter */
     if (
       status &&
       status !== "all"
     ) {
-      filter.status = status;
+      if (
+        [
+          "Unread",
+          "Read",
+        ].includes(
+          status
+        )
+      ) {
+        filter.status =
+          status;
+      }
     }
 
+    /* Product Filter */
     if (
       productInterest &&
-      productInterest !== "all"
+      productInterest !==
+        "all"
     ) {
       filter.productInterest =
         productInterest;
     }
 
-    if (search.trim()) {
+    /* Search */
+    if (
+      search.trim()
+    ) {
+      const searchValue =
+        search.trim();
+
       filter.$or = [
         {
           fullName: {
-            $regex: search.trim(),
+            $regex:
+              searchValue,
             $options: "i",
           },
         },
+
         {
           email: {
-            $regex: search.trim(),
+            $regex:
+              searchValue,
             $options: "i",
           },
         },
+
         {
           phone: {
-            $regex: search.trim(),
+            $regex:
+              searchValue,
             $options: "i",
           },
         },
+
+        {
+          mobileNumber: {
+            $regex:
+              searchValue,
+            $options: "i",
+          },
+        },
+
         {
           productInterest: {
-            $regex: search.trim(),
+            $regex:
+              searchValue,
             $options: "i",
           },
         },
+
+        {
+          productName: {
+            $regex:
+              searchValue,
+            $options: "i",
+          },
+        },
+
         {
           message: {
-            $regex: search.trim(),
+            $regex:
+              searchValue,
+            $options: "i",
+          },
+        },
+
+        {
+          source: {
+            $regex:
+              searchValue,
+            $options: "i",
+          },
+        },
+
+        {
+          location: {
+            $regex:
+              searchValue,
             $options: "i",
           },
         },
       ];
     }
 
-    const pageNumber = Math.max(
-      Number(page) || 1,
-      1
-    );
-
-    const limitNumber = Math.min(
+    const pageNumber =
       Math.max(
-        Number(limit) || 20,
+        Number(page) || 1,
         1
-      ),
-      100
-    );
+      );
+
+    const limitNumber =
+      Math.min(
+        Math.max(
+          Number(limit) || 20,
+          1
+        ),
+        100
+      );
 
     const skip =
       (pageNumber - 1) *
@@ -147,56 +299,80 @@ export const getInquiries = async (req, res) => {
     const [
       inquiries,
       total,
-      newCount,
-      contactedCount,
-      closedCount,
-    ] = await Promise.all([
-      Inquiry.find(filter)
-        .sort({ createdAt: -1 })
-        .skip(skip)
-        .limit(limitNumber).lean(),
+      totalCount,
+      unreadCount,
+      readCount,
+    ] =
+      await Promise.all([
+        Inquiry.find(
+          filter
+        )
+          .sort({
+            createdAt: -1,
+          })
+          .skip(skip)
+          .limit(
+            limitNumber
+          )
+          .lean(),
 
-      Inquiry.countDocuments(filter),
+        Inquiry.countDocuments(
+          filter
+        ),
 
-      Inquiry.countDocuments({
-        status: "New",
-      }),
+        Inquiry.countDocuments(),
 
-      Inquiry.countDocuments({
-        status: "Contacted",
-      }),
+        Inquiry.countDocuments({
+          status:
+            "Unread",
+        }),
 
-      Inquiry.countDocuments({
-        status: "Closed",
-      }),
-    ]);
+        Inquiry.countDocuments({
+          status:
+            "Read",
+        }),
+      ]);
 
-    const pages = Math.max(
-      Math.ceil(
-        total / limitNumber
-      ),
-      1
-    );
+    const pages =
+      Math.max(
+        Math.ceil(
+          total /
+            limitNumber
+        ),
+        1
+      );
 
     return res.json({
       success: true,
+
       inquiries,
+
       total,
-      page: pageNumber,
+
+      page:
+        pageNumber,
+
       pages,
-      limit: limitNumber,
+
+      limit:
+        limitNumber,
+
       stats: {
         total:
-          await Inquiry.countDocuments(),
-        new: newCount,
-        contacted:
-          contactedCount,
-        closed:
-          closedCount,
+          totalCount,
+
+        unread:
+          unreadCount,
+
+        read:
+          readCount,
       },
     });
   } catch (error) {
-    console.error("Get inquiries error:", error);
+    console.error(
+      "Get inquiries error:",
+      error
+    );
 
     return res.status(500).json({
       success: false,
@@ -206,12 +382,19 @@ export const getInquiries = async (req, res) => {
   }
 };
 
+/* =========================================================
+   GET SINGLE INQUIRY
+   IMPORTANT:
+   Opening the inquiry DOES NOT change status.
+========================================================= */
 export const getInquiryById = async (
   req,
   res
 ) => {
   try {
-    const { id } = req.params;
+    const {
+      id,
+    } = req.params;
 
     if (
       !mongoose.Types.ObjectId.isValid(
@@ -220,19 +403,34 @@ export const getInquiryById = async (
     ) {
       return res.status(400).json({
         success: false,
-        message: "Invalid inquiry ID.",
+        message:
+          "Invalid inquiry ID.",
       });
     }
 
     const inquiry =
-      await Inquiry.findById(id);
+      await Inquiry.findById(
+        id
+      );
 
     if (!inquiry) {
       return res.status(404).json({
         success: false,
-        message: "Inquiry not found.",
+        message:
+          "Inquiry not found.",
       });
     }
+
+    /*
+      IMPORTANT:
+      No automatic status update here.
+
+      If status is Unread,
+      it stays Unread even when admin opens it.
+
+      Admin must manually change it
+      from the frontend dropdown.
+    */
 
     return res.json({
       success: true,
@@ -252,11 +450,23 @@ export const getInquiryById = async (
   }
 };
 
+/* =========================================================
+   UPDATE INQUIRY STATUS
+   Manual Read / Unread only
+========================================================= */
 export const updateInquiryStatus =
-  async (req, res) => {
+  async (
+    req,
+    res
+  ) => {
     try {
-      const { id } = req.params;
-      const { status } = req.body;
+      const {
+        id,
+      } = req.params;
+
+      const {
+        status,
+      } = req.body;
 
       if (
         !mongoose.Types.ObjectId.isValid(
@@ -271,9 +481,8 @@ export const updateInquiryStatus =
       }
 
       const allowedStatuses = [
-        "New",
-        "Contacted",
-        "Closed",
+        "Unread",
+        "Read",
       ];
 
       if (
@@ -284,17 +493,20 @@ export const updateInquiryStatus =
         return res.status(400).json({
           success: false,
           message:
-            "Invalid inquiry status.",
+            "Invalid inquiry status. Only Read or Unread is allowed.",
         });
       }
 
       const inquiry =
         await Inquiry.findByIdAndUpdate(
           id,
-          { status },
+          {
+            status,
+          },
           {
             new: true,
-            runValidators: true,
+            runValidators:
+              true,
           }
         );
 
@@ -309,7 +521,7 @@ export const updateInquiryStatus =
       return res.json({
         success: true,
         message:
-          "Inquiry status updated.",
+          "Inquiry status updated successfully.",
         inquiry,
       });
     } catch (error) {
@@ -326,12 +538,17 @@ export const updateInquiryStatus =
     }
   };
 
+/* =========================================================
+   DELETE INQUIRY
+========================================================= */
 export const deleteInquiry = async (
   req,
   res
 ) => {
   try {
-    const { id } = req.params;
+    const {
+      id,
+    } = req.params;
 
     if (
       !mongoose.Types.ObjectId.isValid(
@@ -340,7 +557,8 @@ export const deleteInquiry = async (
     ) {
       return res.status(400).json({
         success: false,
-        message: "Invalid inquiry ID.",
+        message:
+          "Invalid inquiry ID.",
       });
     }
 
@@ -352,7 +570,8 @@ export const deleteInquiry = async (
     if (!inquiry) {
       return res.status(404).json({
         success: false,
-        message: "Inquiry not found.",
+        message:
+          "Inquiry not found.",
       });
     }
 

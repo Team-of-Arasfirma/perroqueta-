@@ -32,6 +32,7 @@ const inquirySchema = new mongoose.Schema(
       trim: true,
       default: "",
     },
+
     productInterest: {
       type: String,
       trim: true,
@@ -61,10 +62,11 @@ const inquirySchema = new mongoose.Schema(
       trim: true,
       default: "",
     },
+
     status: {
       type: String,
-      enum: ["New", "Contacted", "Closed"],
-      default: "New",
+      enum: ["Unread", "Read"],
+      default: "Unread",
     },
   },
   {
@@ -82,5 +84,3 @@ const Inquiry =
   mongoose.model("Inquiry", inquirySchema);
 
 export default Inquiry;
-
-
