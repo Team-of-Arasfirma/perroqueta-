@@ -33,7 +33,7 @@ export default function ProductHero() {
 
       {/* Content */}
       <div className="relative z-20 mx-auto flex min-h-[470px] w-full max-w-[1600px] items-center px-5 sm:px-8 lg:px-12 xl:px-[62px]">
-        <div className="max-w-[620px]">
+        <div className="max-w-[620px] lg:max-w-[calc(100%_-_430px)] xl:max-w-[620px]">
           <p className="text-[13px] font-bold uppercase tracking-[0.08em] text-[#FF8626]">
             Our Products
           </p>

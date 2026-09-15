@@ -36,7 +36,7 @@ const timeline = [
 export default function OurStory() {
   return (
     <section className="w-full bg-[#F7F4FF] py-16 sm:py-20 lg:py-24">
-      <div className="mx-auto grid w-full max-w-[1600px] gap-12 px-5 sm:px-8 lg:grid-cols-[0.34fr_0.66fr] lg:px-12 xl:gap-16 xl:px-[62px]">
+      <div className="mx-auto grid w-full max-w-[1600px] gap-12 px-5 sm:px-8 xl:grid-cols-[0.34fr_0.66fr] lg:px-12 xl:gap-16 xl:px-[62px]">
         
         {/* Left Content */}
         <div>
@@ -77,12 +77,12 @@ export default function OurStory() {
         </div>
 
         {/* Timeline */}
-        <div className="relative pt-3 lg:pt-5">
+        <div className="relative pt-3 xl:pt-5">
           
           {/* Dashed Line */}
-          <div className="absolute left-[8%] right-[8%] top-[55px] hidden border-t-2 border-dashed border-[#BBA9EA] lg:block" />
+          <div className="absolute left-[8%] right-[8%] top-[55px] hidden border-t-2 border-dashed border-[#BBA9EA] xl:block" />
 
-          <div className="relative z-10 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+          <div className="relative z-10 grid gap-10 sm:grid-cols-2 xl:grid-cols-4 xl:gap-6">
             {timeline.map((item) => {
               const Icon = item.icon;
 

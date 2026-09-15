@@ -30,11 +30,11 @@ export default function StatsBanner() {
 
   return (
     <div className="relative z-30 mx-auto -mt-[34px] w-[calc(100%-40px)] max-w-[1180px]">
-      <div className="grid grid-cols-2 gap-x-5 gap-y-6 rounded-[18px] border border-[#EEEAF5] bg-white px-5 py-5 shadow-[0_12px_34px_rgba(49,29,91,0.12)] sm:grid-cols-4 sm:gap-0 sm:px-6">
+      <div className="grid grid-cols-2 gap-x-5 gap-y-6 rounded-[18px] border border-[#EEEAF5] bg-white px-5 py-5 shadow-[0_12px_34px_rgba(49,29,91,0.12)] lg:grid-cols-4 lg:gap-0 sm:px-6">
         {stats.map((stat, index) => (
           <div
             key={stat.label}
-            className={`flex min-w-0 items-center gap-3 sm:px-5 ${index > 0 ? "sm:border-l sm:border-[#EEEAF5]" : ""}`}
+            className={`flex min-w-0 flex-col items-center gap-3 text-center sm:flex-row sm:text-left lg:px-5 ${index > 0 ? "lg:border-l lg:border-[#EEEAF5]" : ""}`}
           >
             <div
               className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full"
@@ -51,7 +51,7 @@ export default function StatsBanner() {
             </div>
 
             <div>
-              <p className="text-[30px] font-bold leading-none tracking-[-0.02em] text-[#171717]">
+              <p className="text-[24px] sm:text-[30px] font-bold leading-none tracking-[-0.02em] text-[#171717]">
                 {stat.value}
               </p>
 

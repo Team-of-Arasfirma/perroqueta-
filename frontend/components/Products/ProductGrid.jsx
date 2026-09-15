@@ -82,24 +82,24 @@ export default function ProductGrid() {
           </h2>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid auto-rows-fr gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {products.map((product) => (
             <Link
               key={product.id}
               href={product.href}
-              className="group overflow-hidden rounded-[16px] border border-[#EAEAEA] bg-white transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+              className="group flex min-w-0 flex-col overflow-hidden rounded-[16px] border border-[#EAEAEA] bg-white transition duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
-              <div className="relative h-[220px] w-full overflow-hidden bg-[#F7F7F7]">
+              <div className="relative h-[220px] w-full shrink-0 overflow-hidden bg-[#F7F7F7]">
                 <Image
                   src={product.image}
                   alt={product.title}
                   fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  sizes="(min-width: 1600px) 351px, (min-width: 1280px) calc((100vw - 196px) / 4), (min-width: 1024px) calc((100vw - 144px) / 3), (min-width: 640px) calc((100vw - 88px) / 2), calc(100vw - 40px)"
                   className="object-contain p-4 transition-transform duration-500 group-hover:scale-[1.04]"
                 />
               </div>
 
-              <div className="p-5">
+              <div className="flex min-w-0 flex-1 flex-col p-5">
                 <h3 className="text-[19px] font-semibold text-[#171717] transition group-hover:text-[#6030C6]">
                   {product.title}
                 </h3>
@@ -108,7 +108,7 @@ export default function ProductGrid() {
                   {product.description}
                 </p>
 
-                <div className="mt-5 inline-flex items-center gap-2 text-[13px] font-semibold text-[#FF8626]">
+                <div className="mt-auto inline-flex items-center gap-2 self-start pt-5 text-[13px] font-semibold text-[#FF8626]">
                   View Product
 
                   <svg
@@ -116,7 +116,7 @@ export default function ProductGrid() {
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
-                    className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                    className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1"
                     aria-hidden="true"
                   >
                     <path d="M5 12h14M13 6l6 6-6 6" />

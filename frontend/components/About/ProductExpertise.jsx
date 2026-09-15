@@ -70,7 +70,10 @@ export default function ProductExpertise() {
   const scrollProducts = (direction) => {
     if (!scrollRef.current) return;
 
-    const scrollAmount = 320;
+    const card = scrollRef.current.firstElementChild;
+    if (!card) return;
+    const gap = parseFloat(getComputedStyle(scrollRef.current).columnGap) || 0;
+    const scrollAmount = card.getBoundingClientRect().width + gap;
 
     scrollRef.current.scrollBy({
       left: direction === "left" ? -scrollAmount : scrollAmount,
@@ -94,7 +97,7 @@ export default function ProductExpertise() {
           </div>
 
           {/* Desktop Arrows */}
-          <div className="hidden items-center gap-3 sm:flex">
+          <div className="hidden shrink-0 items-center gap-3 sm:flex">
             <button
               type="button"
               onClick={() => scrollProducts("left")}
@@ -124,7 +127,7 @@ export default function ProductExpertise() {
             <Link
               key={product.title}
               href={product.href}
-              className="group min-w-[260px] snap-start overflow-hidden rounded-[12px] border border-[#DCDCDC] bg-white transition duration-300 hover:-translate-y-1 hover:shadow-lg sm:min-w-[290px] lg:min-w-[300px]"
+              className="group w-[260px] max-w-full shrink-0 snap-start overflow-hidden rounded-[12px] border border-[#DCDCDC] bg-white transition duration-300 hover:-translate-y-1 hover:shadow-lg sm:w-[290px] lg:w-[300px]"
             >
               {/* Product Image */}
               <div className="relative h-[190px] w-full overflow-hidden bg-[#F7F7F7]">
@@ -132,7 +135,7 @@ export default function ProductExpertise() {
                   src={product.image}
                   alt={product.title}
                   fill
-                  sizes="300px"
+                  sizes="(max-width: 639px) 260px, (max-width: 1023px) 290px, 300px"
                   className="object-contain p-3 transition-transform duration-500 group-hover:scale-[1.03]"
                 />
               </div>

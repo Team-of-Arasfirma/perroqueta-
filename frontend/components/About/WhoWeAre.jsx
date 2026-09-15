@@ -104,15 +104,15 @@ export default function WhoWeAre() {
           </p>
 
           {/* Stats */}
-          <div className="mt-10 grid grid-cols-2 gap-y-8 sm:grid-cols-4 sm:gap-y-0">
+          <div className="mt-10 grid grid-cols-2 gap-y-8 sm:grid-cols-4 sm:gap-y-0 lg:grid-cols-2 lg:gap-y-8 xl:grid-cols-4 xl:gap-y-0">
             {stats.map((stat, index) => (
               <div
                 key={stat.value}
-                className={`relative pr-4 ${
+                className={`relative min-w-0 pr-4 ${
                   index !== stats.length - 1
-                    ? "sm:border-r sm:border-[#D9D9D9]"
+                    ? "sm:border-r sm:border-[#D9D9D9] lg:border-r-0 xl:border-r"
                     : ""
-                } ${index !== 0 ? "sm:pl-5" : ""}`}
+                } ${index !== 0 ? "sm:pl-5 lg:pl-0 xl:pl-5" : ""}`}
               >
                 <div
                   className={`flex h-10 w-10 items-center justify-center rounded-full text-white ${stat.color}`}
@@ -138,7 +138,7 @@ export default function WhoWeAre() {
 
         {/* Right Image Mosaic */}
         <div className="relative">
-          <div className="grid h-[440px] grid-cols-2 gap-3 sm:h-[500px]">
+          <div className="grid h-[min(110vw,440px)] grid-cols-2 gap-3 sm:h-[500px]">
             {/* Left Full Height Image */}
             <div className="relative overflow-hidden rounded-[14px] bg-[#E7E7E7]">
               <Image

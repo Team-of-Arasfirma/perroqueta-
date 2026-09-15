@@ -17,7 +17,7 @@ export default function AboutHero() {
             About Perroqueta
           </p>
 
-          <h1 className="max-w-[720px] text-[42px] font-bold leading-[1.08] text-white sm:text-[52px] lg:text-[62px]">
+          <h1 className="max-w-[720px] text-[34px] min-[375px]:text-[38px] min-[430px]:text-[42px] font-bold leading-[1.08] text-white sm:text-[52px] lg:text-[62px]">
             Materials Built for
             <span className="block text-[#FF9A48]">
               Better Spaces.
@@ -47,7 +47,7 @@ export default function AboutHero() {
         </div>
 
         {/* Abstract Animated Illustration */}
-        <div className="relative flex min-h-[320px] items-center justify-center lg:min-h-[420px]">
+        <div className="relative flex min-w-0 min-h-[200px] sm:min-h-[320px] items-center justify-center lg:min-h-[420px]">
           <svg
             viewBox="0 0 600 420"
             className="h-auto w-full max-w-[590px]"

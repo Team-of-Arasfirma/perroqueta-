@@ -307,10 +307,12 @@ export default function WPCHero() {
                   </div>
                 </div>
               ) : (
-                <div className="mt-6 grid grid-cols-3 gap-3">
+                <div className="mt-6 grid grid-cols-2 gap-3 min-[430px]:grid-cols-3">
                   <ProfileItem label="Total Width" value="152mm" />
                   <ProfileItem label="Rib Width" value="25mm" />
-                  <ProfileItem label="Thickness" value="15mm" />
+                  <div className="col-span-2 min-[430px]:col-span-1">
+                    <ProfileItem label="Thickness" value="15mm" />
+                  </div>
                 </div>
               )}
             </div>

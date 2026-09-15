@@ -17,8 +17,8 @@ export default function MissionVision() {
         {/* Cards */}
         <div className="mx-auto mt-9 grid max-w-[1160px] gap-6 lg:grid-cols-2 lg:gap-8">
           {/* Mission */}
-          <div className="flex items-center gap-5 rounded-[16px] bg-[#F3EEFF] px-5 py-6 sm:gap-6 sm:px-6">
-            <div className="flex h-[92px] w-[92px] shrink-0 items-center justify-center rounded-[14px]">
+          <div className="flex flex-col items-start gap-4 min-[430px]:flex-row min-[430px]:items-center min-[430px]:gap-5 rounded-[16px] bg-[#F3EEFF] px-5 py-6 sm:gap-6 sm:px-6">
+            <div className="flex h-[52px] w-[52px] sm:h-[92px] sm:w-[92px] shrink-0 items-center justify-center rounded-[14px]">
               <Target
                 size={42}
                 strokeWidth={1.7}
@@ -26,7 +26,7 @@ export default function MissionVision() {
               />
             </div>
 
-            <div>
+            <div className="min-w-0">
               <h3 className="text-[18px] font-bold text-[#5C35C6]">
                 Our Mission
               </h3>
@@ -39,8 +39,8 @@ export default function MissionVision() {
           </div>
 
           {/* Vision */}
-          <div className="flex items-center gap-5 rounded-[16px] bg-[#FFF0EA] px-5 py-6 sm:gap-6 sm:px-6">
-            <div className="flex h-[92px] w-[92px] shrink-0 items-center justify-center rounded-[14px] ">
+          <div className="flex flex-col items-start gap-4 min-[430px]:flex-row min-[430px]:items-center min-[430px]:gap-5 rounded-[16px] bg-[#FFF0EA] px-5 py-6 sm:gap-6 sm:px-6">
+            <div className="flex h-[52px] w-[52px] sm:h-[92px] sm:w-[92px] shrink-0 items-center justify-center rounded-[14px] ">
               <Eye
                 size={42}
                 strokeWidth={1.7}
@@ -48,7 +48,7 @@ export default function MissionVision() {
               />
             </div>
 
-            <div>
+            <div className="min-w-0">
               <h3 className="text-[18px] font-bold text-[#FF792D]">
                 Our Vision
               </h3>

@@ -12,6 +12,6 @@ export const metadata = {
 export default async function BlogPage() {
   let blogs = [];
   try { blogs = (await fetchBlogs({ published: true })).blogs || []; } catch (error) { console.error("Blog listing load error:", error); }
-  return <main className="bg-[#FBFBFB]"><BlogHero /><BlogGrid blogs={blogs} /></main>;
+  return <main className="bg-[#FBFBFB] [&_article_h2]:break-words"><BlogHero /><BlogGrid blogs={blogs} /></main>;
 }
 

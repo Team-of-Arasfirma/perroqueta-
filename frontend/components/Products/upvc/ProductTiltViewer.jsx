@@ -38,6 +38,7 @@ export default function ProductTiltViewer({ image, alt }) {
       {/* Product */}
       <div
         className="relative h-[320px] w-full max-w-[820px] cursor-ew-resize select-none sm:h-[370px] lg:h-[420px]"
+        style={{ touchAction: "pan-y pinch-zoom" }}
         onMouseDown={(e) => handleStart(e.clientX)}
         onMouseMove={(e) => handleMove(e.clientX)}
         onMouseUp={handleEnd}
@@ -45,6 +46,7 @@ export default function ProductTiltViewer({ image, alt }) {
         onTouchStart={(e) => handleStart(e.touches[0].clientX)}
         onTouchMove={(e) => handleMove(e.touches[0].clientX)}
         onTouchEnd={handleEnd}
+        onTouchCancel={handleEnd}
       >
         <div
           className="relative h-full w-full transition-transform duration-150 ease-out"

@@ -173,7 +173,7 @@ function ProjectList() {
 
                     {/* Project Details */}
                     <div className="px-4 py-4 sm:px-5 sm:py-5">
-                      <h3 className="line-clamp-2 text-[14px] font-semibold leading-5 text-[#222222] sm:text-[16px]">
+                      <h3 className="line-clamp-2 break-words text-[14px] font-semibold leading-5 text-[#222222] sm:text-[16px]">
                         {project.title || "Project"}
                       </h3>
 

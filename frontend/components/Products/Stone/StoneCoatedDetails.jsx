@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Check } from "lucide-react";
 
 import ProductTiltViewer from "../upvc/ProductTiltViewer";
@@ -151,7 +151,7 @@ export default function StoneCoatedDetails() {
     useState("tradix");
 
   const [selectedColor, setSelectedColor] =
-    useState("red");
+    useState(variants[0].colors[0].id);
 
   const currentVariant =
     variants.find(
@@ -162,10 +162,6 @@ export default function StoneCoatedDetails() {
     currentVariant.colors.find(
       (color) => color.id === selectedColor
     ) || currentVariant.colors[0];
-
-  useEffect(() => {
-    setSelectedColor(currentVariant.colors[0].id);
-  }, [selectedVariant, currentVariant]);
 
   return (
     <section className="relative w-full overflow-hidden bg-white">
@@ -279,9 +275,12 @@ export default function StoneCoatedDetails() {
                   <button
                     key={variant.id}
                     type="button"
-                    onClick={() =>
-                      setSelectedVariant(variant.id)
-                    }
+                    onClick={() => {
+                      if (selectedVariant !== variant.id) {
+                        setSelectedVariant(variant.id);
+                        setSelectedColor(variant.colors[0].id);
+                      }
+                    }}
                     aria-label={`Select ${variant.name}`}
                     title={variant.name}
                     className="group flex flex-col items-center"

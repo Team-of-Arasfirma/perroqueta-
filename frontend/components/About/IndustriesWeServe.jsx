@@ -50,14 +50,14 @@ export default function IndustriesWeServe() {
         </div>
 
         {/* Industry Cards */}
-        <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+        <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 xl:grid-cols-6">
           {industries.map((industry) => {
             const Icon = industry.icon;
 
             return (
               <div
                 key={industry.title}
-                className="group flex min-h-[190px] flex-col items-center justify-center rounded-[18px] border border-[#E5DDF1] bg-white px-4 py-6 text-center shadow-[0_6px_20px_rgba(65,40,110,0.05)] transition-all duration-300 hover:-translate-y-1 hover:border-[#CFC0E9] hover:shadow-[0_14px_35px_rgba(65,40,110,0.10)]"
+                className="group flex min-w-0 min-h-[190px] flex-col items-center justify-center rounded-[18px] border border-[#E5DDF1] bg-white px-2 py-6 min-[375px]:px-4 text-center shadow-[0_6px_20px_rgba(65,40,110,0.05)] transition-all duration-300 hover:-translate-y-1 hover:border-[#CFC0E9] hover:shadow-[0_14px_35px_rgba(65,40,110,0.10)]"
               >
                 {/* Icon */}
                 <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#F2ECFB] text-[#6030C6] transition-all duration-300 group-hover:bg-[#6030C6] group-hover:text-white">
