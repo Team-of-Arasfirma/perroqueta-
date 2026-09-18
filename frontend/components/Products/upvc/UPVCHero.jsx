@@ -51,7 +51,7 @@ export default function UPVCHero() {
 
   return (
     <section className="relative w-full overflow-hidden bg-white">
-      <div className="mx-auto min-h-[700px] w-full max-w-[1600px] px-5 pb-14 pt-7 sm:px-8 lg:px-12 xl:px-[62px]">
+      <div className="mx-auto min-h-[820px] w-full max-w-[1600px] px-5 pb-20 pt-7 sm:px-8 sm:pb-24 lg:px-12 xl:px-[62px]">
         {/* Breadcrumb */}
         <div className="flex items-center gap-3 text-[13px]">
           <Link
@@ -69,14 +69,14 @@ export default function UPVCHero() {
         </div>
 
         {/* Product Title */}
-        <div className="relative mt-6 text-center">
-          <h1 className="pointer-events-none font-serif text-[46px] font-normal leading-none text-[#C4C0C0] sm:text-[62px] lg:text-[74px]">
+        <div className="mt-8 flex flex-col items-center sm:mt-10">
+          <h1 className="pointer-events-none text-center font-serif text-[46px] font-normal leading-none text-[#C4C0C0] sm:text-[62px] lg:text-[74px]">
             UPVC Sheets
           </h1>
         </div>
 
         {/* Main Viewer */}
-        <div className="mt-[-5px] flex flex-col items-center">
+        <div className="mt-8 flex flex-col items-center sm:mt-10">
           <div className="w-full max-w-[760px]">
             <ProductTiltViewer
               image={currentColor.image}
@@ -85,7 +85,7 @@ export default function UPVCHero() {
           </div>
 
           {/* Color Selector */}
-          <div className="mt-1 flex flex-wrap items-start justify-center gap-5 sm:gap-6">
+          <div className="mt-10 flex flex-wrap items-start justify-center gap-5 sm:mt-12 sm:gap-7 lg:mt-14">
             {colors.map((color) => {
               const active = selectedColor === color.id;
 

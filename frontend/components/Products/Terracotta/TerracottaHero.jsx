@@ -30,7 +30,7 @@ export default function TerracottaHero() {
 
   return (
     <section className="relative w-full overflow-hidden bg-white">
-      <div className="mx-auto min-h-[700px] w-full max-w-[1600px] px-5 pb-14 pt-7 sm:px-8 lg:px-12 xl:px-[62px]">
+      <div className="mx-auto min-h-[820px] w-full max-w-[1600px] px-5 pb-20 pt-7 sm:px-8 sm:pb-24 lg:px-12 xl:px-[62px]">
         {/* Breadcrumb */}
         <div className="flex items-center gap-3 text-[13px]">
           <Link
@@ -48,15 +48,15 @@ export default function TerracottaHero() {
         </div>
 
         {/* Title */}
-        <div className="relative mt-6 text-center">
-          <h1 className="pointer-events-none font-serif text-[42px] font-normal leading-none text-[#C4C0C0] sm:text-[58px] lg:text-[72px]">
+        <div className="mt-8 flex flex-col items-center sm:mt-10">
+          <h1 className="pointer-events-none text-center font-serif text-[42px] font-normal leading-none text-[#C4C0C0] sm:text-[58px] lg:text-[72px]">
             Terracotta Clay Jali
           </h1>
         </div>
 
-        <div className="mt-[-5px] flex flex-col items-center">
-          {/* Main Product Viewer */}
-          <div className="w-full max-w-[820px]">
+        {/* Main Viewer */}
+        <div className="mt-8 flex flex-col items-center sm:mt-10">
+          <div className="w-full max-w-[760px]">
             <TerracottaTiltViewer
               image={selectedProduct.image}
               alt={`Perroqueta Terracotta Clay Jali ${selectedProduct.name}`}
@@ -64,7 +64,7 @@ export default function TerracottaHero() {
           </div>
 
           {/* Product Image Selector */}
-          <div className="mt-5 flex flex-wrap justify-center gap-4">
+          <div className="mt-10 flex flex-wrap justify-center gap-4 sm:mt-12 sm:gap-6 lg:mt-14">
             {jaliProducts.map((product) => {
               const isActive = selectedProduct.name === product.name;
 
@@ -91,7 +91,7 @@ export default function TerracottaHero() {
           </div>
 
           {/* Product Details */}
-          <div className="mt-4 flex flex-wrap justify-center gap-3">
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
             <span className="rounded-full border border-[#E3D9F3] bg-[#F7F4FC] px-5 py-2 text-[13px] font-semibold text-[#6030C6]">
               Terracotta
             </span>

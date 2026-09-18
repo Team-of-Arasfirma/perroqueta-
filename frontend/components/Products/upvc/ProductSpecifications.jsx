@@ -17,7 +17,7 @@ const specifications = [
   },
   {
     label: "Available Colours",
-    value: "Multiple colour options available",
+    value: "Blue, White, Grey, Orange, Brown, Green, Red",
   },
 ];
 
