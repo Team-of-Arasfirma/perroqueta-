@@ -89,13 +89,13 @@ export default function DepotSection() {
               <div className="absolute inset-x-0 top-0 h-[4px] bg-[linear-gradient(90deg,#6030C6,#7A45E5,#FF8626)]" />
               <div className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-[#6030C6]/10 transition-all duration-500 group-hover:scale-125 group-hover:bg-[#FF8626]/10" />
 
-              <div className="relative flex min-h-[128px] items-center gap-5 rounded-[25px] bg-white p-6">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-[18px] bg-[#F0EAFB] text-[#6030C6] transition-all duration-300 group-hover:rotate-6 group-hover:scale-110 group-hover:bg-[#6030C6] group-hover:text-white">
+              <div className="relative flex min-h-[128px] items-center gap-3 rounded-[25px] bg-white p-4 sm:gap-5 sm:p-6 lg:gap-3 lg:p-4 xl:gap-5 xl:p-6">
+                <div className="flex h-12 w-12 shrink-0 sm:h-14 sm:w-14 lg:h-12 lg:w-12 xl:h-14 xl:w-14 items-center justify-center rounded-[18px] bg-[#F0EAFB] text-[#6030C6] transition-all duration-300 group-hover:rotate-6 group-hover:scale-110 group-hover:bg-[#6030C6] group-hover:text-white">
                   <MapPin className="h-7 w-7" strokeWidth={1.8} />
                 </div>
 
                 <div className="min-w-0 flex-1">
-                  <h3 className="text-[19px] font-extrabold text-[#171717] transition-colors duration-300 group-hover:text-[#6030C6]">
+                  <h3 className="[overflow-wrap:anywhere] text-[19px] font-extrabold text-[#171717] transition-colors duration-300 group-hover:text-[#6030C6]">
                     {depot.name}
                   </h3>
 

@@ -32,7 +32,7 @@ export default function ContactMap() {
             </div>
 
             {/* Map Info Card */}
-            <div className="absolute left-5 top-5 w-[280px] rounded-[14px] bg-white p-5 shadow-xl sm:left-7 sm:top-7 sm:w-[320px]">
+            <div className="absolute left-5 top-5 w-[280px] max-w-[calc(100%-40px)] rounded-[14px] bg-white p-5 shadow-xl sm:left-7 sm:top-7 sm:w-[320px]">
               <div className="flex items-start gap-3">
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#F0EAFB] text-[#6030C6]">
                   <MapPin

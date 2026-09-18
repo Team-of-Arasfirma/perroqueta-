@@ -35,7 +35,7 @@ export default function OpenPositions() {
   return (
     <section
       id="open-positions"
-      className="relative w-full overflow-hidden bg-[#fbfafc] py-16 sm:py-20"
+      className="relative w-full overflow-hidden [overflow-wrap:anywhere] bg-[#fbfafc] py-16 sm:py-20"
     >
       <div className="pointer-events-none absolute left-[-120px] top-10 h-[280px] w-[280px] rounded-full bg-[#6030C6]/10 blur-3xl" />
       <div className="pointer-events-none absolute bottom-[-140px] right-[-100px] h-[320px] w-[320px] rounded-full bg-[#FF8626]/10 blur-3xl" />
@@ -106,7 +106,7 @@ export default function OpenPositions() {
 
                   <div className="relative flex min-h-[300px] flex-col justify-between rounded-[27px] bg-white p-6 sm:p-7">
                     <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
-                      <div className="max-w-[680px]">
+                      <div className="min-w-0 max-w-[680px]">
                         <div className="flex flex-wrap items-center gap-3">
                           <span className="inline-flex rounded-full bg-[#F0EAFB] px-3 py-[7px] text-[11px] font-bold uppercase tracking-[0.06em] text-[#6030C6]">
                             {job.jobType || "Full Time"}

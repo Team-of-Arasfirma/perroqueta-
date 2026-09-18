@@ -5,7 +5,7 @@ const products = [
   {
     id: 1,
     title: "UPVC Roofing Sheets",
-    image: "/assets/products/upv.png",
+    image: "/assets/products/upv1.png",
     description:
       "Corrosion-resistant and lightweight roofing sheets designed for long-term performance.",
     href: "/products/upvc-roofing-sheets",
@@ -53,7 +53,7 @@ const products = [
   {
     id: 7,
     title: "Terracotta Clay Jali",
-    image: "/assets/products/terracotta-jali.png",
+    image: "/assets/products/Jali/Diamond.png",
     description:
       "Architectural clay jali designed for ventilation, natural light and visual appeal.",
     href: "/products/terracotta-clay-jali",

@@ -7,7 +7,7 @@ import { useRef } from "react";
 const products = [
   {
     title: "UPVC Roofing Solutions",
-    image: "/assets/products/upv.png",
+    image: "/assets/products/upv1.png",
     href: "/products/upvc-roofing-sheets",
   },
   {
@@ -108,9 +108,10 @@ export default function ProductsSection() {
             className="flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
             {products.map((product) => (
-              <article
+              <Link
                 key={product.title}
-                className="group w-[78vw] max-w-[260px] shrink-0 snap-start overflow-hidden rounded-[18px] border border-[#E8E1F3] bg-white shadow-[0_8px_24px_rgba(49,29,91,0.06)] transition duration-300 hover:-translate-y-1 hover:border-[#D7C8F3] hover:shadow-[0_16px_32px_rgba(49,29,91,0.12)] sm:w-[260px]"
+                href={product.href}
+                className="group block w-[78vw] max-w-[260px] shrink-0 snap-start overflow-hidden rounded-[18px] border border-[#E8E1F3] bg-white shadow-[0_8px_24px_rgba(49,29,91,0.06)] transition duration-300 hover:-translate-y-1 hover:border-[#D7C8F3] hover:shadow-[0_16px_32px_rgba(49,29,91,0.12)] sm:w-[260px]"
               >
                 {/* Product Image */}
                 <div className="relative h-[214px] w-full overflow-hidden bg-[#FAF8FD]">
@@ -130,10 +131,7 @@ export default function ProductsSection() {
                     {product.title}
                   </h3>
 
-                  <Link
-                    href={product.href}
-                    className="mt-5 inline-flex items-center gap-2 text-[14px] font-semibold text-[#6030C6] transition-all hover:gap-3"
-                  >
+                  <span className="mt-5 inline-flex items-center gap-2 text-[14px] font-semibold text-[#6030C6] transition-all group-hover:gap-3">
                     Explore
 
                     <svg
@@ -146,9 +144,9 @@ export default function ProductsSection() {
                     >
                       <path d="M5 12h14M13 6l6 6-6 6" />
                     </svg>
-                  </Link>
+                  </span>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
 

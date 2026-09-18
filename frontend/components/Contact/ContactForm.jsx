@@ -86,7 +86,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="rounded-[18px] border border-[#EEEAF5] bg-white p-6 shadow-sm sm:p-7">
+    <div className="min-w-0 rounded-[18px] border border-[#EEEAF5] bg-white p-6 shadow-sm sm:p-7">
       {/* Header */}
       <div className="flex items-start justify-between gap-4">
         <div>
@@ -121,7 +121,7 @@ export default function ContactForm() {
               onChange={handleChange}
               placeholder="Enter your full name"
               required
-              className="w-full rounded-[8px] border border-[#DCDCDC] px-4 py-3 text-[14px] outline-none transition focus:border-[#6030C6]"
+              className="min-w-0 w-full rounded-[8px] border border-[#DCDCDC] px-4 py-3 text-[14px] outline-none transition focus:border-[#6030C6]"
             />
           </div>
 
@@ -138,7 +138,7 @@ export default function ContactForm() {
               onChange={handleChange}
               placeholder="Enter your email"
               required
-              className="w-full rounded-[8px] border border-[#DCDCDC] px-4 py-3 text-[14px] outline-none transition focus:border-[#6030C6]"
+              className="min-w-0 w-full rounded-[8px] border border-[#DCDCDC] px-4 py-3 text-[14px] outline-none transition focus:border-[#6030C6]"
             />
           </div>
 
@@ -157,7 +157,7 @@ export default function ContactForm() {
               required
               inputMode="numeric"
               maxLength={10}
-              className="w-full rounded-[8px] border border-[#DCDCDC] px-4 py-3 text-[14px] outline-none transition focus:border-[#6030C6]"
+              className="min-w-0 w-full rounded-[8px] border border-[#DCDCDC] px-4 py-3 text-[14px] outline-none transition focus:border-[#6030C6]"
             />
           </div>
 
@@ -174,7 +174,7 @@ export default function ContactForm() {
               onChange={handleChange}
               placeholder="Enter your location"
               required
-              className="w-full rounded-[8px] border border-[#DCDCDC] px-4 py-3 text-[14px] outline-none transition focus:border-[#6030C6]"
+              className="min-w-0 w-full rounded-[8px] border border-[#DCDCDC] px-4 py-3 text-[14px] outline-none transition focus:border-[#6030C6]"
             />
           </div>
         </div>
@@ -190,7 +190,7 @@ export default function ContactForm() {
             value={formData.category}
             onChange={handleChange}
             required
-            className="w-full rounded-[8px] border border-[#DCDCDC] bg-white px-4 py-3 text-[14px] text-[#555555] outline-none transition focus:border-[#6030C6]"
+            className="min-w-0 w-full rounded-[8px] border border-[#DCDCDC] bg-white px-4 py-3 text-[14px] text-[#555555] outline-none transition focus:border-[#6030C6]"
           >
             <option value="">Select category</option>
 
@@ -214,7 +214,7 @@ export default function ContactForm() {
             value={formData.subject}
             onChange={handleChange}
             placeholder="How can we help you?"
-            className="w-full rounded-[8px] border border-[#DCDCDC] px-4 py-3 text-[14px] outline-none transition focus:border-[#6030C6]"
+            className="min-w-0 w-full rounded-[8px] border border-[#DCDCDC] px-4 py-3 text-[14px] outline-none transition focus:border-[#6030C6]"
           />
         </div>
 
@@ -230,7 +230,7 @@ export default function ContactForm() {
             onChange={handleChange}
             rows={5}
             placeholder="Type your message here..."
-            className="w-full resize-none rounded-[8px] border border-[#DCDCDC] px-4 py-3 text-[14px] outline-none transition focus:border-[#6030C6]"
+            className="min-w-0 w-full resize-none rounded-[8px] border border-[#DCDCDC] px-4 py-3 text-[14px] outline-none transition focus:border-[#6030C6]"
           />
         </div>
 

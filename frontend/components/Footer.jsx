@@ -95,7 +95,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="#"
+                href="https://www.instagram.com/perroqueta_roofings/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -105,7 +105,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="#"
+                href="https://www.facebook.com/p/Perroqueta-61573143764726/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
@@ -115,7 +115,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="#"
+                href="https://www.youtube.com/@Perroqueta"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube"

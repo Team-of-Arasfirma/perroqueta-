@@ -60,7 +60,7 @@ const contactItems = [
 
 export default function ContactInfo() {
   return (
-    <div className="rounded-[18px] bg-[#FBFAFD] p-6 sm:p-7">
+    <div className="min-w-0 rounded-[18px] bg-[#FBFAFD] p-4 sm:p-7 lg:p-4 xl:p-7">
       {/* Heading */}
       <div>
         <h2 className="max-w-[280px] text-[28px] font-bold leading-[1.15] text-[#17152F] sm:text-[32px]">
@@ -102,10 +102,10 @@ export default function ContactInfo() {
 
                 {/* Call Us */}
                 {item.title === "Call Us" ? (
-                  <div className="group relative ml-7 flex min-h-[94px] items-center gap-4 rounded-[13px] bg-white px-4 py-4 shadow-[0_4px_18px_rgba(0,0,0,0.04)] transition duration-300 hover:-translate-y-0.5 hover:shadow-md">
+                  <div className="group relative ml-5 flex min-h-[94px] items-center gap-2 sm:ml-7 sm:gap-4 lg:ml-5 lg:gap-2 xl:ml-7 xl:gap-4 rounded-[13px] bg-white px-3 py-4 sm:px-4 lg:px-3 xl:px-4 shadow-[0_4px_18px_rgba(0,0,0,0.04)] transition duration-300 hover:-translate-y-0.5 hover:shadow-md">
                     {/* Icon */}
                     <div
-                      className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-white ${iconBg}`}
+                      className={`flex h-9 w-9 shrink-0 sm:h-11 sm:w-11 lg:h-9 lg:w-9 xl:h-11 xl:w-11 items-center justify-center rounded-full text-white ${iconBg}`}
                     >
                       <Icon
                         className="h-5 w-5"
@@ -151,11 +151,11 @@ export default function ContactInfo() {
                         ? "noopener noreferrer"
                         : undefined
                     }
-                    className="group relative ml-7 flex min-h-[94px] items-center gap-4 rounded-[13px] bg-white px-4 py-4 shadow-[0_4px_18px_rgba(0,0,0,0.04)] transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
+                    className="group relative ml-5 flex min-h-[94px] items-center gap-2 sm:ml-7 sm:gap-4 lg:ml-5 lg:gap-2 xl:ml-7 xl:gap-4 rounded-[13px] bg-white px-3 py-4 sm:px-4 lg:px-3 xl:px-4 shadow-[0_4px_18px_rgba(0,0,0,0.04)] transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
                   >
                     {/* Icon */}
                     <div
-                      className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-white ${iconBg}`}
+                      className={`flex h-9 w-9 shrink-0 sm:h-11 sm:w-11 lg:h-9 lg:w-9 xl:h-11 xl:w-11 items-center justify-center rounded-full text-white ${iconBg}`}
                     >
                       <Icon
                         className="h-5 w-5"
@@ -173,7 +173,7 @@ export default function ContactInfo() {
                         {item.lines.map((line) => (
                           <p
                             key={line}
-                            className="text-[12px] leading-[1.55] text-[#555555]"
+                            className="[overflow-wrap:anywhere] text-[12px] leading-[1.55] text-[#555555]"
                           >
                             {line}
                           </p>
@@ -185,10 +185,10 @@ export default function ContactInfo() {
                     <ArrowRight className="h-5 w-5 shrink-0 text-[#FF8626] transition duration-300 group-hover:translate-x-1" />
                   </a>
                 ) : (
-                  <div className="group relative ml-7 flex min-h-[94px] items-center gap-4 rounded-[13px] bg-white px-4 py-4 shadow-[0_4px_18px_rgba(0,0,0,0.04)] transition duration-300 hover:-translate-y-0.5 hover:shadow-md">
+                  <div className="group relative ml-5 flex min-h-[94px] items-center gap-2 sm:ml-7 sm:gap-4 lg:ml-5 lg:gap-2 xl:ml-7 xl:gap-4 rounded-[13px] bg-white px-3 py-4 sm:px-4 lg:px-3 xl:px-4 shadow-[0_4px_18px_rgba(0,0,0,0.04)] transition duration-300 hover:-translate-y-0.5 hover:shadow-md">
                     {/* Icon */}
                     <div
-                      className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-white ${iconBg}`}
+                      className={`flex h-9 w-9 shrink-0 sm:h-11 sm:w-11 lg:h-9 lg:w-9 xl:h-11 xl:w-11 items-center justify-center rounded-full text-white ${iconBg}`}
                     >
                       <Icon
                         className="h-5 w-5"
@@ -206,7 +206,7 @@ export default function ContactInfo() {
                         {item.lines.map((line) => (
                           <p
                             key={line}
-                            className="text-[12px] leading-[1.55] text-[#555555]"
+                            className="[overflow-wrap:anywhere] text-[12px] leading-[1.55] text-[#555555]"
                           >
                             {line}
                           </p>

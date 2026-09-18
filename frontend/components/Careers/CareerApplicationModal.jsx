@@ -267,7 +267,7 @@ export default function CareerApplicationModal({ career, onClose, open = true })
     <button
       type="button"
       onClick={onClose}
-      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white transition hover:bg-white hover:text-[#6030C6]"
+      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white transition hover:bg-white hover:text-[#6030C6]"
       aria-label="Close application modal"
     >
       <X className="h-5 w-5" />
@@ -283,7 +283,7 @@ export default function CareerApplicationModal({ career, onClose, open = true })
         }
       }}
     >
-      <div className="flex max-h-[90vh] w-full max-w-[720px] flex-col overflow-hidden rounded-[24px] border border-[#E8E1F3] bg-[#FFFDFC] shadow-[0_30px_80px_rgba(23,17,45,0.35)]">
+      <div className="flex max-h-[90vh] w-full [overflow-wrap:anywhere] max-w-[720px] flex-col overflow-hidden rounded-[24px] border border-[#E8E1F3] bg-[#FFFDFC] shadow-[0_30px_80px_rgba(23,17,45,0.35)]">
         <div className="flex shrink-0 items-start justify-between gap-4 border-b border-[#EEE6FB] bg-[linear-gradient(135deg,#6030C6_0%,#6E3DE2_55%,#FF8626_130%)] px-5 py-5 text-white sm:px-6">
           <div>
             <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-white/80">

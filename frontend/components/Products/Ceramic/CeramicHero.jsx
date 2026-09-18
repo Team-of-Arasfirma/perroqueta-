@@ -21,6 +21,11 @@ const colors = [
     name: "Pattern",
     image: "/assets/products/Ceramic/pattern.png",
   },
+  {
+    id: "grey",
+    name: "Grey",
+    image: "/assets/products/Ceramic/grey.png",
+  },
 ];
 
 export default function CeramicHero() {

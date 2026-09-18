@@ -13,7 +13,7 @@ export default function BlogDetails({ blog }) {
     "";
 
   return (
-    <main className="w-full bg-[#FBFBFB]">
+    <main className="w-full bg-[#FBFBFB] [overflow-wrap:anywhere]">
       <section className="relative overflow-hidden bg-[#21143A] py-16 sm:py-24">
         {image ? (
           <Image
@@ -71,7 +71,7 @@ export default function BlogDetails({ blog }) {
         ) : null}
 
         <article
-          className="blog-content rounded-3xl border border-[#EAE2F5] bg-white p-6 shadow-sm sm:p-10"
+          className="blog-content [&_pre]:max-w-full [&_pre]:overflow-x-auto rounded-3xl border border-[#EAE2F5] bg-white p-6 shadow-sm sm:p-10"
           dangerouslySetInnerHTML={{
             __html: sanitizeBlogHtml(
               blog.content || ""

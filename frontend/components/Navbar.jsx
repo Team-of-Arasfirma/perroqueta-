@@ -74,7 +74,7 @@ export default function Navbar() {
           {/* Desktop Buttons */}
           <div className="hidden shrink-0 items-center gap-3 xl:flex 2xl:gap-5">
             <a
-              href="/brochure/perroqueta-brochure.pdf"
+              href="/brochures/Perroqueta Brochure PDF.pdf"
               download
               className="whitespace-nowrap rounded-[11px] border-2 border-[#6535D0] px-4 py-3 text-[14px] font-medium leading-none text-[#5630BD] transition-all duration-300 hover:bg-[#6535D0] hover:text-white"
             >

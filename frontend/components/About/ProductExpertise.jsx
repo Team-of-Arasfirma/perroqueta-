@@ -10,7 +10,7 @@ const products = [
     title: "UPVC Roofing Sheets",
     description:
       "Corrosion resistant, lightweight and built for long-term performance.",
-    image: "/assets/products/upv.png",
+    image: "/assets/products/upv1.png",
     href: "/products/upvc-roofing-sheets",
   },
   {

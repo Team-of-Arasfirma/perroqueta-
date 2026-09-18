@@ -9,7 +9,11 @@ const specifications = [
   },
   {
     label: "Size",
-    value: "200 × 200 mm",
+    value: "12 × 8 inch",
+  },
+  {
+    label: "Thickness",
+    value: "18 mm",
   },
   {
     label: "Colour",

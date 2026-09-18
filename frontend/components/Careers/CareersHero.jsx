@@ -17,7 +17,7 @@ export default function CareerHero() {
       {/* Main Container */}
       <div className="relative z-10 mx-auto flex min-h-[500px] w-full max-w-[1600px] items-center px-5 sm:px-8 lg:px-12 xl:px-[62px]">
         {/* Left Content */}
-        <div className="max-w-[630px]">
+        <div className="max-w-[630px] lg:max-xl:max-w-[calc(100%_-_320px)]">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#E7DDF8] bg-white px-4 py-2 shadow-sm">
             <span className="h-2 w-2 rounded-full bg-[#FF8626]" />
 
@@ -79,7 +79,7 @@ export default function CareerHero() {
         </div>
 
         {/* Right Career Visual */}
-        <div className="pointer-events-none absolute right-[4%] top-1/2 hidden -translate-y-1/2 lg:block">
+        <div className="pointer-events-none absolute right-[4%] top-1/2 hidden -translate-y-1/2 lg:block lg:max-xl:origin-right lg:max-xl:scale-[0.65]">
           <div className="relative h-[380px] w-[470px]">
             {/* Main Glass Card */}
             <div className="absolute left-[70px] top-[55px] h-[260px] w-[310px] rounded-[30px] border border-white/70 bg-white/75 p-6 shadow-[0_25px_70px_rgba(72,47,117,0.14)] backdrop-blur-md">
