@@ -10,8 +10,18 @@ const query = (params = {}) => {
 };
 
 const parse = async (response) => {
-  const data = await response.json();
-  if (!response.ok) throw new Error(data.message || "Request failed.");
+  if (response.status === 413) {
+    throw new Error("Blog upload is too large. Use an image up to 10MB. If it is already within this limit, the server upload limit needs to be increased.");
+  }
+  let data;
+  try {
+    data = await response.json();
+  } catch {
+    throw new Error(response.ok
+      ? "The server returned an invalid response. Please reload the blog list before retrying."
+      : "Unable to complete the blog request. Please try again later.");
+  }
+  if (!response.ok) throw new Error(data?.message || "Request failed.");
   return data;
 };
 

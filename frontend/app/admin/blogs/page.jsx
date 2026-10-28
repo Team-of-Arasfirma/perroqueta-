@@ -102,8 +102,13 @@ export default function AdminBlogsPage() {
   const selectFile = (event) => {
     const file = event.target.files?.[0];
     if (!file) return;
-    if (!["image/jpeg", "image/png", "image/webp"].includes(file.type) || file.size > 10 * 1024 * 1024) {
-      setError("Use JPG, JPEG, PNG or WEBP under 10MB."); return;
+    if (!["image/jpeg", "image/jpg", "image/png", "image/webp"].includes(file.type.toLowerCase())) {
+      event.target.value = "";
+      setError("Use JPG, JPEG, PNG or WEBP images only."); return;
+    }
+    if (file.size > 10 * 1024 * 1024) {
+      event.target.value = "";
+      setError("Blog image must be 10MB or smaller."); return;
     }
     setValue("image", file); setValue("removeCoverImage", false); setPreview(URL.createObjectURL(file)); setError("");
   };
@@ -219,7 +224,7 @@ export default function AdminBlogsPage() {
                     <div className="mb-5"><p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#6030C6]">Cover Image</p><p className="mt-1 text-xs text-[#888]">JPG, PNG or WEBP up to 10MB.</p></div>
                     <label className="flex min-h-28 cursor-pointer flex-col items-center justify-center rounded-2xl border border-dashed border-[#CFC4E2] bg-[#FBF9FF] px-4 py-5 text-center hover:border-[#6030C6]">
                       <ImagePlus className="h-7 w-7 text-[#6030C6]" /><span className="mt-2 text-sm font-semibold text-[#4D3A6A]">Choose cover image</span><span className="mt-1 max-w-full truncate text-xs text-[#999]">{form.image?.name || (preview ? "Current cover image" : "No file selected")}</span>
-                      <input type="file" accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp" onChange={selectFile} className="sr-only" />
+                      <input type="file" accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/jpg,image/png,image/webp" onChange={selectFile} className="sr-only" />
                     </label>
                     {preview && <div className="mt-4 rounded-2xl border border-[#E8E1F3] bg-[#FBF9FF] p-3"><img src={preview} alt="Cover preview" className="max-h-48 w-full rounded-xl object-cover" /><button type="button" onClick={removeImage} className="mt-3 inline-flex items-center gap-2 rounded-lg border border-red-200 bg-white px-3 py-2 text-xs font-semibold text-red-600 hover:bg-red-50"><Trash2 className="h-3.5 w-3.5" />Remove Image</button></div>}
                   </section>

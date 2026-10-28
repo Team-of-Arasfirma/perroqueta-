@@ -18,7 +18,7 @@ const quickLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
   { label: "Our Products", href: "/products" },
-  { label: "Project", href: "/projects" },
+  { label: "Project", href: "/project" },
   { label: "Blog", href: "/blog" },
   { label: "Careers", href: "/careers" },
   { label: "Contact Us", href: "/contact" },
@@ -66,7 +66,6 @@ export default function Footer() {
     <footer className="w-full bg-[#121047]">
       <div className="mx-auto w-full max-w-[1600px] px-5 pb-6 pt-10 sm:px-8 lg:px-12 xl:px-[62px]">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.2fr_0.9fr_1.2fr_1.35fr_1.35fr]">
-
           {/* Brand */}
           <div>
             <Link
@@ -171,7 +170,6 @@ export default function Footer() {
             </h3>
 
             <div className="mt-4 space-y-4 text-[14px] leading-6 text-white/75">
-
               {/* Address */}
               <a
                 href="https://www.google.com/maps/place/Perroqueta+Materials+Science+I+Private+Limited+-+Avinashi/@11.1861683,77.2864394,19.63z/data=!4m6!3m5!1s0x3ba9030074cec3bf:0xacdd3bd52c27ff2b!8m2!3d11.1864612!4d77.2863818!16s%2Fg%2F11wy74llm7"
@@ -232,7 +230,6 @@ export default function Footer() {
                   </a>
                 </div>
               </div>
-
             </div>
           </div>
 

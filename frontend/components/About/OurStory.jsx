@@ -36,8 +36,7 @@ const timeline = [
 export default function OurStory() {
   return (
     <section className="w-full bg-[#F7F4FF] py-16 sm:py-20 lg:py-24">
-      <div className="mx-auto grid w-full max-w-[1600px] gap-12 px-5 sm:px-8 xl:grid-cols-[0.34fr_0.66fr] lg:px-12 xl:gap-16 xl:px-[62px]">
-        
+      <div className="mx-auto grid w-full max-w-[1600px] gap-12 px-5 sm:px-8 lg:px-12 xl:grid-cols-[0.34fr_0.66fr] xl:gap-16 xl:px-[62px]">
         {/* Left Content */}
         <div>
           <p className="text-[13px] font-bold uppercase tracking-[0.05em] text-[#5A36C8]">
@@ -58,7 +57,7 @@ export default function OurStory() {
           </p>
 
           <Link
-            href="/projects"
+            href="/project"
             className="mt-6 inline-flex items-center gap-3 rounded-[8px] border border-[#6030C6] px-4 py-[10px] text-[14px] font-medium text-[#6030C6] transition hover:bg-[#6030C6] hover:text-white"
           >
             View Projects
@@ -78,7 +77,6 @@ export default function OurStory() {
 
         {/* Timeline */}
         <div className="relative pt-3 xl:pt-5">
-          
           {/* Dashed Line */}
           <div className="absolute left-[8%] right-[8%] top-[55px] hidden border-t-2 border-dashed border-[#BBA9EA] xl:block" />
 
