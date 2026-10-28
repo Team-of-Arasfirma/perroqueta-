@@ -1,7 +1,7 @@
 const specifications = [
   {
     label: "Product",
-    value: "Clay Ceiling Tiles",
+    value: "Terracotta Clay Jali",
   },
   {
     label: "Size",

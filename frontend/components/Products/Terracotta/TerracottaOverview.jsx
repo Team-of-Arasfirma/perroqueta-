@@ -43,11 +43,11 @@ export default function TerracottaOverview() {
             </p>
 
             <h2 className="mt-3 max-w-[650px] text-[30px] font-bold leading-[1.15] text-[#171717] sm:text-[36px]">
-              Natural Terracotta Screens for Architectural Spaces
+              Natural ceiling Screens for Architectural Spaces
             </h2>
 
             <p className="mt-5 max-w-[700px] text-[15px] leading-7 text-[#5F5F5F]">
-              Perroqueta Terracotta Clay Jali brings natural clay character to
+              Perroqueta Clay Ceiling Tiles brings natural clay character to
               architectural screening and decorative applications.
             </p>
 
@@ -67,7 +67,7 @@ export default function TerracottaOverview() {
             </h3>
 
             <p className="mt-4 text-[14px] leading-7 text-[#5F5F5F]">
-              Terracotta jali can be used to create decorative screens that
+              Clay Ceiling Tiles can be used to create decorative screens that
               balance openness with architectural identity.
             </p>
           </div>

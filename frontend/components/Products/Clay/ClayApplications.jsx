@@ -60,7 +60,7 @@ export default function ClayApplications() {
           </h2>
 
           <p className="mt-4 max-w-[680px] text-[15px] leading-7 text-[#666666]">
-            Clay ceiling tiles can be used in interior applications where a
+            Terracotta Clay Jali can be used in interior applications where a
             warm, traditional and natural finish is preferred.
           </p>
         </div>

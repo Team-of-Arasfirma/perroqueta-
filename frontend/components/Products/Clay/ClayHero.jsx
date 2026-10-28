@@ -18,13 +18,13 @@ export default function ClayHero() {
           <span className="text-[#999999]">&gt;</span>
 
           <span className="font-medium text-[#6030C6]">
-            Clay Ceiling Tiles
+            Terracotta Clay Jali
           </span>
         </div>
 
         <div className="relative mt-6 text-center">
           <h1 className="pointer-events-none font-serif text-[46px] font-normal leading-none text-[#C4C0C0] sm:text-[62px] lg:text-[74px]">
-            Clay Ceiling Tiles
+            Terracotta Clay Jali
           </h1>
         </div>
 

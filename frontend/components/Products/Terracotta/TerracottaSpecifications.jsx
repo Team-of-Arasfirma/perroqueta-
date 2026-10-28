@@ -1,7 +1,7 @@
 const specifications = [
   {
     label: "Product",
-    value: "Terracotta Clay Jali",
+    value: "Clay Ceiling Tiles",
   },
   {
     label: "Material",
@@ -32,11 +32,11 @@ export default function TerracottaSpecifications() {
             </p>
 
             <h2 className="mt-3 text-[30px] font-bold leading-tight text-[#171717] sm:text-[36px]">
-              Terracotta Clay Jali Specifications
+              Clay Ceiling Tiles Specifications
             </h2>
 
             <p className="mt-4 max-w-[520px] text-[14px] leading-7 text-[#666666]">
-              Standard product information for Perroqueta Terracotta Clay Jali.
+              Standard product information for Perroqueta Clay Ceiling Tiles.
             </p>
           </div>
 

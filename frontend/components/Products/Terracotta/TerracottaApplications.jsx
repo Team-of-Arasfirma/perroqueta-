@@ -60,7 +60,7 @@ export default function TerracottaApplications() {
           </h2>
 
           <p className="mt-4 max-w-[680px] text-[15px] leading-7 text-[#666666]">
-            Terracotta clay jali can be used in architectural applications that
+            Clay Ceiling Tiles can be used in architectural applications that
             require decorative screening with a natural clay finish.
           </p>
         </div>

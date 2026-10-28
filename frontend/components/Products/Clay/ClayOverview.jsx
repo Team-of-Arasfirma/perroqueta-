@@ -43,11 +43,11 @@ export default function ClayOverview() {
             </p>
 
             <h2 className="mt-3 max-w-[650px] text-[30px] font-bold leading-[1.15] text-[#171717] sm:text-[36px]">
-              Natural Clay Ceiling Tiles with Timeless Character
+              Natural Terracotta Clay Jali with Timeless Character
             </h2>
 
             <p className="mt-5 max-w-[700px] text-[15px] leading-7 text-[#5F5F5F]">
-              Perroqueta Clay Ceiling Tiles bring a warm, natural appearance
+              Perroqueta Terracotta Clay Jali bring a warm, natural appearance
               to interior ceiling applications.
             </p>
 

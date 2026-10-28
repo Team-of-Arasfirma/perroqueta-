@@ -43,14 +43,14 @@ export default function TerracottaHero() {
           <span className="text-[#999999]">&gt;</span>
 
           <span className="font-medium text-[#6030C6]">
-            Terracotta Clay Jali
+            Clay Ceiling Tiles
           </span>
         </div>
 
         {/* Title */}
         <div className="mt-8 flex flex-col items-center sm:mt-10">
           <h1 className="pointer-events-none text-center font-serif text-[42px] font-normal leading-none text-[#C4C0C0] sm:text-[58px] lg:text-[72px]">
-            Terracotta Clay Jali
+            Clay Ceiling Tiles
           </h1>
         </div>
 
@@ -59,7 +59,7 @@ export default function TerracottaHero() {
           <div className="w-full max-w-[760px]">
             <TerracottaTiltViewer
               image={selectedProduct.image}
-              alt={`Perroqueta Terracotta Clay Jali ${selectedProduct.name}`}
+              alt={`Perroqueta Clay Ceiling Tiles ${selectedProduct.name}`}
             />
           </div>
 

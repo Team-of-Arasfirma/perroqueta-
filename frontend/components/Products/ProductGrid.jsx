@@ -44,7 +44,7 @@ const products = [
   },
   {
     id: 6,
-    title: "Clay Ceiling Tiles",
+    title: "Terracotta Clay Jali",
     image: "/assets/products/clay-ceiling.png",
     description:
       "Natural clay ceiling solutions that improve comfort and architectural character.",
@@ -52,7 +52,7 @@ const products = [
   },
   {
     id: 7,
-    title: "Terracotta Clay Jali",
+    title: "Clay Ceiling Tiles",
     image: "/assets/products/Jali/Diamond.png",
     description:
       "Architectural clay jali designed for ventilation, natural light and visual appeal.",
