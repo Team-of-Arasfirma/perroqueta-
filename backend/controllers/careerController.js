@@ -41,32 +41,8 @@ const uniqueSlug = async (value, excludeId) => {
   return slug;
 };
 
-const isCareerOpenForApplications = (career) => {
-  if (!career) return false;
-
-  if (career.published === false) {
-    return false;
-  }
-
-  if (career.status !== 'Open') {
-    return false;
-  }
-
-  if (!career.applicationDeadline) {
-    return true;
-  }
-
-  return new Date(career.applicationDeadline).getTime() >= Date.now();
-};
-
-const buildPublicAvailabilityFilter = () => ({
-  published: true,
-  status: 'Open',
-  $or: [
-    { applicationDeadline: null },
-    { applicationDeadline: { $gte: new Date() } },
-  ],
-});
+// Return only current schema fields, including for records created before schema changes.
+const careerFields = Object.keys(Career.schema.paths).join(' ');
 
 const payload = async (body, current = null) => {
   const title = clean(body.title ?? current?.title);
@@ -74,7 +50,6 @@ const payload = async (body, current = null) => {
   const location = clean(body.location ?? current?.location);
   const description = clean(body.description ?? current?.description);
   const published = body.published === undefined ? current?.published ?? false : bool(body.published);
-  const deadline = body.applicationDeadline === '' ? null : body.applicationDeadline ? new Date(body.applicationDeadline) : current?.applicationDeadline || null;
 
   if (!title || !department || !location || !description) {
     throw new Error('Title, department, location and description are required.');
@@ -82,7 +57,7 @@ const payload = async (body, current = null) => {
 
   const result = {
     title,
-    slug: await uniqueSlug(clean(body.slug || title), current?._id),
+    slug: await uniqueSlug(clean(body.slug || current?.slug || title), current?._id),
     department,
     location,
     jobType: body.jobType ?? current?.jobType ?? 'Full Time',
@@ -98,17 +73,12 @@ const payload = async (body, current = null) => {
     status: body.status ?? current?.status ?? 'Open',
     published,
     publishedAt: published ? current?.publishedAt || new Date() : current?.publishedAt || null,
-    applicationDeadline: deadline,
     metaTitle: clean(body.metaTitle ?? current?.metaTitle),
     metaDescription: clean(body.metaDescription ?? current?.metaDescription),
   };
 
   if (!options.jobType.includes(result.jobType) || !options.workMode.includes(result.workMode) || !options.status.includes(result.status)) {
     throw new Error('One or more career options are invalid.');
-  }
-
-  if (deadline && Number.isNaN(deadline.getTime())) {
-    throw new Error('Application deadline is invalid.');
   }
 
   return result;
@@ -120,10 +90,8 @@ export const getCareers = async (req, res) => {
     const filter = {};
 
     if (bool(publicOnly)) {
-      Object.assign(filter, buildPublicAvailabilityFilter());
-    }
-
-    if (published !== undefined && !bool(publicOnly)) {
+      filter.published = true;
+    } else if (published !== undefined) {
       filter.published = bool(published);
     }
 
@@ -152,7 +120,7 @@ export const getCareers = async (req, res) => {
     const page = Math.max(Number.parseInt(req.query.page, 10) || 1, 1);
     const limit = Math.min(Math.max(Number.parseInt(req.query.limit, 10) || 12, 1), 100);
     const total = await Career.countDocuments(filter);
-    const careers = await Career.find(filter).sort({ publishedAt: -1, createdAt: -1 }).skip((page - 1) * limit).limit(limit).lean();
+    const careers = await Career.find(filter, careerFields).sort({ publishedAt: -1, createdAt: -1 }).skip((page - 1) * limit).limit(limit).lean();
 
     return res.json({ success: true, careers, total, page, pages: Math.max(Math.ceil(total / limit), 1), limit });
   } catch (error) {
@@ -171,8 +139,8 @@ export const getCareerBySlug = async (req, res) => {
 
     const career = await Career.findOne({
       slug,
-      ...buildPublicAvailabilityFilter(),
-    });
+      published: true,
+    }, careerFields);
 
     if (!career) {
       return res.status(404).json({ success: false, message: 'Career not found.' });
@@ -195,7 +163,7 @@ export const createCareer = async (req, res) => {
 export const updateCareer = async (req, res) => {
   try {
     if (!mongoose.isValidObjectId(req.params.id)) return res.status(400).json({ success: false, message: 'Invalid career ID.' });
-    const career = await Career.findById(req.params.id);
+    const career = await Career.findById(req.params.id, careerFields);
     if (!career) return res.status(404).json({ success: false, message: 'Career not found.' });
     Object.assign(career, await payload(req.body, career));
     await career.save();

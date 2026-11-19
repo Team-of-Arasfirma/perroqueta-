@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Briefcase,
   Clock3,
@@ -26,11 +26,6 @@ export default function OpenPositions() {
       .catch((error) => setState({ loading: false, error: error.message }))
       .finally(() => setState((current) => ({ ...current, loading: false })));
   }, []);
-
-  const visibleCareers = useMemo(
-    () => careers.filter((career) => isCareerAcceptingApplications(career)),
-    [careers]
-  );
 
   return (
     <section
@@ -60,10 +55,10 @@ export default function OpenPositions() {
 
           <div className="w-fit rounded-2xl border border-[#E8DDF8] bg-white px-5 py-4 shadow-sm">
             <p className="text-[26px] font-extrabold leading-none text-[#6030C6]">
-              {visibleCareers.length}
+              {careers.length}
             </p>
             <p className="mt-1 text-[12px] font-semibold uppercase tracking-[0.08em] text-[#777]">
-              Positions Available
+              Positions Listed
             </p>
           </div>
         </div>
@@ -76,10 +71,10 @@ export default function OpenPositions() {
           <div className="mt-10 rounded-3xl border border-red-100 bg-red-50 p-7 text-center text-sm font-medium text-red-600">
             {state.error}
           </div>
-        ) : visibleCareers.length === 0 ? (
+        ) : careers.length === 0 ? (
           <div className="mt-10 rounded-3xl border border-dashed border-[#D7C7EF] bg-white p-12 text-center">
             <p className="text-[18px] font-bold text-[#171717]">
-              No open positions right now
+              No positions listed right now
             </p>
             <p className="mt-2 text-sm text-[#777]">
               Please check back soon for upcoming opportunities.
@@ -87,7 +82,7 @@ export default function OpenPositions() {
           </div>
         ) : (
           <div className="mt-12 grid gap-7 lg:grid-cols-2">
-            {visibleCareers.map((job, index) => {
+            {careers.map((job, index) => {
               const canApply = isCareerAcceptingApplications(job);
 
               return (
@@ -113,7 +108,7 @@ export default function OpenPositions() {
                           </span>
 
                           <span className="inline-flex rounded-full border border-[#FFE0C2] bg-[#FFF7EF] px-3 py-[7px] text-[11px] font-bold uppercase tracking-[0.06em] text-[#D86B10]">
-                            Hiring Now
+                            {canApply ? "Hiring Now" : "Closed"}
                           </span>
                         </div>
 
@@ -170,7 +165,7 @@ export default function OpenPositions() {
                       <button
                         type="button"
                         onClick={() => {
-                          if (canApply) {
+                          if (isCareerAcceptingApplications(job)) {
                             setSelectedJob(job);
                           }
                         }}

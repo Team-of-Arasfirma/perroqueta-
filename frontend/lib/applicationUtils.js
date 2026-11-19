@@ -38,27 +38,5 @@ export const formatApplicationDate = (value) => {
   }).format(date);
 };
 
-export const isCareerAcceptingApplications = (career) => {
-  if (!career) return false;
-
-  if (career.status !== 'Open') {
-    return false;
-  }
-
-  if (career.published === false) {
-    return false;
-  }
-
-  if (!career.applicationDeadline) {
-    return true;
-  }
-
-  const deadline = new Date(career.applicationDeadline);
-  return !Number.isNaN(deadline.getTime()) && deadline.getTime() >= Date.now();
-};
-
-export const formatCareerDeadline = (value) => {
-  if (!value) return 'Open until filled';
-  const formatted = formatApplicationDate(value);
-  return formatted || 'Open until filled';
-};
+export const isCareerAcceptingApplications = (career) =>
+  career?.published === true && career.status === 'Open';

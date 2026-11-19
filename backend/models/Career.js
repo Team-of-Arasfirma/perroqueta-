@@ -18,7 +18,6 @@ const careerSchema = new mongoose.Schema({
   status: { type: String, enum: ['Open', 'Closed'], default: 'Open' },
   published: { type: Boolean, default: false },
   publishedAt: { type: Date, default: null },
-  applicationDeadline: { type: Date, default: null },
   metaTitle: { type: String, trim: true, default: '' },
   metaDescription: { type: String, trim: true, default: '' },
 }, { timestamps: true });

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
   BriefcaseBusiness,
   Check,
@@ -33,7 +33,6 @@ const blank = {
   experience: "",
   salary: "",
   openings: 1,
-  applicationDeadline: "",
   shortDescription: "",
   description: "",
   responsibilities: "",
@@ -242,37 +241,34 @@ export default function CareersAdminPage() {
       error: "",
     });
 
-  const load = () =>
-    fetchCareers({
+  const latestLoad = useRef(0);
+
+  const load = useCallback(async () => {
+    const request = ++latestLoad.current;
+    return fetchCareers({
       ...filters,
       limit: 100,
     })
-      .then((data) =>
-        setCareers(
-          data.careers || []
-        )
-      )
-      .catch((error) =>
-        setState((prev) => ({
-          ...prev,
-          error: error.message,
-        }))
-      )
-      .finally(() =>
-        setState((prev) => ({
-          ...prev,
-          loading: false,
-        }))
-      );
+      .then((data) => {
+        if (request !== latestLoad.current) return;
+        setCareers(data.careers || []);
+        setState((prev) => ({ ...prev, loading: false, error: "" }));
+      })
+      .catch((error) => {
+        if (request !== latestLoad.current) return;
+        setCareers([]);
+        setState((prev) => ({ ...prev, loading: false, error: error.message }));
+      });
+  }, [filters]);
 
   useEffect(() => {
     load();
-  }, [
-    filters.search,
-    filters.status,
-    filters.department,
-    filters.jobType,
-  ]);
+  }, [load]);
+
+  const changeFilters = (nextFilters) => {
+    setState((prev) => ({ ...prev, loading: true, error: "" }));
+    setFilters(nextFilters);
+  };
 
   const stats = {
     total: careers.length,
@@ -315,12 +311,6 @@ export default function CareersAdminPage() {
 
       salary:
         career.salary || "",
-
-      applicationDeadline:
-        career.applicationDeadline?.slice(
-          0,
-          10
-        ) || "",
 
       responsibilities:
         asLines(
@@ -597,7 +587,7 @@ export default function CareersAdminPage() {
                 filters.search
               }
               onChange={(e) =>
-                setFilters({
+                changeFilters({
                   ...filters,
                   search:
                     e.target.value,
@@ -647,7 +637,7 @@ export default function CareersAdminPage() {
                   ]
                 }
                 onChange={(e) =>
-                  setFilters({
+                  changeFilters({
                     ...filters,
                     [name]:
                       e.target
@@ -1003,22 +993,6 @@ export default function CareersAdminPage() {
                           min="1"
                           value={
                             form.openings
-                          }
-                          onChange={
-                            change
-                          }
-                        />
-                      </Field>
-
-                      <Field
-                        label="Application Deadline"
-                        hint="Optional"
-                      >
-                        <Input
-                          name="applicationDeadline"
-                          type="date"
-                          value={
-                            form.applicationDeadline
                           }
                           onChange={
                             change

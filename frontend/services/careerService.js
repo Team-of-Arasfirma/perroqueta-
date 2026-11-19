@@ -1,8 +1,12 @@
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+const API_BASE = (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000')
+  .replace(/\/+$/, '')
+  .replace(/\/api$/, '');
 
 const parse = async (response) => {
-  const data = await response.json();
-  if (!response.ok) throw new Error(data.message || 'Request failed.');
+  const data = await response.json().catch(() => null);
+  if (!response.ok || !data?.success) {
+    throw Object.assign(new Error(data?.message || 'Request failed.'), { status: response.status });
+  }
   return data;
 };
 

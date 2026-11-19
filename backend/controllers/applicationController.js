@@ -40,23 +40,8 @@ const getExtension = (filename = '') => {
   return segments.pop().toLowerCase();
 };
 
-const isCareerOpenForApplications = (career) => {
-  if (!career) return false;
-
-  if (career.published === false) {
-    return false;
-  }
-
-  if (career.status !== 'Open') {
-    return false;
-  }
-
-  if (!career.applicationDeadline) {
-    return true;
-  }
-
-  return new Date(career.applicationDeadline).getTime() >= Date.now();
-};
+const isCareerOpenForApplications = (career) =>
+  career?.published === true && career.status === 'Open';
 
 const uploadResumeToCloudinary = (file) =>
   new Promise((resolve, reject) => {
@@ -205,7 +190,7 @@ export const createApplication = async (req, res) => {
 
     const populatedApplication = await Application.findById(application._id).populate(
       'career',
-      'title slug status applicationDeadline'
+      'title slug status'
     );
 
     return res.status(201).json({
@@ -278,7 +263,7 @@ export const getApplications = async (req, res) => {
         Application.countDocuments({ status: 'Rejected' }),
         Application.countDocuments({ status: 'Hired' }),
         Application.find(filter)
-          .populate('career', 'title slug status applicationDeadline')
+          .populate('career', 'title slug status')
           .sort({ appliedAt: -1, createdAt: -1 })
           .skip((page - 1) * limit)
           .limit(limit).lean(),
@@ -323,7 +308,7 @@ export const getApplicationById = async (req, res) => {
 
     const application = await Application.findById(id).populate(
       'career',
-      'title slug status applicationDeadline'
+      'title slug status'
     );
 
     if (!application) {
@@ -380,7 +365,7 @@ export const updateApplicationStatus = async (req, res) => {
 
     const populatedApplication = await Application.findById(application._id).populate(
       'career',
-      'title slug status applicationDeadline'
+      'title slug status'
     );
 
     return res.status(200).json({

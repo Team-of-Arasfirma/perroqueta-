@@ -15,7 +15,7 @@ export default function CareerApplicationTrigger({ career }) {
       <button
         type="button"
         onClick={() => {
-          if (canApply) {
+          if (isCareerAcceptingApplications(career)) {
             setOpen(true);
           }
         }}

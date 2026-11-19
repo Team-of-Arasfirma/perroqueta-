@@ -11,11 +11,8 @@ import {
   X,
 } from 'lucide-react';
 
-import { submitApplication } from '@/services/applicationService';
-import {
-  formatCareerDeadline,
-  isCareerAcceptingApplications,
-} from '@/lib/applicationUtils';
+import { submitCareerApplication } from '@/services/careerService';
+import { isCareerAcceptingApplications } from '@/lib/applicationUtils';
 
 const allowedMimeTypes = new Set([
   'application/pdf',
@@ -82,7 +79,10 @@ const Field = ({ label, error, children, className = '' }) => (
 );
 
 export default function CareerApplicationModal({ career, onClose, open = true }) {
-  const [mounted, setMounted] = useState(false);
+  return open && career ? <ApplicationForm key={career._id} career={career} onClose={onClose} /> : null;
+}
+
+function ApplicationForm({ career, onClose }) {
   const [form, setForm] = useState(initialForm);
   const [resumeFile, setResumeFile] = useState(null);
   const [errors, setErrors] = useState({});
@@ -91,34 +91,16 @@ export default function CareerApplicationModal({ career, onClose, open = true })
   const [fileKey, setFileKey] = useState(0);
 
   const canApply = isCareerAcceptingApplications(career);
-  const isVisible = open && !!career;
 
   useEffect(() => {
-    setMounted(true);
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
   }, []);
 
   useEffect(() => {
-    if (!isVisible) {
-      document.body.style.overflow = '';
-      return undefined;
-    }
-
-    document.body.style.overflow = 'hidden';
-
-    setForm(initialForm);
-    setResumeFile(null);
-    setErrors({});
-    setSuccess('');
-    setFileKey((value) => value + 1);
-
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [isVisible]);
-
-  useEffect(() => {
-    if (!isVisible) return undefined;
-
     const onKeyDown = (event) => {
       if (event.key === 'Escape' && !submitting) {
         onClose();
@@ -127,15 +109,7 @@ export default function CareerApplicationModal({ career, onClose, open = true })
 
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
-  }, [isVisible, onClose, submitting]);
-
-  useEffect(() => () => {
-    document.body.style.overflow = '';
-  }, []);
-
-  if (!mounted || !isVisible) {
-    return null;
-  }
+  }, [onClose, submitting]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -247,7 +221,7 @@ export default function CareerApplicationModal({ career, onClose, open = true })
       payload.append('message', clean(form.message));
       payload.append('resume', resumeFile);
 
-      await submitApplication(payload);
+      await submitCareerApplication(payload);
 
       setSuccess('Application submitted successfully. We will review your application and contact you if shortlisted.');
       setForm(initialForm);
@@ -295,8 +269,6 @@ export default function CareerApplicationModal({ career, onClose, open = true })
             <p className="mt-2 max-w-[520px] text-[13px] leading-6 text-white/80">
               {career.department ? `${career.department} · ` : ''}
               {career.location || 'Location not specified'}
-              {' · '}
-              Deadline: {formatCareerDeadline(career.applicationDeadline)}
             </p>
           </div>
 
