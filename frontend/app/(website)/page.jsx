@@ -1,3 +1,4 @@
+import { getPageMetadata } from "@/lib/pageSeo";
 import styles from "./home.module.css";
 import HeroSection from "@/components/Home/HeroSection";
 import StatsBanner from "@/components/Home/StatsBanner";
@@ -7,6 +8,10 @@ import ProjectsSection from "@/components/Home/ProjectsSection";
 import ProjectStats from "@/components/Home/ProjectStats";
 import TestimonialsSection from "@/components/Home/TestimonialsSection";
 import BlogSection from "@/components/Home/BlogSection";
+
+export function generateMetadata() {
+  return getPageMetadata('home');
+}
 
 export default function HomePage() {
   return (

@@ -5,6 +5,7 @@ const MODULE_ACTIONS = {
   careers: ["view", "create", "edit", "delete"],
   applications: ["view", "edit", "delete"],
   inquiries: ["view", "edit", "delete"],
+  seo: ["view", "edit"],
   redirects: ["view", "create", "edit", "delete"],
 };
 

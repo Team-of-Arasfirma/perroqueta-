@@ -17,6 +17,7 @@ import {
   ClipboardList,
   MessageSquare,
   UsersRound,
+  Search,
   Route,
   Menu,
   X,
@@ -33,6 +34,7 @@ const menuItems = [
   { label: "Applications", href: "/admin/applications", Icon: ClipboardList, moduleName: "applications", action: "view" },
   { label: "Inquiries", href: "/admin/inquiries", Icon: MessageSquare, moduleName: "inquiries", action: "view" },
   { label: "Users & Roles", href: "/admin/users", Icon: UsersRound, superAdminOnly: true },
+  { label: "SEO Management", href: "/admin/seo", Icon: Search, moduleName: "seo", action: "view" },
   { label: "URL Redirection", href: "/admin/redirects", Icon: Route, moduleName: "redirects", action: "view" },
 ];
 

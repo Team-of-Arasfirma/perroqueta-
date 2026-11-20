@@ -20,6 +20,7 @@ const PERMISSION_GROUPS = [
   ["careers", "Careers", [["view", "View"], ["create", "Create"], ["edit", "Edit"], ["delete", "Delete"]]],
   ["applications", "Applications", [["view", "View"], ["edit", "Edit Status"], ["delete", "Delete"]]],
   ["inquiries", "Inquiries", [["view", "View"], ["edit", "Edit Status"], ["delete", "Delete"]]],
+  ["seo", "SEO Management", [["view", "View"], ["edit", "Edit"]]],
   ["redirects", "Redirects", [["view", "View"], ["create", "Create"], ["edit", "Edit"], ["delete", "Delete"]]],
 ];
 

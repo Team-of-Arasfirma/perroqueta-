@@ -1,13 +1,18 @@
 import BlogHero from "@/components/Blog/BlogHero";
 import BlogGrid from "@/components/Blog/BlogGrid";
+import { getPageMetadata } from "@/lib/pageSeo";
 import { fetchBlogs } from "@/services/blogService";
 
 export const dynamic = "force-dynamic";
-export const metadata = {
+const fallbackMetadata = {
   title: "Blog",
   description: "Explore roofing insights, building material guides, industry updates and expert articles from Perroqueta.",
   alternates: { canonical: "/blog" },
 };
+
+export function generateMetadata() {
+  return getPageMetadata("blog", fallbackMetadata);
+}
 
 export default async function BlogPage() {
   let blogs = [];

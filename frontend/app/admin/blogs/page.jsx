@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Edit3, ImagePlus, Loader2, Plus, Trash2, X } from "lucide-react";
 import BlogRichTextEditor from "@/components/Admin/BlogRichTextEditor";
 import { useAdminAuth } from "@/components/Admin/AdminAuthProvider";
@@ -9,6 +9,7 @@ import { hasPermission, isSuperAdmin } from "@/lib/adminPermissions";
 import { buildSiteUrl, formatBlogDate } from "@/lib/blogContent";
 import {
   deleteBlog,
+  fetchBlogById,
   fetchBlogCategories,
   fetchBlogSubCategories,
   fetchBlogs,
@@ -76,7 +77,7 @@ export default function AdminBlogsPage() {
   const openAdd = () => {
     setEditing(null); setForm({ ...emptyForm, date: today() }); setPreview(""); setCategoryMode("new"); setSubCategoryMode("new"); setError(""); setModal(true);
   };
-  const openEdit = (blog) => {
+  const openEdit = useCallback((blog) => {
     setEditing(blog);
     setForm({
       ...emptyForm,
@@ -90,7 +91,21 @@ export default function AdminBlogsPage() {
     });
     setPreview(blog.coverImage || blog.featuredImage?.url || "");
     setCategoryMode("existing"); setSubCategoryMode(blog.subCategory ? "existing" : "new"); setError(""); setModal(true);
-  };
+  }, []);
+
+  useEffect(() => {
+    if (!canView || !canEdit || !authToken) return;
+    const id = new URLSearchParams(window.location.search).get("edit");
+    if (!id) return;
+    let active = true;
+    fetchBlogById({ token: authToken, id: encodeURIComponent(id) }).then(({ blog }) => {
+      if (active) openEdit(blog);
+    }).catch((err) => {
+      if (active) setError(err.message || "Unable to open the requested blog.");
+    });
+    return () => { active = false; };
+  }, [authToken, canEdit, canView, openEdit]);
+
   const close = () => { if (!saving) { setModal(false); setEditing(null); setPreview(""); } };
 
   const changeCategory = (value) => {

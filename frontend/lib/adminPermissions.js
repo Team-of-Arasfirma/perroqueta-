@@ -5,6 +5,7 @@ export const MODULES = [
   "careers",
   "applications",
   "inquiries",
+  "seo",
   "redirects",
 ];
 
@@ -15,6 +16,7 @@ export const ACTIONS = {
   careers: ["view", "create", "edit", "delete"],
   applications: ["view", "edit", "delete"],
   inquiries: ["view", "edit", "delete"],
+  seo: ["view", "edit"],
   redirects: ["view", "create", "edit", "delete"],
 };
 
@@ -58,6 +60,7 @@ export const getPermissionSummary = (user) => {
     careers: "Careers",
     applications: "Applications",
     inquiries: "Inquiries",
+    seo: "SEO Management",
     redirects: "Redirects",
   };
 

@@ -128,6 +128,10 @@ const adminSchema = new mongoose.Schema(
         },
       },
 
+      seo: {
+        view: { type: Boolean, default: false },
+        edit: { type: Boolean, default: false },
+      },
       redirects: {
         view: {
           type: Boolean,

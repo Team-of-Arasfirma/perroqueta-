@@ -8,6 +8,7 @@ import careerRoutes from "./routes/careerRoutes.js";
 import applicationRoutes from "./routes/applicationRoutes.js";
 import inquiryRoutes from "./routes/inquiryRoutes.js";
 import adminUserRoutes from "./routes/adminUserRoutes.js";
+import seoRoutes from "./routes/seoRoutes.js";
 import redirectRoutes from "./routes/redirectRoutes.js";
 import dashboardRoutes from "./routes/dashboardRoutes.js";
 
@@ -68,6 +69,7 @@ app.use("/api/inquiries", inquiryRoutes);
 app.use("/api/admin/users", adminUserRoutes);
 
 app.use("/api/redirects", redirectRoutes);
+app.use("/api/seo", seoRoutes);
 
 app.use("/api/admin/dashboard", dashboardRoutes);
 

@@ -1,3 +1,4 @@
+import { getPageMetadata } from "@/lib/pageSeo";
 import AboutHero from "@/components/About/AboutHero";
 import WhoWeAre from "@/components/About/WhoWeAre";
 import OurStory from "@/components/About/OurStory";
@@ -5,6 +6,10 @@ import MissionVision from "@/components/About/MissionVision";
 import WhyChooseAbout from "@/components/About/WhyChooseAbout";
 import ProductExpertise from "@/components/About/ProductExpertise";
 import IndustriesWeServe from "@/components/About/IndustriesWeServe";
+
+export function generateMetadata() {
+  return getPageMetadata('about');
+}
 
 export default function AboutPage() {
   return (
