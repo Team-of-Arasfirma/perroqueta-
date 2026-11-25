@@ -1,73 +1,28 @@
-import {
-  Building2,
-  Home,
-  PanelsTopLeft,
-  Hotel,
-  Landmark,
-  Store,
-} from "lucide-react";
+import { getProductIcon } from "../productIcons";
 
-const applications = [
-  {
-    icon: Building2,
-    title: "Building Facades",
-    description:
-      "Suitable for decorative external screening and architectural facade elements.",
-  },
-  {
-    icon: PanelsTopLeft,
-    title: "Partitions",
-    description:
-      "Can be used to create semi-open architectural partitions and decorative screens.",
-  },
-  {
-    icon: Home,
-    title: "Residential Spaces",
-    description:
-      "Suitable for homes, courtyards and selected residential architectural applications.",
-  },
-  {
-    icon: Hotel,
-    title: "Hotels & Resorts",
-    description:
-      "Adds natural clay character to hospitality and resort design concepts.",
-  },
-  {
-    icon: Landmark,
-    title: "Institutional Projects",
-    description:
-      "Can be incorporated into architectural screens for institutional buildings.",
-  },
-  {
-    icon: Store,
-    title: "Commercial Spaces",
-    description:
-      "Suitable for selected commercial interiors and exterior design applications.",
-  },
-];
+export default function TerracottaApplications({ product }) {
+  const { applications } = product;
 
-export default function TerracottaApplications() {
   return (
     <section className="w-full bg-white py-16 sm:py-20">
       <div className="mx-auto w-full max-w-[1600px] px-5 sm:px-8 lg:px-12 xl:px-[62px]">
         <div className="max-w-[760px]">
           <p className="text-[13px] font-bold uppercase tracking-[0.05em] text-[#6030C6]">
-            Applications
+            {applications.eyebrow}
           </p>
 
           <h2 className="mt-3 text-[30px] font-bold leading-tight text-[#171717] sm:text-[36px]">
-            Designed for Architectural Screening
+            {applications.heading}
           </h2>
 
           <p className="mt-4 max-w-[680px] text-[15px] leading-7 text-[#666666]">
-            Clay Ceiling Tiles can be used in architectural applications that
-            require decorative screening with a natural clay finish.
+            {applications.description}
           </p>
         </div>
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {applications.map((item) => {
-            const Icon = item.icon;
+          {applications.items.map((item) => {
+            const Icon = getProductIcon(item.iconKey);
 
             return (
               <div

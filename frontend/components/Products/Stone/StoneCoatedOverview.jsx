@@ -1,38 +1,8 @@
-import {
-  ShieldCheck,
-  CloudSun,
-  Volume2,
-  Sparkles,
-} from "lucide-react";
+import { getProductIcon } from "../productIcons";
 
-const features = [
-  {
-    icon: ShieldCheck,
-    title: "Long-Lasting Protection",
-    description:
-      "Stone coated roofing combines a strong metal base with a protective surface finish for long-term durability.",
-  },
-  {
-    icon: CloudSun,
-    title: "Weather Resistant",
-    description:
-      "Designed to withstand sun, rain and changing weather conditions while maintaining performance.",
-  },
-  {
-    icon: Volume2,
-    title: "Noise Reduction",
-    description:
-      "The stone chip coating helps reduce rain impact noise compared with conventional bare metal roofing.",
-  },
-  {
-    icon: Sparkles,
-    title: "Premium Appearance",
-    description:
-      "Available in multiple profiles and colors to suit modern, traditional and premium architectural styles.",
-  },
-];
+export default function StoneCoatedOverview({ product }) {
+  const { overview } = product;
 
-export default function StoneCoatedOverview() {
   return (
     <section className="w-full bg-[#FBFBFB] py-16 sm:py-20">
       <div className="mx-auto w-full max-w-[1600px] px-5 sm:px-8 lg:px-12 xl:px-[62px]">
@@ -40,47 +10,40 @@ export default function StoneCoatedOverview() {
           {/* Left Content */}
           <div>
             <p className="text-[13px] font-bold uppercase tracking-[0.05em] text-[#6030C6]">
-              Product Overview
+              {overview.eyebrow}
             </p>
 
             <h2 className="mt-3 max-w-[650px] text-[30px] font-bold leading-[1.15] text-[#171717] sm:text-[36px]">
-              Premium Roofing with Strength and Style
+              {overview.heading}
             </h2>
 
-            <p className="mt-5 max-w-[700px] text-[15px] leading-7 text-[#5F5F5F]">
-              Perroqueta stone coated roofing sheets combine the strength of a
-              metal roofing system with the premium appearance of natural stone
-              finishes.
-            </p>
-
-            <p className="mt-4 max-w-[700px] text-[15px] leading-7 text-[#5F5F5F]">
-              With multiple profiles and color options, they are suitable for
-              residential, commercial and architectural projects where both
-              performance and visual appeal are important.
-            </p>
+            {overview.paragraphs.map((paragraph, index) => (
+              <p key={index} className={index === 0 ? "mt-5 max-w-[700px] text-[15px] leading-7 text-[#5F5F5F]" : "mt-4 max-w-[700px] text-[15px] leading-7 text-[#5F5F5F]"}>
+                {paragraph}
+              </p>
+            ))}
           </div>
 
           {/* Right Highlight */}
           <div className="rounded-[18px] bg-[#F1ECFB] p-7 sm:p-8">
             <p className="text-[12px] font-bold uppercase tracking-[0.05em] text-[#FF8626]">
-              Designed to Stand Out
+              {overview.highlight.eyebrow}
             </p>
 
             <h3 className="mt-3 text-[26px] font-bold leading-tight text-[#171717]">
-              A Roof That Adds Character
+              {overview.highlight.heading}
             </h3>
 
             <p className="mt-4 text-[14px] leading-7 text-[#5F5F5F]">
-              Choose from Tradix, Tile-O, Milan and Shingles profiles with a
-              range of finishes to match different architectural styles.
+              {overview.highlight.description}
             </p>
           </div>
         </div>
 
         {/* Features */}
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {features.map((feature) => {
-            const Icon = feature.icon;
+          {overview.features.map((feature) => {
+            const Icon = getProductIcon(feature.iconKey);
 
             return (
               <div

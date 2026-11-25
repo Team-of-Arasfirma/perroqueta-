@@ -1,73 +1,28 @@
-import {
-  Home,
-  Hotel,
-  Building2,
-  Landmark,
-  Store,
-  House,
-} from "lucide-react";
+import { getProductIcon } from "../productIcons";
 
-const applications = [
-  {
-    icon: Home,
-    title: "Residential Homes",
-    description:
-      "Suitable for independent houses and residential roofing projects.",
-  },
-  {
-    icon: House,
-    title: "Villas",
-    description:
-      "Ideal for villa roofing where a traditional ceramic appearance is preferred.",
-  },
-  {
-    icon: Hotel,
-    title: "Resorts & Hotels",
-    description:
-      "Adds a warm architectural character to hospitality roofing projects.",
-  },
-  {
-    icon: Building2,
-    title: "Commercial Buildings",
-    description:
-      "Suitable for selected commercial projects requiring decorative roofing.",
-  },
-  {
-    icon: Landmark,
-    title: "Institutional Buildings",
-    description:
-      "Can be used in schools, community buildings and similar structures.",
-  },
-  {
-    icon: Store,
-    title: "Architectural Projects",
-    description:
-      "Suitable for roofing designs where traditional aesthetics are important.",
-  },
-];
+export default function CeramicApplications({ product }) {
+  const { applications } = product;
 
-export default function CeramicApplications() {
   return (
     <section className="w-full bg-white py-16 sm:py-20">
       <div className="mx-auto w-full max-w-[1600px] px-5 sm:px-8 lg:px-12 xl:px-[62px]">
         <div className="max-w-[760px]">
           <p className="text-[13px] font-bold uppercase tracking-[0.05em] text-[#6030C6]">
-            Applications
+            {applications.eyebrow}
           </p>
 
           <h2 className="mt-3 text-[30px] font-bold leading-tight text-[#171717] sm:text-[36px]">
-            Suitable for Beautiful Roofing Projects
+            {applications.heading}
           </h2>
 
           <p className="mt-4 max-w-[680px] text-[15px] leading-7 text-[#666666]">
-            Ceramic roofing tiles are suitable for building types where a
-            classic and architectural roof finish is preferred.
+            {applications.description}
           </p>
         </div>
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {applications.map((item) => {
-            const Icon = item.icon;
+          {applications.items.map((item) => {
+            const Icon = getProductIcon(item.iconKey);
 
             return (
               <div

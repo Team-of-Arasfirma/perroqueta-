@@ -41,6 +41,12 @@ const adminSchema = new mongoose.Schema(
         },
       },
 
+      products: {
+        view: { type: Boolean, default: false },
+        create: { type: Boolean, default: false },
+        edit: { type: Boolean, default: false },
+      },
+
       projects: {
         view: {
           type: Boolean,

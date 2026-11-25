@@ -215,12 +215,7 @@ export default function Footer() {
                 />
 
                 <div className="flex flex-col gap-1">
-                  <a
-                    href="tel:+919514077787"
-                    className="transition duration-300 hover:text-white"
-                  >
-                    +91 95140 77787
-                  </a>
+                  
 
                   <a
                     href="tel:+919514577787"

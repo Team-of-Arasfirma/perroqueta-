@@ -3,105 +3,19 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { byDisplayOrder, productText } from "../productPresentation";
 import WPCTiltViewer from "./WPCTiltViewer";
 
-const wpcImages = [
-  {
-    id: 1,
-    image: "/assets/products/wpc/02.png",
-    label: "CHERRY",
-    thickness: "12mm",
-    dimensions: "2950mm (L) × 153mm (W)",
-    coverage: "4.85 SQF",
-    width: "153mm",
-    length: "2950mm",
-    profileImage: "/assets/products/wpc/profile-12mm.png",
-    profileType: "12mm",
-    ribWidth: "24mm",
-    gap: "7mm",
-    sectionGap: "14mm",
-  },
-  {
-    id: 2,
-    image: "/assets/products/wpc/03.png",
-    label: "CHARCOAL",
-    thickness: "12mm",
-    dimensions: "2950mm (L) × 153mm (W)",
-    coverage: "4.85 SQF",
-    width: "153mm",
-    length: "2950mm",
-    profileImage: "/assets/products/wpc/profile-12mm.png",
-    profileType: "12mm",
-    ribWidth: "24mm",
-    gap: "7mm",
-    sectionGap: "14mm",
-  },
-  {
-    id: 3,
-    image: "/assets/products/wpc/04.png",
-    label: "NUTMEG",
-    thickness: "12mm",
-    dimensions: "2950mm (L) × 153mm (W)",
-    coverage: "4.85 SQF",
-    width: "153mm",
-    length: "2950mm",
-    profileImage: "/assets/products/wpc/profile-12mm.png",
-    profileType: "12mm",
-    ribWidth: "24mm",
-    gap: "7mm",
-    sectionGap: "14mm",
-  },
-  {
-    id: 4,
-    image: "/assets/products/wpc/05.png",
-    label: "CARRARA GOLD",
-    thickness: "15mm",
-    dimensions: "2900mm (L) × 152mm (W)",
-    coverage: "4.75 SQF",
-    width: "152mm",
-    length: "2900mm",
-    profileImage: "/assets/products/wpc/profile-15mm.png",
-    profileType: "15mm",
-    ribWidth: "25mm",
-  },
-  {
-    id: 5,
-    image: "/assets/products/wpc/06.png",
-    label: "MARQUINA GOLD",
-    thickness: "15mm",
-    dimensions: "2900mm (L) × 152mm (W)",
-    coverage: "4.75 SQF",
-    width: "152mm",
-    length: "2900mm",
-    profileImage: "/assets/products/wpc/profile-15mm.png",
-    profileType: "15mm",
-    ribWidth: "25mm",
-  },
-];
-
-export default function WPCHero() {
-  const [selectedImage, setSelectedImage] = useState(wpcImages[1]);
-
-  const specifications = [
-    {
-      label: "Dimensions",
-      value: selectedImage.dimensions,
-    },
-    {
-      label: "Thickness",
-      value: selectedImage.thickness,
-    },
-    {
-      label: "Coverage Per Panel",
-      value: selectedImage.coverage,
-    },
-    {
-      label: "Application",
-      value: "Interior Use",
-    },
-  ];
-
-  const is12mm = selectedImage.profileType === "12mm";
+export default function WPCHero({ product }) {
+  const wpcImages = byDisplayOrder(product.options);
+  const [selectedId, setSelectedId] = useState(product.hero.defaultOptionId);
+  const selectedImage = wpcImages.find((option) => option.id === selectedId) ?? wpcImages[0];
+  const profile = product.profiles.find((item) => item.id === selectedImage.profileId);
+  const { selectedSpecifications, technicalProfile } = product;
+  const thickness = selectedImage.thickness || profile.thickness;
+  const specificationValues = [profile.dimensions, thickness, profile.coverage, profile.application];
+  const badgeValues = [profile.width, profile.length, thickness, profile.coverage];
+  const is12mm = profile.profileType === "12mm";
 
   return (
     <section className="relative w-full overflow-hidden bg-white">
@@ -118,14 +32,14 @@ export default function WPCHero() {
           <span className="text-[#999999]">&gt;</span>
 
           <span className="font-medium text-[#6030C6]">
-            WPC Interior Wall Panels
+            {product.breadcrumbLabel}
           </span>
         </div>
 
         {/* Title */}
         <div className="relative mt-6 text-center">
           <h1 className="pointer-events-none font-serif text-[42px] font-normal leading-none text-[#C4C0C0] sm:text-[58px] lg:text-[72px]">
-            WPC Interior Wall Panels
+            {product.detailHeading}
           </h1>
         </div>
 
@@ -133,19 +47,19 @@ export default function WPCHero() {
         <div className="mt-4 flex flex-col items-center">
           <div className="w-full max-w-[820px]">
             <WPCTiltViewer
-              image={selectedImage.image}
-              alt={`${selectedImage.thickness} ${selectedImage.label} WPC Interior Wall Panel`}
+              image={selectedImage.image.url}
+              alt={selectedImage.image.alt || productText(product.hero.alt, { thickness, label: selectedImage.label }) || product.name}
             />
           </div>
 
           {/* Selected Variant Name */}
           <div className="mt-4 text-center">
             <p className="text-[12px] font-semibold uppercase tracking-[0.15em] text-[#FF8626]">
-              VersaFlute
+              {product.series}
             </p>
 
             <h2 className="mt-2 text-[24px] font-bold text-[#171717] sm:text-[30px]">
-              {selectedImage.thickness.toUpperCase()} {selectedImage.label}
+              {thickness?.toUpperCase()} {selectedImage.label}
             </h2>
           </div>
 
@@ -158,7 +72,7 @@ export default function WPCHero() {
                 <button
                   key={item.id}
                   type="button"
-                  onClick={() => setSelectedImage(item)}
+                  onClick={() => setSelectedId(item.id)}
                   className="group flex flex-col items-center gap-2"
                 >
                   <div
@@ -181,8 +95,8 @@ export default function WPCHero() {
                     `}
                   >
                     <Image
-                      src={item.image}
-                      alt={item.label}
+                      src={(item.thumbnail ?? item.image).url}
+                      alt={item.thumbnail?.alt || item.label}
                       fill
                       sizes="88px"
                       className="object-contain p-2"
@@ -221,26 +135,26 @@ export default function WPCHero() {
           <div className="mt-14 w-full max-w-[1000px]">
             <div className="text-center">
               <p className="text-[12px] font-bold uppercase tracking-[0.15em] text-[#6030C6]">
-                Product Specifications
+                {selectedSpecifications?.eyebrow}
               </p>
 
               <h3 className="mt-2 text-[26px] font-bold text-[#171717] sm:text-[32px]">
-                Technical Details
+                {selectedSpecifications?.heading}
               </h3>
             </div>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {specifications.map((item) => (
+              {selectedSpecifications?.labels.map((label, index) => (
                 <div
-                  key={item.label}
+                  key={label}
                   className="rounded-2xl border border-[#E8E1F3] bg-[#FBF9FF] p-5 text-center"
                 >
                   <p className="text-[12px] font-semibold uppercase tracking-[0.08em] text-[#7E7190]">
-                    {item.label}
+                    {label}
                   </p>
 
                   <p className="mt-2 text-[15px] font-bold text-[#21143A]">
-                    {item.value}
+                    {specificationValues[index]}
                   </p>
                 </div>
               ))}
@@ -249,72 +163,52 @@ export default function WPCHero() {
 
           {/* Quick Detail Pills */}
           <div className="mt-8 flex flex-wrap justify-center gap-4 sm:gap-6">
-            <span className="rounded-full border border-[#E3D9F3] bg-[#F7F4FC] px-5 py-2 text-[13px] font-semibold text-[#6030C6]">
-              {selectedImage.width} Width
-            </span>
-
-            <span className="rounded-full border border-[#E3D9F3] bg-[#F7F4FC] px-5 py-2 text-[13px] font-semibold text-[#6030C6]">
-              {selectedImage.length} Length
-            </span>
-
-            <span className="rounded-full border border-[#E3D9F3] bg-[#F7F4FC] px-5 py-2 text-[13px] font-semibold text-[#6030C6]">
-              {selectedImage.thickness} Thickness
-            </span>
-
-            <span className="rounded-full border border-[#E3D9F3] bg-[#F7F4FC] px-5 py-2 text-[13px] font-semibold text-[#6030C6]">
-              {selectedImage.coverage} Coverage
-            </span>
+            {selectedSpecifications?.badgeLabels.map((label, index) => (
+              <span key={label} className="rounded-full border border-[#E3D9F3] bg-[#F7F4FC] px-5 py-2 text-[13px] font-semibold text-[#6030C6]">
+                {badgeValues[index]} {label}
+              </span>
+            ))}
           </div>
 
           {/* Technical Profile */}
           <div className="mt-16 w-full max-w-[1100px]">
             <div className="text-center">
               <p className="text-[12px] font-bold uppercase tracking-[0.15em] text-[#FF8626]">
-                Technical Profile
+                {technicalProfile?.eyebrow}
               </p>
 
               <h3 className="mt-2 text-[26px] font-bold text-[#171717] sm:text-[32px]">
-                WPC Panel Cross Section
+                {technicalProfile?.heading}
               </h3>
 
               <p className="mx-auto mt-3 max-w-[650px] text-[14px] leading-6 text-[#666666]">
-                Profile measurements and cross-sectional dimensions of the{" "}
-                {selectedImage.thickness} VersaFlute WPC interior wall panel.
+                {productText(technicalProfile?.descriptionTemplate, { thickness, series: product.series })}
               </p>
             </div>
 
             <div className="mt-8 rounded-[24px] border border-[#E8E1F3] bg-white p-4 shadow-[0_10px_35px_rgba(40,20,80,0.05)] sm:p-6">
-              {/* Only 2 profile image paths used */}
-              <div className="relative mx-auto aspect-[3/1] w-full">
+              {profile.diagram && <div className="relative mx-auto aspect-[3/1] w-full">
                 <Image
-                  src={selectedImage.profileImage}
-                  alt={`${selectedImage.thickness} WPC panel technical cross section`}
+                  src={profile.diagram.url}
+                  alt={profile.diagram.alt || profile.label}
                   fill
                   sizes="(max-width: 1200px) 100vw, 1100px"
                   className="object-contain"
                 />
+              </div>}
+
+              <div className={is12mm ? "mt-6 grid grid-cols-2 gap-3 sm:grid-cols-5" : "mt-6 grid grid-cols-2 gap-3 min-[430px]:grid-cols-3"}>
+                {profile.measurements?.map((measurement, index, measurements) => (
+                  <div
+                    key={measurement.label}
+                    className={index === measurements.length - 1
+                      ? is12mm ? "col-span-2 sm:col-span-1" : "col-span-2 min-[430px]:col-span-1"
+                      : undefined}
+                  >
+                    <ProfileItem {...measurement} />
+                  </div>
+                ))}
               </div>
-
-              {is12mm ? (
-                <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-5">
-                  <ProfileItem label="Total Width" value="153mm" />
-                  <ProfileItem label="Rib Width" value="24mm" />
-                  <ProfileItem label="Gap" value="7mm" />
-                  <ProfileItem label="Section Gap" value="14mm" />
-
-                  <div className="col-span-2 sm:col-span-1">
-                    <ProfileItem label="Thickness" value="12mm" />
-                  </div>
-                </div>
-              ) : (
-                <div className="mt-6 grid grid-cols-2 gap-3 min-[430px]:grid-cols-3">
-                  <ProfileItem label="Total Width" value="152mm" />
-                  <ProfileItem label="Rib Width" value="25mm" />
-                  <div className="col-span-2 min-[430px]:col-span-1">
-                    <ProfileItem label="Thickness" value="15mm" />
-                  </div>
-                </div>
-              )}
             </div>
           </div>
         </div>

@@ -2,156 +2,22 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { byDisplayOrder, productText } from "../productPresentation";
 import { useState } from "react";
 import { Check } from "lucide-react";
 
 import ProductTiltViewer from "../upvc/ProductTiltViewer";
 
-const variants = [
-  {
-    id: "tradix",
-    name: "Tradix",
-    thumbnail: "/assets/products/stone-coated/variants/tradix.png",
-    colors: [
-      {
-        id: "arctic-blue",
-        name: "Arctic Blue",
-        image:
-          "/assets/products/stone-coated/colors/Tradix-ArcticBlue.png",
-      },
-      {
-        id: "asia-red",
-        name: "Asia Red",
-        image:
-          "/assets/products/stone-coated/colors/tradix-Asiared.png",
-      },
-      {
-        id: "black",
-        name: "Black",
-        image:
-          "/assets/products/stone-coated/colors/Tradix-black.png",
-      },
-      {
-        id: "red",
-        name: "Red",
-        image:
-          "/assets/products/stone-coated/colors/Tradix-red.png",
-      },
-      {
-        id: "sky-blue",
-        name: "Sky Blue",
-        image:
-          "/assets/products/stone-coated/colors/Tradix-skyblue.png",
-      },
-    ],
-  },
-
-  {
-    id: "tile-o",
-    name: "Tile-O",
-    thumbnail:
-      "/assets/products/stone-coated/variants/tile-o.png",
-    colors: [
-      {
-        id: "red",
-        name: "Red",
-        image:
-          "/assets/products/stone-coated/colors/tile-ored.png",
-      },
-      {
-        id: "asia-blue",
-        name: "Asia Blue",
-        image:
-          "/assets/products/stone-coated/colors/tile-o-Asia blue.png",
-      },
-      {
-        id: "autumn-brown",
-        name: "Autumn Brown",
-        image:
-          "/assets/products/stone-coated/colors/tile-o-autumn brown.png",
-      },
-      {
-        id: "frost-green",
-        name: "Frost Green",
-        image:
-          "/assets/products/stone-coated/colors/tile-o-Frost green.png",
-      },
-    ],
-  },
-
-  {
-    id: "milan",
-    name: "Milan",
-    thumbnail:
-      "/assets/products/stone-coated/variants/milan.png",
-    colors: [
-      {
-        id: "asia-red",
-        name: "Asia Red",
-        image:
-          "/assets/products/stone-coated/colors/milan-Asiared.png",
-      },
-      {
-        id: "autumn-brown",
-        name: "Autumn Brown",
-        image:
-          "/assets/products/stone-coated/colors/milan-autumnbrown.png",
-      },
-      {
-        id: "blue",
-        name: "Blue",
-        image:
-          "/assets/products/stone-coated/colors/milan-Blue.png",
-      },
-      {
-        id: "frost-green",
-        name: "Frost Green",
-        image:
-          "/assets/products/stone-coated/colors/milan-Frostgreen.png",
-      },
-      {
-        id: "wine-red",
-        name: "Wine Red",
-        image:
-          "/assets/products/stone-coated/colors/milan-WineRed.png",
-      },
-    ],
-  },
-
-  {
-    id: "shingles",
-    name: "Shingles",
-    thumbnail:
-      "/assets/products/stone-coated/variants/shingles.png",
-    colors: [
-      {
-        id: "asia-red",
-        name: "Asia Red",
-        image:
-          "/assets/products/stone-coated/colors/shingles-Asiared.png",
-      },
-      {
-        id: "autumn-brown",
-        name: "Autumn Brown",
-        image:
-          "/assets/products/stone-coated/colors/shingles-autumnbrown.png",
-      },
-      {
-        id: "frost-green",
-        name: "Frost Green",
-        image:
-          "/assets/products/stone-coated/colors/shingles-Frostgreen.png",
-      },
-    ],
-  },
-];
-
-export default function StoneCoatedDetails() {
+export default function StoneCoatedDetails({ product }) {
+  const variants = byDisplayOrder(product.profiles).map((profile) => ({
+    ...profile,
+    colors: byDisplayOrder(profile.colors),
+  }));
   const [selectedVariant, setSelectedVariant] =
-    useState("tradix");
+    useState(product.hero.defaultProfileId);
 
   const [selectedColor, setSelectedColor] =
-    useState(variants[0].colors[0].id);
+    useState(product.hero.defaultColorId);
 
   const currentVariant =
     variants.find(
@@ -180,7 +46,7 @@ export default function StoneCoatedDetails() {
           </span>
 
           <span className="font-medium text-[#6030C6]">
-            Stone Coated
+            {product.breadcrumbLabel}
           </span>
         </div>
 
@@ -188,7 +54,7 @@ export default function StoneCoatedDetails() {
         <div className="relative mt-5">
           {/* Main Title */}
           <h1 className="pointer-events-none text-center font-serif text-[46px] font-normal uppercase leading-none text-[#C3BFBF] sm:text-[60px] lg:text-[72px]">
-            Stone Coated Sheet
+            {product.detailHeading}
           </h1>
 
           <div className="mt-6 grid items-center gap-8 lg:grid-cols-[1fr_150px]">
@@ -197,8 +63,8 @@ export default function StoneCoatedDetails() {
               {/* Main Product Image */}
               <div className="w-full max-w-[900px]">
                 <ProductTiltViewer
-                  image={currentColor.image}
-                  alt={`${currentVariant.name} ${currentColor.name} Stone Coated Roofing Sheet`}
+                  image={currentColor.image.url}
+                  alt={currentColor.image.alt || productText(product.hero.alt, { profile: currentVariant.label, color: currentColor.label }) || product.name}
                 />
               </div>
 
@@ -216,8 +82,8 @@ export default function StoneCoatedDetails() {
                         onClick={() =>
                           setSelectedColor(color.id)
                         }
-                        aria-label={`Select ${color.name}`}
-                        title={color.name}
+                        aria-label={`Select ${color.label}`}
+                        title={color.label}
                         className="group flex flex-col items-center"
                       >
                         <div
@@ -227,8 +93,8 @@ export default function StoneCoatedDetails() {
                             }`}
                         >
                           <Image
-                            src={color.image}
-                            alt={color.name}
+                            src={(color.thumbnail ?? color.image).url}
+                            alt={color.thumbnail?.alt || color.label}
                             fill
                             sizes="78px"
                             className="object-contain p-1"
@@ -256,7 +122,7 @@ export default function StoneCoatedDetails() {
                             : "text-[#555555]"
                             }`}
                         >
-                          {color.name}
+                          {color.label}
                         </span>
                       </button>
                     );
@@ -281,8 +147,8 @@ export default function StoneCoatedDetails() {
                         setSelectedColor(variant.colors[0].id);
                       }
                     }}
-                    aria-label={`Select ${variant.name}`}
-                    title={variant.name}
+                    aria-label={`Select ${variant.label}`}
+                    title={variant.label}
                     className="group flex flex-col items-center"
                   >
                     <div
@@ -292,8 +158,8 @@ export default function StoneCoatedDetails() {
                         }`}
                     >
                       <Image
-                        src={variant.thumbnail}
-                        alt={variant.name}
+                        src={(variant.thumbnail ?? variant.colors[0].image).url}
+                        alt={variant.thumbnail?.alt || variant.label}
                         fill
                         sizes="78px"
                         className="object-contain p-1"
@@ -321,7 +187,7 @@ export default function StoneCoatedDetails() {
                         : "text-[#555555]"
                         }`}
                     >
-                      {variant.name}
+                      {variant.label}
                     </span>
                   </button>
                 );
@@ -334,14 +200,14 @@ export default function StoneCoatedDetails() {
             <p>
               Variant:{" "}
               <span className="font-semibold text-[#6030C6]">
-                {currentVariant.name}
+                {currentVariant.label}
               </span>
             </p>
 
             <p>
               Color:{" "}
               <span className="font-semibold text-[#6030C6]">
-                {currentColor.name}
+                {currentColor.label}
               </span>
             </p>
           </div>

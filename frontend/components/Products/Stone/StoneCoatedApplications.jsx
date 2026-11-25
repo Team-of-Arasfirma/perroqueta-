@@ -1,73 +1,28 @@
-import {
-  Home,
-  Building2,
-  Hotel,
-  Store,
-  Landmark,
-  Warehouse,
-} from "lucide-react";
+import { getProductIcon } from "../productIcons";
 
-const applications = [
-  {
-    icon: Home,
-    title: "Residential Homes",
-    description:
-      "Ideal for villas, independent houses and premium residential roofing.",
-  },
-  {
-    icon: Hotel,
-    title: "Resorts & Hotels",
-    description:
-      "Adds a premium architectural finish to hospitality and resort projects.",
-  },
-  {
-    icon: Building2,
-    title: "Commercial Buildings",
-    description:
-      "Suitable for offices, commercial properties and modern developments.",
-  },
-  {
-    icon: Store,
-    title: "Showrooms",
-    description:
-      "Creates an attractive roof profile for retail and showroom buildings.",
-  },
-  {
-    icon: Landmark,
-    title: "Institutional Projects",
-    description:
-      "Suitable for schools, community buildings and institutional structures.",
-  },
-  {
-    icon: Warehouse,
-    title: "Architectural Projects",
-    description:
-      "Works well for specialized roofing where visual design is a priority.",
-  },
-];
+export default function StoneCoatedApplications({ product }) {
+  const { applications } = product;
 
-export default function StoneCoatedApplications() {
   return (
     <section className="w-full bg-white py-16 sm:py-20">
       <div className="mx-auto w-full max-w-[1600px] px-5 sm:px-8 lg:px-12 xl:px-[62px]">
         <div className="max-w-[760px]">
           <p className="text-[13px] font-bold uppercase tracking-[0.05em] text-[#6030C6]">
-            Applications
+            {applications.eyebrow}
           </p>
 
           <h2 className="mt-3 text-[30px] font-bold leading-tight text-[#171717] sm:text-[36px]">
-            Designed for Premium Roofing Projects
+            {applications.heading}
           </h2>
 
           <p className="mt-4 max-w-[680px] text-[15px] leading-7 text-[#666666]">
-            Stone coated roofing is suitable for projects that need durable
-            weather protection together with a distinctive architectural look.
+            {applications.description}
           </p>
         </div>
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {applications.map((item) => {
-            const Icon = item.icon;
+          {applications.items.map((item) => {
+            const Icon = getProductIcon(item.iconKey);
 
             return (
               <div

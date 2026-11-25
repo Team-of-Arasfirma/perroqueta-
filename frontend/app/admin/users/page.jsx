@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Check, Edit3, Eye, EyeOff, Loader2, Plus, Search, Shield, ShieldAlert, ShieldCheck, Trash2, X } from "lucide-react";
 import AdminAccessDenied from "@/components/Admin/AccessDenied";
 import { useAdminAuth } from "@/components/Admin/AdminAuthProvider";
@@ -16,6 +16,7 @@ const ROLES = [
 const PERMISSION_GROUPS = [
   ["dashboard", "Dashboard", [["view", "View"]]],
   ["projects", "Projects", [["view", "View"], ["create", "Create"], ["edit", "Edit"], ["delete", "Delete"]]],
+  ["products", "Products", [["view", "View"], ["create", "Create"], ["edit", "Edit & archive"]]],
   ["blogs", "Blogs", [["view", "View"], ["create", "Create"], ["edit", "Edit"], ["delete", "Delete"]]],
   ["careers", "Careers", [["view", "View"], ["create", "Create"], ["edit", "Edit"], ["delete", "Delete"]]],
   ["applications", "Applications", [["view", "View"], ["edit", "Edit Status"], ["delete", "Delete"]]],
@@ -67,6 +68,12 @@ const StatCard = ({ label, value, tone = "text-[#6030C6]" }) => (
 
 export default function AdminUsersPage() {
   const { user, token, status } = useAdminAuth();
+  if (status === "loading") return <div className="flex min-h-[60vh] items-center justify-center"><Loader2 className="h-8 w-8 animate-spin text-[#6030C6]" /></div>;
+  if (!isSuperAdmin(user)) return <AdminAccessDenied title="Users & Roles Access Denied" description="Only a super admin can manage admin users, roles and module permissions." />;
+  return <AdminUsersManagement key={token} user={user} token={token} />;
+}
+
+function AdminUsersManagement({ user, token }) {
   const [users, setUsers] = useState([]);
   const [stats, setStats] = useState({ total: 0, active: 0, superAdmins: 0, disabled: 0 });
   const [loading, setLoading] = useState(true);
@@ -83,27 +90,25 @@ export default function AdminUsersPage() {
   const [form, setForm] = useState(blankForm());
   const [showPassword, setShowPassword] = useState(false);
 
-  const canAccessPage = status === "ready" && isSuperAdmin(user);
   const activeSuperAdminCount = useMemo(() => users.filter((item) => item.role === "super_admin" && item.isActive).length, [users]);
 
-  const loadUsers = async () => {
-    const data = await fetchAdminUsers({ token });
+  const applyUsers = useCallback((data) => {
     setUsers(data.users || []);
     setStats(data.stats || { total: 0, active: 0, superAdmins: 0, disabled: 0 });
-  };
+  }, []);
+  const loadUsers = async () => applyUsers(await fetchAdminUsers({ token }));
 
   useEffect(() => {
-    if (!canAccessPage) {
-      setLoading(false);
-      return;
-    }
-
-    if (!token) return;
-
-    setLoading(true);
-    setError("");
-    loadUsers().catch((loadError) => setError(loadError.message || "Unable to load admin users.")).finally(() => setLoading(false));
-  }, [canAccessPage, token]);
+    let active = true;
+    fetchAdminUsers({ token }).then((data) => {
+      if (active) applyUsers(data);
+    }).catch((failure) => {
+      if (active) setError(failure.message || "Unable to load admin users.");
+    }).finally(() => {
+      if (active) setLoading(false);
+    });
+    return () => { active = false; };
+  }, [applyUsers, token]);
 
   const filteredUsers = useMemo(() => {
     const keyword = search.trim().toLowerCase();
@@ -208,8 +213,8 @@ export default function AdminUsersPage() {
     }
   };
 
-  if (status === "loading") return <div className="flex min-h-[60vh] items-center justify-center"><Loader2 className="h-8 w-8 animate-spin text-[#6030C6]" /></div>;
-  if (!isSuperAdmin(user)) return <AdminAccessDenied title="Users & Roles Access Denied" description="Only a super admin can manage admin users, roles and module permissions." />;
+
+
 
   return (
     <div className="mx-auto w-full max-w-[1600px]">

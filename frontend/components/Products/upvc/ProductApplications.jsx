@@ -1,73 +1,28 @@
-import {
-  Factory,
-  Warehouse,
-  Home,
-  Tractor,
-  Store,
-  Building2,
-} from "lucide-react";
+import { getProductIcon } from "../productIcons";
 
-const applications = [
-  {
-    icon: Home,
-    title: "Residential Roofing",
-    description:
-      "Suitable for houses, utility areas and other residential roofing requirements.",
-  },
-  {
-    icon: Factory,
-    title: "Industrial Buildings",
-    description:
-      "A practical roofing option for factories and industrial structures.",
-  },
-  {
-    icon: Warehouse,
-    title: "Warehouses",
-    description:
-      "Suitable for warehouse and storage building roof applications.",
-  },
-  {
-    icon: Tractor,
-    title: "Agricultural Buildings",
-    description:
-      "Can be used for farm structures, sheds and agricultural roofing.",
-  },
-  {
-    icon: Store,
-    title: "Commercial Spaces",
-    description:
-      "Suitable for shops, service buildings and other commercial structures.",
-  },
-  {
-    icon: Building2,
-    title: "Institutional Projects",
-    description:
-      "Can support roofing requirements for institutional and general-purpose buildings.",
-  },
-];
+export default function ProductApplications({ product }) {
+  const { applications } = product;
 
-export default function ProductApplications() {
   return (
     <section className="w-full bg-white py-16 sm:py-20">
       <div className="mx-auto w-full max-w-[1600px] px-5 sm:px-8 lg:px-12 xl:px-[62px]">
         <div className="max-w-[760px]">
           <p className="text-[13px] font-bold uppercase tracking-[0.05em] text-[#6030C6]">
-            Applications
+            {applications.eyebrow}
           </p>
 
           <h2 className="mt-3 text-[30px] font-bold leading-tight text-[#171717] sm:text-[36px]">
-            Built for Multiple Roofing Applications
+            {applications.heading}
           </h2>
 
           <p className="mt-4 max-w-[680px] text-[15px] leading-7 text-[#666666]">
-            UPVC roofing sheets provide a versatile solution for different
-            building types and roofing requirements.
+            {applications.description}
           </p>
         </div>
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {applications.map((item) => {
-            const Icon = item.icon;
+          {applications.items.map((item) => {
+            const Icon = getProductIcon(item.iconKey);
 
             return (
               <div

@@ -1,22 +1,24 @@
+import ProductDetail from "@/components/Products/ProductDetail";
+import { getProductMetadata, requirePublishedProduct } from "@/lib/publicProducts";
 import PUFHero from "@/components/Products/PUF/PUFHero";
 import PUFOverview from "@/components/Products/PUF/PUFOverview";
 import PUFApplications from "@/components/Products/PUF/PUFApplications";
 import PUFSpecifications from "@/components/Products/PUF/PUFSpecifications";
 
-export const metadata = {
-  title: "PUF Panels",
-  description:
-    "Explore Perroqueta PUF Panels for insulated industrial, commercial and cold storage applications.",
+const slug = "puf-panels";
+const sections = {
+  hero: PUFHero,
+  overview: PUFOverview,
+  specifications: PUFSpecifications,
+  applications: PUFApplications,
 };
 
-export default function PUFPanelsPage() {
-  return (
-    <main className="bg-white">
-      <PUFHero />
-      <PUFSpecifications />
-      <PUFOverview />
-      <PUFApplications />
-      
-    </main>
-  );
+export function generateMetadata() {
+  return getProductMetadata(slug);
+}
+
+export default async function PUFPanelsPage() {
+  const product = await requirePublishedProduct(slug);
+
+  return <ProductDetail product={product} sections={sections} originalSelector="options" />;
 }

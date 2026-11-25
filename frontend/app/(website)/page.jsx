@@ -1,3 +1,4 @@
+import { getProductCards } from "@/lib/publicProducts";
 import { getPageMetadata } from "@/lib/pageSeo";
 import styles from "./home.module.css";
 import HeroSection from "@/components/Home/HeroSection";
@@ -9,16 +10,20 @@ import ProjectStats from "@/components/Home/ProjectStats";
 import TestimonialsSection from "@/components/Home/TestimonialsSection";
 import BlogSection from "@/components/Home/BlogSection";
 
+export const dynamic = "force-dynamic";
+
 export function generateMetadata() {
   return getPageMetadata('home');
 }
 
-export default function HomePage() {
+export default async function HomePage() {
+  const products = await getProductCards("home");
+
   return (
     <div className={styles.home} data-home-page>
       <HeroSection />
       <StatsBanner />
-      <ProductsSection />
+      <ProductsSection products={products} />
       <WhyChooseSection />
       <ProjectsSection />
       <ProjectStats />

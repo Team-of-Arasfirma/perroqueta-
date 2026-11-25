@@ -5,66 +5,7 @@ import Link from "next/link";
 import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const products = [
-  {
-    title: "UPVC Roofing Sheets",
-    description:
-      "Corrosion resistant, lightweight and built for long-term performance.",
-    image: "/assets/products/upv1.png",
-    href: "/products/upvc-roofing-sheets",
-  },
-  {
-    title: "Stone Coated Roofing",
-    description:
-      "Premium roofing with elegant design, strength and weather resistance.",
-    image: "/assets/products/stone-coated.png",
-    href: "/products/stone-coated-roofing",
-  },
-  {
-    title: "Ceramic Roofing Tiles",
-    description:
-      "Classic roofing solution with excellent durability and low maintenance.",
-    image: "/assets/products/ceramic.png",
-    href: "/products/ceramic-roofing-tiles",
-  },
-  {
-    title: "WPC Interior Wall Panels",
-    description:
-      "Modern wall solutions designed for clean and premium interior spaces.",
-    image: "/assets/products/wpc/wpc-1.png",
-    href: "/products/wpc-interior-wall-panels",
-  },
-  {
-    title: "PUF Panels",
-    description:
-      "High-performance insulated panels for thermal efficiency and durability.",
-    image: "/assets/products/puf/Roofpanel1.png",
-    href: "/products/puf-panels",
-  },
-  {
-    title: "Clay Ceiling Tiles",
-    description:
-      "Natural clay ceiling solutions that improve comfort and aesthetics.",
-    image: "/assets/products/clay-ceiling.png",
-    href: "/products/clay-ceiling-tiles",
-  },
-  {
-    title: "Terracotta Clay Jali",
-    description:
-      "Architectural clay jali designed for ventilation, light and visual appeal.",
-    image: "/assets/products/terracotta-jali.png",
-    href: "/products/terracotta-clay-jali",
-  },
-  {
-    title: "Solar Structures",
-    description:
-      "Strong and reliable structural solutions engineered for solar projects.",
-    image: "/assets/products/solar.png",
-    href: "/products/solar-structures",
-  },
-];
-
-export default function ProductExpertise() {
+export default function ProductExpertise({ products }) {
   const scrollRef = useRef(null);
 
   const scrollProducts = (direction) => {
@@ -125,7 +66,7 @@ export default function ProductExpertise() {
         >
           {products.map((product) => (
             <Link
-              key={product.title}
+              key={product.slug}
               href={product.href}
               className="group w-[260px] max-w-full shrink-0 snap-start overflow-hidden rounded-[12px] border border-[#DCDCDC] bg-white transition duration-300 hover:-translate-y-1 hover:shadow-lg sm:w-[290px] lg:w-[300px]"
             >
@@ -133,7 +74,7 @@ export default function ProductExpertise() {
               <div className="relative h-[190px] w-full overflow-hidden bg-[#F7F7F7]">
                 <Image
                   src={product.image}
-                  alt={product.title}
+                  alt={product.alt}
                   fill
                   sizes="(max-width: 639px) 260px, (max-width: 1023px) 290px, 300px"
                   className="object-contain p-3 transition-transform duration-500 group-hover:scale-[1.03]"

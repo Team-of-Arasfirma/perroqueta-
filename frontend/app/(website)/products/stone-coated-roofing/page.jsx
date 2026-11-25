@@ -1,22 +1,24 @@
+import ProductDetail from "@/components/Products/ProductDetail";
+import { getProductMetadata, requirePublishedProduct } from "@/lib/publicProducts";
 import StoneCoatedDetails from "@/components/Products/Stone/StoneCoatedDetails";
 import StoneCoatedOverview from "@/components/Products/Stone/StoneCoatedOverview";
 import StoneCoatedApplications from "@/components/Products/Stone/StoneCoatedApplications";
 import StoneCoatedSpecifications from "@/components/Products/Stone/StoneCoatedSpecifications";
 
-export const metadata = {
-  title: "Stone Coated Roofing",
-  description:
-    "Explore Perroqueta stone coated roofing sheets available in multiple profiles and colors.",
+const slug = "stone-coated-roofing";
+const sections = {
+  hero: StoneCoatedDetails,
+  overview: StoneCoatedOverview,
+  specifications: StoneCoatedSpecifications,
+  applications: StoneCoatedApplications,
 };
 
-export default function StoneCoatedRoofingPage() {
-  return (
-    <main className="bg-white">
-      <StoneCoatedDetails />
-      <StoneCoatedSpecifications />
-      <StoneCoatedOverview />
-      <StoneCoatedApplications />
-      
-    </main>
-  );
+export function generateMetadata() {
+  return getProductMetadata(slug);
+}
+
+export default async function StoneCoatedRoofingPage() {
+  const product = await requirePublishedProduct(slug);
+
+  return <ProductDetail product={product} sections={sections} originalSelector="profileColors" />;
 }

@@ -1,6 +1,7 @@
 const MODULE_ACTIONS = {
   dashboard: ["view"],
   projects: ["view", "create", "edit", "delete"],
+  products: ["view", "create", "edit"],
   blogs: ["view", "create", "edit", "delete"],
   careers: ["view", "create", "edit", "delete"],
   applications: ["view", "edit", "delete"],

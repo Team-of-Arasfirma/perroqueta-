@@ -1,81 +1,46 @@
-import {
-  Leaf,
-  Sparkles,
-  ShieldCheck,
-  Wrench,
-} from "lucide-react";
+import { getProductIcon } from "../productIcons";
 
-const features = [
-  {
-    icon: Leaf,
-    title: "Natural Clay Material",
-    description:
-      "Made with natural clay for a warm and traditional ceiling appearance.",
-  },
-  {
-    icon: Sparkles,
-    title: "Classic Finish",
-    description:
-      "Natural red colour adds a distinctive traditional character to ceiling spaces.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Durable Construction",
-    description:
-      "Designed for dependable use in suitable ceiling and architectural applications.",
-  },
-  {
-    icon: Wrench,
-    title: "Standard Tile Size",
-    description:
-      "Standard dimensions support planned installation across different ceiling layouts.",
-  },
-];
+export default function ClayOverview({ product }) {
+  const { overview } = product;
 
-export default function ClayOverview() {
   return (
     <section className="w-full bg-[#FBFBFB] py-16 sm:py-20">
       <div className="mx-auto w-full max-w-[1600px] px-5 sm:px-8 lg:px-12 xl:px-[62px]">
         <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div>
             <p className="text-[13px] font-bold uppercase tracking-[0.05em] text-[#6030C6]">
-              Product Overview
+              {overview.eyebrow}
             </p>
 
             <h2 className="mt-3 max-w-[650px] text-[30px] font-bold leading-[1.15] text-[#171717] sm:text-[36px]">
-              Natural Terracotta Clay Jali with Timeless Character
+              {overview.heading}
             </h2>
 
-            <p className="mt-5 max-w-[700px] text-[15px] leading-7 text-[#5F5F5F]">
-              Perroqueta Terracotta Clay Jali bring a warm, natural appearance
-              to interior ceiling applications.
-            </p>
-
-            <p className="mt-4 max-w-[700px] text-[15px] leading-7 text-[#5F5F5F]">
-              Their standard dimensions and natural red finish make them
-              suitable for traditional, residential and architectural spaces.
-            </p>
+            {overview.paragraphs.map((paragraph, index) => (
+              <p key={index} className={index === 0 ? "mt-5 max-w-[700px] text-[15px] leading-7 text-[#5F5F5F]" : "mt-4 max-w-[700px] text-[15px] leading-7 text-[#5F5F5F]"}>
+                {paragraph}
+              </p>
+            ))}
           </div>
 
           <div className="rounded-[18px] bg-[#F1ECFB] p-7 sm:p-8">
             <p className="text-[12px] font-bold uppercase tracking-[0.05em] text-[#FF8626]">
-              Natural Finish
+              {overview.highlight.eyebrow}
             </p>
 
             <h3 className="mt-3 text-[26px] font-bold leading-tight text-[#171717]">
-              Simple. Warm. Timeless.
+              {overview.highlight.heading}
             </h3>
 
             <p className="mt-4 text-[14px] leading-7 text-[#5F5F5F]">
-              The natural red finish creates a distinct clay aesthetic suitable
-              for spaces that need a traditional architectural character.
+              {overview.highlight.description}
             </p>
           </div>
         </div>
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {features.map((feature) => {
-            const Icon = feature.icon;
+          {overview.features.map((feature) => {
+            const Icon = getProductIcon(feature.iconKey);
 
             return (
               <div

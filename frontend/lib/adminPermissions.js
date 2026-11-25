@@ -1,5 +1,6 @@
 export const MODULES = [
   "dashboard",
+  "products",
   "projects",
   "blogs",
   "careers",
@@ -11,6 +12,7 @@ export const MODULES = [
 
 export const ACTIONS = {
   dashboard: ["view"],
+  products: ["view", "create", "edit"],
   projects: ["view", "create", "edit", "delete"],
   blogs: ["view", "create", "edit", "delete"],
   careers: ["view", "create", "edit", "delete"],
@@ -55,6 +57,7 @@ export const getPermissionSummary = (user) => {
 
   const labels = {
     dashboard: "Dashboard",
+    products: "Products",
     projects: "Projects",
     blogs: "Blogs",
     careers: "Careers",

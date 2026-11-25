@@ -2,49 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { byDisplayOrder, productText } from "../productPresentation";
 import { useState } from "react";
 import ProductTiltViewer from "./ProductTiltViewer";
 
-const colors = [
-  {
-    id: "blue",
-    name: "Blue",
-    image: "/assets/products/upvc/blue.png",
-  },
-  {
-    id: "white",
-    name: "White",
-    image: "/assets/products/upvc/white.png",
-  },
-  {
-    id: "grey",
-    name: "Grey",
-    image: "/assets/products/upvc/grey.png",
-  },
-  {
-    id: "orange",
-    name: "Orange",
-    image: "/assets/products/upvc/orange.png",
-  },
-  {
-    id: "brown",
-    name: "Brown",
-    image: "/assets/products/upvc/brown.png",
-  },
-  {
-    id: "green",
-    name: "Green",
-    image: "/assets/products/upvc/green.png",
-  },
-  {
-    id: "red",
-    name: "Red",
-    image: "/assets/products/upvc/CHERRY.png",
-  },
-];
-
-export default function UPVCHero() {
-  const [selectedColor, setSelectedColor] = useState("orange");
+export default function UPVCHero({ product }) {
+  const colors = byDisplayOrder(product.options);
+  const [selectedColor, setSelectedColor] = useState(product.hero.defaultOptionId);
 
   const currentColor =
     colors.find((color) => color.id === selectedColor) || colors[0];
@@ -64,14 +28,14 @@ export default function UPVCHero() {
           <span className="text-[#999999]">&gt;</span>
 
           <span className="font-medium text-[#6030C6]">
-            UPVC Roofing Sheets
+            {product.breadcrumbLabel}
           </span>
         </div>
 
         {/* Product Title */}
         <div className="mt-8 flex flex-col items-center sm:mt-10">
           <h1 className="pointer-events-none text-center font-serif text-[46px] font-normal leading-none text-[#C4C0C0] sm:text-[62px] lg:text-[74px]">
-            UPVC Sheets
+            {product.detailHeading}
           </h1>
         </div>
 
@@ -79,8 +43,8 @@ export default function UPVCHero() {
         <div className="mt-8 flex flex-col items-center sm:mt-10">
           <div className="w-full max-w-[760px]">
             <ProductTiltViewer
-              image={currentColor.image}
-              alt={`UPVC Roofing Sheet - ${currentColor.name}`}
+              image={currentColor.image.url}
+              alt={currentColor.image.alt || productText(product.hero.alt, { label: currentColor.label }) || product.name}
             />
           </div>
 
@@ -95,7 +59,7 @@ export default function UPVCHero() {
                   type="button"
                   onClick={() => setSelectedColor(color.id)}
                   className="group flex flex-col items-center"
-                  aria-label={`Select ${color.name}`}
+                  aria-label={`Select ${color.label}`}
                 >
                   <div
                     className={`relative h-[66px] w-[66px] overflow-hidden rounded-[8px] border-2 bg-white transition-all duration-300 sm:h-[72px] sm:w-[72px] ${
@@ -105,8 +69,8 @@ export default function UPVCHero() {
                     }`}
                   >
                     <Image
-                      src={color.image}
-                      alt={color.name}
+                      src={(color.thumbnail ?? color.image).url}
+                      alt={color.thumbnail?.alt || color.label}
                       fill
                       sizes="72px"
                       className="object-cover"
@@ -128,7 +92,7 @@ export default function UPVCHero() {
                         : "text-[#555555]"
                     }`}
                   >
-                    {color.name}
+                    {color.label}
                   </span>
                 </button>
               );

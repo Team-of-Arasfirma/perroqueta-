@@ -1,73 +1,28 @@
-import {
-  Building2,
-  Factory,
-  Warehouse,
-  Home,
-  PanelsTopLeft,
-  LandPlot,
-} from "lucide-react";
+import { getProductIcon } from "../productIcons";
 
-const applications = [
-  {
-    icon: LandPlot,
-    title: "Ground Mounted Solar",
-    description:
-      "Suitable for solar structures installed on open ground and utility-scale sites.",
-  },
-  {
-    icon: PanelsTopLeft,
-    title: "Rooftop Solar",
-    description:
-      "Suitable for rooftop solar panel mounting applications.",
-  },
-  {
-    icon: Factory,
-    title: "Industrial Buildings",
-    description:
-      "Can support solar installations on industrial and manufacturing facilities.",
-  },
-  {
-    icon: Warehouse,
-    title: "Warehouses",
-    description:
-      "Suitable for warehouse rooftops and related solar installation projects.",
-  },
-  {
-    icon: Building2,
-    title: "Commercial Buildings",
-    description:
-      "Can be used for commercial rooftop and project-based solar structures.",
-  },
-  {
-    icon: Home,
-    title: "Residential Projects",
-    description:
-      "Suitable for selected residential rooftop solar mounting requirements.",
-  },
-];
+export default function SolarApplications({ product }) {
+  const { applications } = product;
 
-export default function SolarApplications() {
   return (
     <section className="w-full bg-white py-16 sm:py-20">
       <div className="mx-auto w-full max-w-[1600px] px-5 sm:px-8 lg:px-12 xl:px-[62px]">
         <div className="max-w-[760px]">
           <p className="text-[13px] font-bold uppercase tracking-[0.05em] text-[#6030C6]">
-            Applications
+            {applications.eyebrow}
           </p>
 
           <h2 className="mt-3 text-[30px] font-bold leading-tight text-[#171717] sm:text-[36px]">
-            Built for Different Solar Installations
+            {applications.heading}
           </h2>
 
           <p className="mt-4 max-w-[680px] text-[15px] leading-7 text-[#666666]">
-            Solar structures can support both rooftop and ground-mounted
-            installations across different project environments.
+            {applications.description}
           </p>
         </div>
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {applications.map((item) => {
-            const Icon = item.icon;
+          {applications.items.map((item) => {
+            const Icon = getProductIcon(item.iconKey);
 
             return (
               <div

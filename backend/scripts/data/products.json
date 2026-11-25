@@ -1,0 +1,1943 @@
+[
+  {
+    "slug": "upvc-roofing-sheets",
+    "name": "UPVC Roofing Sheets",
+    "status": "published",
+    "displayOrder": 1,
+    "breadcrumbLabel": "UPVC Roofing Sheets",
+    "detailHeading": "UPVC Sheets",
+    "sectionOrder": [
+      "hero",
+      "specifications",
+      "overview",
+      "applications"
+    ],
+    "cards": {
+      "listing": {
+        "order": 1,
+        "title": "UPVC Roofing Sheets",
+        "description": "Corrosion-resistant and lightweight roofing sheets designed for long-term performance.",
+        "image": {
+          "url": "/assets/products/upv1.png",
+          "publicId": "",
+          "alt": "UPVC Roofing Sheets"
+        }
+      },
+      "home": {
+        "order": 1,
+        "title": "UPVC Roofing Solutions",
+        "image": {
+          "url": "/assets/products/upv1.png",
+          "publicId": "",
+          "alt": "UPVC Roofing Solutions"
+        }
+      },
+      "about": {
+        "order": 1,
+        "title": "UPVC Roofing Sheets",
+        "description": "Corrosion resistant, lightweight and built for long-term performance.",
+        "image": {
+          "url": "/assets/products/upv1.png",
+          "publicId": "",
+          "alt": "UPVC Roofing Sheets"
+        }
+      },
+      "footer": {
+        "order": 1,
+        "label": "UPVC Roofing Solutions"
+      }
+    },
+    "hero": {
+      "selectorType": "options",
+      "badges": [],
+      "defaultOptionId": "orange",
+      "alt": "UPVC Roofing Sheet - {label}"
+    },
+    "overview": {
+      "eyebrow": "Product Overview",
+      "heading": "Reliable UPVC Roofing for Everyday Performance",
+      "paragraphs": [
+        "Perroqueta KOKABIL UPVC Roofing Sheets are designed as a practical roofing solution for projects that require durability, lightweight handling and consistent performance.",
+        "Available in standard dimensions and multiple colour options, the sheets can be used across residential, commercial, industrial and agricultural roofing requirements."
+      ],
+      "highlight": {
+        "eyebrow": "Built for Practical Roofing",
+        "heading": "Strong, Simple and Versatile",
+        "description": "Standard 2.5 mm thickness, 3.5 ft width and multiple standard lengths make the product suitable for a wide range of roofing requirements."
+      },
+      "features": [
+        {
+          "title": "Corrosion Resistant",
+          "description": "Suitable for roofing environments where long-term resistance to rust and corrosion is important.",
+          "iconKey": "ShieldCheck"
+        },
+        {
+          "title": "Weather Protection",
+          "description": "Designed for dependable roofing performance under regular outdoor weather exposure.",
+          "iconKey": "Sun"
+        },
+        {
+          "title": "Lightweight",
+          "description": "Lightweight sheet construction helps simplify handling and installation.",
+          "iconKey": "Weight"
+        },
+        {
+          "title": "Low Maintenance",
+          "description": "A practical roofing solution designed for long-term use with minimal maintenance.",
+          "iconKey": "Wrench"
+        }
+      ]
+    },
+    "specifications": {
+      "eyebrow": "Technical Details",
+      "heading": "UPVC Roofing Sheet Specifications",
+      "description": "Standard dimensions and available options for Perroqueta UPVC roofing sheets.",
+      "rows": [
+        {
+          "label": "Product",
+          "value": "KOKABIL UPVC Roofing Sheets"
+        },
+        {
+          "label": "Standard Thickness",
+          "value": "2.5 mm"
+        },
+        {
+          "label": "Standard Width",
+          "value": "3.5 ft"
+        },
+        {
+          "label": "Standard Length",
+          "value": "8 ft, 10 ft, 12 ft, 14 ft, 16 ft, 18 ft, 20 ft, 24 ft"
+        },
+        {
+          "label": "Available Colours",
+          "value": "Blue, White, Grey, Orange, Brown, Green, Red"
+        }
+      ]
+    },
+    "applications": {
+      "eyebrow": "Applications",
+      "heading": "Built for Multiple Roofing Applications",
+      "description": "UPVC roofing sheets provide a versatile solution for different building types and roofing requirements.",
+      "items": [
+        {
+          "title": "Residential Roofing",
+          "description": "Suitable for houses, utility areas and other residential roofing requirements.",
+          "iconKey": "Home"
+        },
+        {
+          "title": "Industrial Buildings",
+          "description": "A practical roofing option for factories and industrial structures.",
+          "iconKey": "Factory"
+        },
+        {
+          "title": "Warehouses",
+          "description": "Suitable for warehouse and storage building roof applications.",
+          "iconKey": "Warehouse"
+        },
+        {
+          "title": "Agricultural Buildings",
+          "description": "Can be used for farm structures, sheds and agricultural roofing.",
+          "iconKey": "Tractor"
+        },
+        {
+          "title": "Commercial Spaces",
+          "description": "Suitable for shops, service buildings and other commercial structures.",
+          "iconKey": "Store"
+        },
+        {
+          "title": "Institutional Projects",
+          "description": "Can support roofing requirements for institutional and general-purpose buildings.",
+          "iconKey": "Building2"
+        }
+      ]
+    },
+    "seo": {
+      "metaTitle": "UPVC Roofing Sheets",
+      "metaDescription": "Explore Perroqueta UPVC roofing sheets available in multiple colours and standard dimensions."
+    },
+    "options": [
+      {
+        "id": "blue",
+        "label": "Blue",
+        "image": {
+          "url": "/assets/products/upvc/blue.png",
+          "publicId": "",
+          "alt": "Blue"
+        },
+        "displayOrder": 1,
+        "color": "Blue"
+      },
+      {
+        "id": "white",
+        "label": "White",
+        "image": {
+          "url": "/assets/products/upvc/white.png",
+          "publicId": "",
+          "alt": "White"
+        },
+        "displayOrder": 2,
+        "color": "White"
+      },
+      {
+        "id": "grey",
+        "label": "Grey",
+        "image": {
+          "url": "/assets/products/upvc/grey.png",
+          "publicId": "",
+          "alt": "Grey"
+        },
+        "displayOrder": 3,
+        "color": "Grey"
+      },
+      {
+        "id": "orange",
+        "label": "Orange",
+        "image": {
+          "url": "/assets/products/upvc/orange.png",
+          "publicId": "",
+          "alt": "Orange"
+        },
+        "displayOrder": 4,
+        "color": "Orange"
+      },
+      {
+        "id": "brown",
+        "label": "Brown",
+        "image": {
+          "url": "/assets/products/upvc/brown.png",
+          "publicId": "",
+          "alt": "Brown"
+        },
+        "displayOrder": 5,
+        "color": "Brown"
+      },
+      {
+        "id": "green",
+        "label": "Green",
+        "image": {
+          "url": "/assets/products/upvc/green.png",
+          "publicId": "",
+          "alt": "Green"
+        },
+        "displayOrder": 6,
+        "color": "Green"
+      },
+      {
+        "id": "red",
+        "label": "Red",
+        "image": {
+          "url": "/assets/products/upvc/CHERRY.png",
+          "publicId": "",
+          "alt": "Red"
+        },
+        "displayOrder": 7,
+        "color": "Red"
+      }
+    ],
+    "brand": "KOKABIL"
+  },
+  {
+    "slug": "stone-coated-roofing",
+    "name": "Stone Coated Roofing",
+    "status": "published",
+    "displayOrder": 2,
+    "breadcrumbLabel": "Stone Coated",
+    "detailHeading": "Stone Coated Sheet",
+    "sectionOrder": [
+      "hero",
+      "specifications",
+      "overview",
+      "applications"
+    ],
+    "cards": {
+      "listing": {
+        "order": 2,
+        "title": "Stone Coated Roofing",
+        "description": "Premium roofing solution combining elegant appearance with strength and weather resistance.",
+        "image": {
+          "url": "/assets/products/stone-coated.png",
+          "publicId": "",
+          "alt": "Stone Coated Roofing"
+        }
+      },
+      "home": {
+        "order": 2,
+        "title": "Stone Coated Roofing",
+        "image": {
+          "url": "/assets/products/stone-coated.png",
+          "publicId": "",
+          "alt": "Stone Coated Roofing"
+        }
+      },
+      "about": {
+        "order": 2,
+        "title": "Stone Coated Roofing",
+        "description": "Premium roofing with elegant design, strength and weather resistance.",
+        "image": {
+          "url": "/assets/products/stone-coated.png",
+          "publicId": "",
+          "alt": "Stone Coated Roofing"
+        }
+      },
+      "footer": {
+        "order": 2,
+        "label": "Stone Coated Roofing"
+      }
+    },
+    "hero": {
+      "selectorType": "profileColors",
+      "badges": [],
+      "defaultProfileId": "tradix",
+      "defaultColorId": "arctic-blue",
+      "alt": "{profile} {color} Stone Coated Roofing Sheet"
+    },
+    "overview": {
+      "eyebrow": "Product Overview",
+      "heading": "Premium Roofing with Strength and Style",
+      "paragraphs": [
+        "Perroqueta stone coated roofing sheets combine the strength of a metal roofing system with the premium appearance of natural stone finishes.",
+        "With multiple profiles and color options, they are suitable for residential, commercial and architectural projects where both performance and visual appeal are important."
+      ],
+      "highlight": {
+        "eyebrow": "Designed to Stand Out",
+        "heading": "A Roof That Adds Character",
+        "description": "Choose from Tradix, Tile-O, Milan and Shingles profiles with a range of finishes to match different architectural styles."
+      },
+      "features": [
+        {
+          "title": "Long-Lasting Protection",
+          "description": "Stone coated roofing combines a strong metal base with a protective surface finish for long-term durability.",
+          "iconKey": "ShieldCheck"
+        },
+        {
+          "title": "Weather Resistant",
+          "description": "Designed to withstand sun, rain and changing weather conditions while maintaining performance.",
+          "iconKey": "CloudSun"
+        },
+        {
+          "title": "Noise Reduction",
+          "description": "The stone chip coating helps reduce rain impact noise compared with conventional bare metal roofing.",
+          "iconKey": "Volume2"
+        },
+        {
+          "title": "Premium Appearance",
+          "description": "Available in multiple profiles and colors to suit modern, traditional and premium architectural styles.",
+          "iconKey": "Sparkles"
+        }
+      ]
+    },
+    "specifications": {
+      "eyebrow": "Technical Details",
+      "heading": "Stone Coated Roofing Specifications",
+      "description": "Technical information for Perroqueta stone coated roofing solutions designed for strength, premium appearance and long-term weather protection.",
+      "rows": [
+        {
+          "label": "Product Type",
+          "value": "Stone Coated Metal Roofing Sheet"
+        },
+        {
+          "label": "Base Material",
+          "value": "High Strength Galvanized / Aluzinc Steel"
+        },
+        {
+          "label": "Surface Finish",
+          "value": "Natural Stone Chip Coating"
+        },
+        {
+          "label": "Available Profiles",
+          "value": "Tradix, Tile-O, Milan, Shingles"
+        },
+        {
+          "label": "Available Colors",
+          "value": "Red, Asia Red, Arctic Blue, Sky Blue, Black"
+        },
+        {
+          "label": "Weather Resistance",
+          "value": "Excellent"
+        },
+        {
+          "label": "Corrosion Resistance",
+          "value": "High"
+        },
+        {
+          "label": "UV Resistance",
+          "value": "High"
+        },
+        {
+          "label": "Maintenance",
+          "value": "Low"
+        },
+        {
+          "label": "Suitable For",
+          "value": "Residential Villas, Commercial Buildings, Resorts and Architectural Roofing"
+        }
+      ]
+    },
+    "applications": {
+      "eyebrow": "Applications",
+      "heading": "Designed for Premium Roofing Projects",
+      "description": "Stone coated roofing is suitable for projects that need durable weather protection together with a distinctive architectural look.",
+      "items": [
+        {
+          "title": "Residential Homes",
+          "description": "Ideal for villas, independent houses and premium residential roofing.",
+          "iconKey": "Home"
+        },
+        {
+          "title": "Resorts & Hotels",
+          "description": "Adds a premium architectural finish to hospitality and resort projects.",
+          "iconKey": "Hotel"
+        },
+        {
+          "title": "Commercial Buildings",
+          "description": "Suitable for offices, commercial properties and modern developments.",
+          "iconKey": "Building2"
+        },
+        {
+          "title": "Showrooms",
+          "description": "Creates an attractive roof profile for retail and showroom buildings.",
+          "iconKey": "Store"
+        },
+        {
+          "title": "Institutional Projects",
+          "description": "Suitable for schools, community buildings and institutional structures.",
+          "iconKey": "Landmark"
+        },
+        {
+          "title": "Architectural Projects",
+          "description": "Works well for specialized roofing where visual design is a priority.",
+          "iconKey": "Warehouse"
+        }
+      ]
+    },
+    "seo": {
+      "metaTitle": "Stone Coated Roofing",
+      "metaDescription": "Explore Perroqueta stone coated roofing sheets available in multiple profiles and colors."
+    },
+    "profiles": [
+      {
+        "id": "tradix",
+        "label": "Tradix",
+        "displayOrder": 1,
+        "thumbnail": {
+          "url": "/assets/products/stone-coated/variants/tradix.png",
+          "publicId": "",
+          "alt": "Tradix"
+        },
+        "colors": [
+          {
+            "id": "arctic-blue",
+            "label": "Arctic Blue",
+            "image": {
+              "url": "/assets/products/stone-coated/colors/Tradix-ArcticBlue.png",
+              "publicId": "",
+              "alt": "Arctic Blue"
+            },
+            "displayOrder": 1,
+            "color": "Arctic Blue"
+          },
+          {
+            "id": "asia-red",
+            "label": "Asia Red",
+            "image": {
+              "url": "/assets/products/stone-coated/colors/tradix-Asiared.png",
+              "publicId": "",
+              "alt": "Asia Red"
+            },
+            "displayOrder": 2,
+            "color": "Asia Red"
+          },
+          {
+            "id": "black",
+            "label": "Black",
+            "image": {
+              "url": "/assets/products/stone-coated/colors/Tradix-black.png",
+              "publicId": "",
+              "alt": "Black"
+            },
+            "displayOrder": 3,
+            "color": "Black"
+          },
+          {
+            "id": "red",
+            "label": "Red",
+            "image": {
+              "url": "/assets/products/stone-coated/colors/Tradix-red.png",
+              "publicId": "",
+              "alt": "Red"
+            },
+            "displayOrder": 4,
+            "color": "Red"
+          },
+          {
+            "id": "sky-blue",
+            "label": "Sky Blue",
+            "image": {
+              "url": "/assets/products/stone-coated/colors/Tradix-skyblue.png",
+              "publicId": "",
+              "alt": "Sky Blue"
+            },
+            "displayOrder": 5,
+            "color": "Sky Blue"
+          }
+        ]
+      },
+      {
+        "id": "tile-o",
+        "label": "Tile-O",
+        "displayOrder": 2,
+        "thumbnail": {
+          "url": "/assets/products/stone-coated/variants/tile-o.png",
+          "publicId": "",
+          "alt": "Tile-O"
+        },
+        "colors": [
+          {
+            "id": "red",
+            "label": "Red",
+            "image": {
+              "url": "/assets/products/stone-coated/colors/tile-ored.png",
+              "publicId": "",
+              "alt": "Red"
+            },
+            "displayOrder": 1,
+            "color": "Red"
+          },
+          {
+            "id": "asia-blue",
+            "label": "Asia Blue",
+            "image": {
+              "url": "/assets/products/stone-coated/colors/tile-o-Asia blue.png",
+              "publicId": "",
+              "alt": "Asia Blue"
+            },
+            "displayOrder": 2,
+            "color": "Asia Blue"
+          },
+          {
+            "id": "autumn-brown",
+            "label": "Autumn Brown",
+            "image": {
+              "url": "/assets/products/stone-coated/colors/tile-o-autumn brown.png",
+              "publicId": "",
+              "alt": "Autumn Brown"
+            },
+            "displayOrder": 3,
+            "color": "Autumn Brown"
+          },
+          {
+            "id": "frost-green",
+            "label": "Frost Green",
+            "image": {
+              "url": "/assets/products/stone-coated/colors/tile-o-Frost green.png",
+              "publicId": "",
+              "alt": "Frost Green"
+            },
+            "displayOrder": 4,
+            "color": "Frost Green"
+          }
+        ]
+      },
+      {
+        "id": "milan",
+        "label": "Milan",
+        "displayOrder": 3,
+        "thumbnail": {
+          "url": "/assets/products/stone-coated/variants/milan.png",
+          "publicId": "",
+          "alt": "Milan"
+        },
+        "colors": [
+          {
+            "id": "asia-red",
+            "label": "Asia Red",
+            "image": {
+              "url": "/assets/products/stone-coated/colors/milan-Asiared.png",
+              "publicId": "",
+              "alt": "Asia Red"
+            },
+            "displayOrder": 1,
+            "color": "Asia Red"
+          },
+          {
+            "id": "autumn-brown",
+            "label": "Autumn Brown",
+            "image": {
+              "url": "/assets/products/stone-coated/colors/milan-autumnbrown.png",
+              "publicId": "",
+              "alt": "Autumn Brown"
+            },
+            "displayOrder": 2,
+            "color": "Autumn Brown"
+          },
+          {
+            "id": "blue",
+            "label": "Blue",
+            "image": {
+              "url": "/assets/products/stone-coated/colors/milan-Blue.png",
+              "publicId": "",
+              "alt": "Blue"
+            },
+            "displayOrder": 3,
+            "color": "Blue"
+          },
+          {
+            "id": "frost-green",
+            "label": "Frost Green",
+            "image": {
+              "url": "/assets/products/stone-coated/colors/milan-Frostgreen.png",
+              "publicId": "",
+              "alt": "Frost Green"
+            },
+            "displayOrder": 4,
+            "color": "Frost Green"
+          },
+          {
+            "id": "wine-red",
+            "label": "Wine Red",
+            "image": {
+              "url": "/assets/products/stone-coated/colors/milan-WineRed.png",
+              "publicId": "",
+              "alt": "Wine Red"
+            },
+            "displayOrder": 5,
+            "color": "Wine Red"
+          }
+        ]
+      },
+      {
+        "id": "shingles",
+        "label": "Shingles",
+        "displayOrder": 4,
+        "thumbnail": {
+          "url": "/assets/products/stone-coated/variants/shingles.png",
+          "publicId": "",
+          "alt": "Shingles"
+        },
+        "colors": [
+          {
+            "id": "asia-red",
+            "label": "Asia Red",
+            "image": {
+              "url": "/assets/products/stone-coated/colors/shingles-Asiared.png",
+              "publicId": "",
+              "alt": "Asia Red"
+            },
+            "displayOrder": 1,
+            "color": "Asia Red"
+          },
+          {
+            "id": "autumn-brown",
+            "label": "Autumn Brown",
+            "image": {
+              "url": "/assets/products/stone-coated/colors/shingles-autumnbrown.png",
+              "publicId": "",
+              "alt": "Autumn Brown"
+            },
+            "displayOrder": 2,
+            "color": "Autumn Brown"
+          },
+          {
+            "id": "frost-green",
+            "label": "Frost Green",
+            "image": {
+              "url": "/assets/products/stone-coated/colors/shingles-Frostgreen.png",
+              "publicId": "",
+              "alt": "Frost Green"
+            },
+            "displayOrder": 3,
+            "color": "Frost Green"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "ceramic-roofing-tiles",
+    "name": "Ceramic Roofing Tiles",
+    "status": "published",
+    "displayOrder": 3,
+    "breadcrumbLabel": "Ceramic Roofing Tiles",
+    "detailHeading": "Ceramic Roofing Tiles",
+    "sectionOrder": [
+      "hero",
+      "overview",
+      "applications",
+      "specifications"
+    ],
+    "cards": {
+      "listing": {
+        "order": 3,
+        "title": "Ceramic Roofing Tiles",
+        "description": "Classic roofing tiles offering durability, aesthetics and low maintenance.",
+        "image": {
+          "url": "/assets/products/ceramic.png",
+          "publicId": "",
+          "alt": "Ceramic Roofing Tiles"
+        }
+      },
+      "home": {
+        "order": 3,
+        "title": "Ceramic Roofing Tiles",
+        "image": {
+          "url": "/assets/products/ceramic.png",
+          "publicId": "",
+          "alt": "Ceramic Roofing Tiles"
+        }
+      },
+      "about": {
+        "order": 3,
+        "title": "Ceramic Roofing Tiles",
+        "description": "Classic roofing solution with excellent durability and low maintenance.",
+        "image": {
+          "url": "/assets/products/ceramic.png",
+          "publicId": "",
+          "alt": "Ceramic Roofing Tiles"
+        }
+      },
+      "footer": {
+        "order": 3,
+        "label": "Ceramic Roofing Tiles"
+      }
+    },
+    "hero": {
+      "selectorType": "options",
+      "badges": [],
+      "defaultOptionId": "red",
+      "alt": "Ceramic Roofing Tile - {label}"
+    },
+    "overview": {
+      "eyebrow": "Product Overview",
+      "heading": "Traditional Roofing with a Refined Finish",
+      "paragraphs": [
+        "Perroqueta Ceramic Roofing Tiles provide a classic roofing appearance for residential and architectural projects.",
+        "With standard tile dimensions and multiple available finishes, they are suitable for projects where roofing performance and visual character are both important."
+      ],
+      "highlight": {
+        "eyebrow": "Classic Roof Character",
+        "heading": "Built for Elegant Roofing",
+        "description": "Standard 1 ft width and 1.25 ft length make the product suitable for structured ceramic roofing layouts."
+      },
+      "features": [
+        {
+          "title": "Durable Roofing",
+          "description": "Ceramic roofing tiles are designed to provide dependable roof coverage for long-term building use.",
+          "iconKey": "ShieldCheck"
+        },
+        {
+          "title": "Weather Protection",
+          "description": "Suitable for roofing applications exposed to regular outdoor weather conditions.",
+          "iconKey": "Sun"
+        },
+        {
+          "title": "Classic Appearance",
+          "description": "Provides a traditional ceramic roof finish suitable for premium residential and architectural projects.",
+          "iconKey": "Sparkles"
+        },
+        {
+          "title": "Practical Installation",
+          "description": "Standard tile dimensions support planned roofing installation and replacement.",
+          "iconKey": "Wrench"
+        }
+      ]
+    },
+    "specifications": {
+      "eyebrow": "Technical Details",
+      "heading": "Ceramic Roofing Tile Specifications",
+      "description": "Standard dimensions and technical information for Perroqueta Ceramic Roofing Tiles.",
+      "rows": [
+        {
+          "label": "Product",
+          "value": "Ceramic Roofing Tiles"
+        },
+        {
+          "label": "Thickness",
+          "value": "10 mm (or) 0.39 mm"
+        },
+        {
+          "label": "Weight",
+          "value": "2.3 kg"
+        },
+        {
+          "label": "Width",
+          "value": "1 ft"
+        },
+        {
+          "label": "Length",
+          "value": "1.25 ft"
+        },
+        {
+          "label": "Available Colours",
+          "value": "Multiple colour options available"
+        }
+      ]
+    },
+    "applications": {
+      "eyebrow": "Applications",
+      "heading": "Suitable for Beautiful Roofing Projects",
+      "description": "Ceramic roofing tiles are suitable for building types where a classic and architectural roof finish is preferred.",
+      "items": [
+        {
+          "title": "Residential Homes",
+          "description": "Suitable for independent houses and residential roofing projects.",
+          "iconKey": "Home"
+        },
+        {
+          "title": "Villas",
+          "description": "Ideal for villa roofing where a traditional ceramic appearance is preferred.",
+          "iconKey": "House"
+        },
+        {
+          "title": "Resorts & Hotels",
+          "description": "Adds a warm architectural character to hospitality roofing projects.",
+          "iconKey": "Hotel"
+        },
+        {
+          "title": "Commercial Buildings",
+          "description": "Suitable for selected commercial projects requiring decorative roofing.",
+          "iconKey": "Building2"
+        },
+        {
+          "title": "Institutional Buildings",
+          "description": "Can be used in schools, community buildings and similar structures.",
+          "iconKey": "Landmark"
+        },
+        {
+          "title": "Architectural Projects",
+          "description": "Suitable for roofing designs where traditional aesthetics are important.",
+          "iconKey": "Store"
+        }
+      ]
+    },
+    "seo": {
+      "metaTitle": "Ceramic Roofing Tiles",
+      "metaDescription": "Explore Perroqueta ceramic roofing tiles for residential and architectural roofing applications."
+    },
+    "options": [
+      {
+        "id": "red",
+        "label": "Red",
+        "image": {
+          "url": "/assets/products/Ceramic/red.png",
+          "publicId": "",
+          "alt": "Red"
+        },
+        "displayOrder": 1,
+        "color": "Red"
+      },
+      {
+        "id": "brown",
+        "label": "Brown",
+        "image": {
+          "url": "/assets/products/Ceramic/brown.png",
+          "publicId": "",
+          "alt": "Brown"
+        },
+        "displayOrder": 2,
+        "color": "Brown"
+      },
+      {
+        "id": "pattern",
+        "label": "Pattern",
+        "image": {
+          "url": "/assets/products/Ceramic/pattern.png",
+          "publicId": "",
+          "alt": "Pattern"
+        },
+        "displayOrder": 3,
+        "pattern": "Pattern"
+      },
+      {
+        "id": "grey",
+        "label": "Grey",
+        "image": {
+          "url": "/assets/products/Ceramic/grey.png",
+          "publicId": "",
+          "alt": "Grey"
+        },
+        "displayOrder": 4,
+        "color": "Grey"
+      }
+    ]
+  },
+  {
+    "slug": "wpc-interior-wall-panels",
+    "name": "WPC Interior Wall Panels",
+    "status": "published",
+    "displayOrder": 4,
+    "breadcrumbLabel": "WPC Interior Wall Panels",
+    "detailHeading": "WPC Interior Wall Panels",
+    "sectionOrder": [
+      "hero",
+      "specifications",
+      "overview",
+      "applications"
+    ],
+    "cards": {
+      "listing": {
+        "order": 4,
+        "title": "AKIMU WPC Interior Wall Panels",
+        "description": "Premium WPC interior wall panels by AKIMU, offering a stylish and durable finish for modern interiors.",
+        "image": {
+          "url": "/assets/products/wpc/wpc-1.png",
+          "publicId": "",
+          "alt": "AKIMU WPC Interior Wall Panels"
+        }
+      },
+      "home": {
+        "order": 4,
+        "title": "WPC Interior Wall Panels",
+        "image": {
+          "url": "/assets/products/wpc/wpc-1.png",
+          "publicId": "",
+          "alt": "WPC Interior Wall Panels"
+        }
+      },
+      "about": {
+        "order": 4,
+        "title": "WPC Interior Wall Panels",
+        "description": "Modern wall solutions designed for clean and premium interior spaces.",
+        "image": {
+          "url": "/assets/products/wpc/wpc-1.png",
+          "publicId": "",
+          "alt": "WPC Interior Wall Panels"
+        }
+      },
+      "footer": {
+        "order": 4,
+        "label": "WPC Interior Wall Panels"
+      }
+    },
+    "hero": {
+      "selectorType": "wpcFinishes",
+      "badges": [],
+      "defaultOptionId": "2",
+      "alt": "{thickness} {label} WPC Interior Wall Panel"
+    },
+    "overview": {
+      "eyebrow": "Product Overview",
+      "heading": "Modern Wall Panels for Refined Interiors",
+      "paragraphs": [
+        "Perroqueta WPC Interior Wall Panels are designed for decorative interior applications where a clean and modern wall finish is required.",
+        "With standard panel dimensions, they provide a practical solution for residential, commercial and hospitality interiors."
+      ],
+      "highlight": {
+        "eyebrow": "Designed for Interiors",
+        "heading": "Clean Lines. Modern Spaces.",
+        "description": "Standard 7 inch width and 9 ft length make the panels suitable for structured interior wall applications."
+      },
+      "features": [
+        {
+          "title": "Modern Interior Finish",
+          "description": "Creates a clean decorative wall finish suitable for contemporary interior spaces.",
+          "iconKey": "Sparkles"
+        },
+        {
+          "title": "Panel-Based Design",
+          "description": "Designed as modular wall panels for structured and consistent interior installation.",
+          "iconKey": "PanelsTopLeft"
+        },
+        {
+          "title": "Practical Interior Solution",
+          "description": "Suitable for interior wall applications where appearance and ease of maintenance are important.",
+          "iconKey": "ShieldCheck"
+        },
+        {
+          "title": "Easy Installation",
+          "description": "Standard panel dimensions support efficient fitting across different interior projects.",
+          "iconKey": "Wrench"
+        }
+      ]
+    },
+    "specifications": {
+      "eyebrow": "Technical Details",
+      "heading": "WPC Interior Wall Panel Specifications",
+      "description": "Standard dimensions and usage information for Perroqueta WPC Interior Wall Panels.",
+      "rows": [
+        {
+          "label": "Product",
+          "value": "AKIMU WPC Interior Wall Panels"
+        },
+        {
+          "label": "Standard Width",
+          "value": "7 in"
+        },
+        {
+          "label": "Standard Length",
+          "value": "9 ft"
+        },
+        {
+          "label": "Usage",
+          "value": "Interior"
+        },
+        {
+          "label": "Available Colours",
+          "value": "Multiple colour options available"
+        }
+      ]
+    },
+    "applications": {
+      "eyebrow": "Applications",
+      "heading": "Designed for Modern Interior Spaces",
+      "description": "WPC wall panels can be used across residential and commercial interiors where decorative wall finishes are required.",
+      "items": [
+        {
+          "title": "Residential Interiors",
+          "description": "Suitable for living rooms, bedrooms, TV walls and decorative home interiors.",
+          "iconKey": "Home"
+        },
+        {
+          "title": "Hotels & Resorts",
+          "description": "Ideal for reception areas, rooms and hospitality interior wall finishes.",
+          "iconKey": "Hotel"
+        },
+        {
+          "title": "Retail Spaces",
+          "description": "Suitable for shops, showrooms and display areas requiring decorative wall treatment.",
+          "iconKey": "Store"
+        },
+        {
+          "title": "Office Interiors",
+          "description": "Can be used in cabins, reception areas, meeting rooms and workspace interiors.",
+          "iconKey": "BriefcaseBusiness"
+        },
+        {
+          "title": "Restaurants & Cafes",
+          "description": "Adds a modern decorative finish to dining and hospitality environments.",
+          "iconKey": "UtensilsCrossed"
+        },
+        {
+          "title": "Commercial Interiors",
+          "description": "Suitable for a wide range of modern commercial interior applications.",
+          "iconKey": "Building2"
+        }
+      ]
+    },
+    "seo": {
+      "metaTitle": "AKIMU WPC Interior Wall Panels",
+      "metaDescription": "Explore AKIMU WPC Interior Wall Panels from Perroqueta for modern interior applications."
+    },
+    "brand": "AKIMU",
+    "series": "VersaFlute",
+    "options": [
+      {
+        "id": "1",
+        "label": "CHERRY",
+        "image": {
+          "url": "/assets/products/wpc/02.png",
+          "publicId": "",
+          "alt": "CHERRY"
+        },
+        "displayOrder": 1,
+        "color": "CHERRY",
+        "thickness": "12mm",
+        "profileId": "12mm"
+      },
+      {
+        "id": "2",
+        "label": "CHARCOAL",
+        "image": {
+          "url": "/assets/products/wpc/03.png",
+          "publicId": "",
+          "alt": "CHARCOAL"
+        },
+        "displayOrder": 2,
+        "color": "CHARCOAL",
+        "thickness": "12mm",
+        "profileId": "12mm"
+      },
+      {
+        "id": "3",
+        "label": "NUTMEG",
+        "image": {
+          "url": "/assets/products/wpc/04.png",
+          "publicId": "",
+          "alt": "NUTMEG"
+        },
+        "displayOrder": 3,
+        "color": "NUTMEG",
+        "thickness": "12mm",
+        "profileId": "12mm"
+      },
+      {
+        "id": "4",
+        "label": "CARRARA GOLD",
+        "image": {
+          "url": "/assets/products/wpc/05.png",
+          "publicId": "",
+          "alt": "CARRARA GOLD"
+        },
+        "displayOrder": 4,
+        "color": "CARRARA GOLD",
+        "thickness": "15mm",
+        "profileId": "15mm"
+      },
+      {
+        "id": "5",
+        "label": "MARQUINA GOLD",
+        "image": {
+          "url": "/assets/products/wpc/06.png",
+          "publicId": "",
+          "alt": "MARQUINA GOLD"
+        },
+        "displayOrder": 5,
+        "color": "MARQUINA GOLD",
+        "thickness": "15mm",
+        "profileId": "15mm"
+      }
+    ],
+    "profiles": [
+      {
+        "id": "12mm",
+        "label": "12mm",
+        "profileType": "12mm",
+        "displayOrder": 1,
+        "diagram": {
+          "url": "/assets/products/wpc/profile-12mm.png",
+          "publicId": "",
+          "alt": "12mm WPC panel technical cross section"
+        },
+        "dimensions": "2950mm (L) × 153mm (W)",
+        "width": "153mm",
+        "length": "2950mm",
+        "thickness": "12mm",
+        "coverage": "4.85 SQF",
+        "application": "Interior Use",
+        "measurements": [
+          {
+            "label": "Total Width",
+            "value": "153mm"
+          },
+          {
+            "label": "Rib Width",
+            "value": "24mm"
+          },
+          {
+            "label": "Gap",
+            "value": "7mm"
+          },
+          {
+            "label": "Section Gap",
+            "value": "14mm"
+          },
+          {
+            "label": "Thickness",
+            "value": "12mm"
+          }
+        ]
+      },
+      {
+        "id": "15mm",
+        "label": "15mm",
+        "profileType": "15mm",
+        "displayOrder": 2,
+        "diagram": {
+          "url": "/assets/products/wpc/profile-15mm.png",
+          "publicId": "",
+          "alt": "15mm WPC panel technical cross section"
+        },
+        "dimensions": "2900mm (L) × 152mm (W)",
+        "width": "152mm",
+        "length": "2900mm",
+        "thickness": "15mm",
+        "coverage": "4.75 SQF",
+        "application": "Interior Use",
+        "measurements": [
+          {
+            "label": "Total Width",
+            "value": "152mm"
+          },
+          {
+            "label": "Rib Width",
+            "value": "25mm"
+          },
+          {
+            "label": "Thickness",
+            "value": "15mm"
+          }
+        ]
+      }
+    ],
+    "selectedSpecifications": {
+      "eyebrow": "Product Specifications",
+      "heading": "Technical Details",
+      "labels": [
+        "Dimensions",
+        "Thickness",
+        "Coverage Per Panel",
+        "Application"
+      ],
+      "badgeLabels": [
+        "Width",
+        "Length",
+        "Thickness",
+        "Coverage"
+      ]
+    },
+    "technicalProfile": {
+      "eyebrow": "Technical Profile",
+      "heading": "WPC Panel Cross Section",
+      "descriptionTemplate": "Profile measurements and cross-sectional dimensions of the {thickness} VersaFlute WPC interior wall panel."
+    }
+  },
+  {
+    "slug": "puf-panels",
+    "name": "PUF Panels",
+    "status": "published",
+    "displayOrder": 5,
+    "breadcrumbLabel": "PUF Panels",
+    "detailHeading": "PUF Panels",
+    "sectionOrder": [
+      "hero",
+      "specifications",
+      "overview",
+      "applications"
+    ],
+    "cards": {
+      "listing": {
+        "order": 5,
+        "title": "PUF Panels",
+        "description": "High-performance insulated panels designed for thermal efficiency and durability.",
+        "image": {
+          "url": "/assets/products/puf.png",
+          "publicId": "",
+          "alt": "PUF Panels"
+        }
+      },
+      "home": {
+        "order": 5,
+        "title": "PUF Panels",
+        "image": {
+          "url": "/assets/products/puf/Roofpanel1.png",
+          "publicId": "",
+          "alt": "PUF Panels"
+        }
+      },
+      "about": {
+        "order": 5,
+        "title": "PUF Panels",
+        "description": "High-performance insulated panels for thermal efficiency and durability.",
+        "image": {
+          "url": "/assets/products/puf/Roofpanel1.png",
+          "publicId": "",
+          "alt": "PUF Panels"
+        }
+      },
+      "footer": {
+        "order": 5,
+        "label": "PUF Panels"
+      }
+    },
+    "hero": {
+      "selectorType": "options",
+      "badges": [
+        "20 - 150 mm Thickness",
+        "Custom Width",
+        "Custom Length",
+        "40 kg ± 2 Density"
+      ],
+      "defaultOptionId": "gray",
+      "alt": "Perroqueta PUF Panel {label}"
+    },
+    "overview": {
+      "eyebrow": "Product Overview",
+      "heading": "Insulated Panels for Modern Building Requirements",
+      "paragraphs": [
+        "Perroqueta PUF Panels are designed for insulated building applications that require practical thermal performance and project-based panel dimensions.",
+        "Available in thicknesses from 20 mm to 150 mm with width and length based on project requirements, they can support multiple commercial and industrial applications."
+      ],
+      "highlight": {
+        "eyebrow": "Project-Based Solutions",
+        "heading": "Built Around Your Requirement",
+        "description": "Multiple thickness options and customized width and length make PUF panels suitable for different project configurations."
+      },
+      "features": [
+        {
+          "title": "Thermal Insulation",
+          "description": "PUF panels are designed to support temperature-controlled building applications.",
+          "iconKey": "ThermometerSnowflake"
+        },
+        {
+          "title": "Durable Construction",
+          "description": "Panel construction is suitable for commercial and industrial building requirements.",
+          "iconKey": "ShieldCheck"
+        },
+        {
+          "title": "Modular Panel System",
+          "description": "Designed for structured wall and roofing applications with custom project dimensions.",
+          "iconKey": "PanelsTopLeft"
+        },
+        {
+          "title": "Flexible Installation",
+          "description": "Custom width and length options support different project and installation requirements.",
+          "iconKey": "Wrench"
+        }
+      ]
+    },
+    "specifications": {
+      "eyebrow": "Technical Details",
+      "heading": "PUF Panel Specifications",
+      "description": "Standard technical information for Perroqueta PUF Panels.",
+      "rows": [
+        {
+          "label": "Product",
+          "value": "PUF Panels"
+        },
+        {
+          "label": "Thickness",
+          "value": "20 mm - 150 mm"
+        },
+        {
+          "label": "Width",
+          "value": "As per requirement"
+        },
+        {
+          "label": "Available Colors",
+          "value": "Brick Red, Sky Blue, Royal Blue, Off White,Caulified Green, Bare"
+        },
+        {
+          "label": "Length",
+          "value": "As per requirement"
+        },
+        {
+          "label": "Density",
+          "value": "40 kg ± 2"
+        }
+      ]
+    },
+    "applications": {
+      "eyebrow": "Applications",
+      "heading": "Designed for Insulated Building Applications",
+      "description": "PUF panels can be used across industrial, commercial and temperature-controlled building projects.",
+      "items": [
+        {
+          "title": "Cold Storage",
+          "description": "Suitable for insulated cold storage building applications.",
+          "iconKey": "Snowflake"
+        },
+        {
+          "title": "Industrial Buildings",
+          "description": "Can be used in factories and industrial structures requiring insulated panels.",
+          "iconKey": "Factory"
+        },
+        {
+          "title": "Warehouses",
+          "description": "Suitable for warehouse walls and roofing based on project requirements.",
+          "iconKey": "Warehouse"
+        },
+        {
+          "title": "Storage Facilities",
+          "description": "Supports insulated storage and controlled-environment building applications.",
+          "iconKey": "Boxes"
+        },
+        {
+          "title": "Commercial Buildings",
+          "description": "Suitable for selected commercial construction and insulated enclosure requirements.",
+          "iconKey": "Store"
+        },
+        {
+          "title": "Prefabricated Structures",
+          "description": "Can be integrated into modular and prefabricated building systems.",
+          "iconKey": "Building2"
+        }
+      ]
+    },
+    "seo": {
+      "metaTitle": "PUF Panels",
+      "metaDescription": "Explore Perroqueta PUF Panels for insulated industrial, commercial and cold storage applications."
+    },
+    "options": [
+      {
+        "id": "gray",
+        "label": "Gray",
+        "image": {
+          "url": "/assets/products/puf/gray.png",
+          "publicId": "",
+          "alt": "Gray"
+        },
+        "displayOrder": 1,
+        "color": "Gray"
+      },
+      {
+        "id": "green",
+        "label": "Green",
+        "image": {
+          "url": "/assets/products/puf/green.png",
+          "publicId": "",
+          "alt": "Green"
+        },
+        "displayOrder": 2,
+        "color": "Green"
+      },
+      {
+        "id": "red",
+        "label": "Red",
+        "image": {
+          "url": "/assets/products/puf/red.png",
+          "publicId": "",
+          "alt": "Red"
+        },
+        "displayOrder": 3,
+        "color": "Red"
+      },
+      {
+        "id": "royal-blue",
+        "label": "Royal Blue",
+        "image": {
+          "url": "/assets/products/puf/royal blue.png",
+          "publicId": "",
+          "alt": "Royal Blue"
+        },
+        "displayOrder": 4,
+        "color": "Royal Blue"
+      },
+      {
+        "id": "sky-blue",
+        "label": "Sky Blue",
+        "image": {
+          "url": "/assets/products/puf/sky blue.png",
+          "publicId": "",
+          "alt": "Sky Blue"
+        },
+        "displayOrder": 5,
+        "color": "Sky Blue"
+      },
+      {
+        "id": "white",
+        "label": "White",
+        "image": {
+          "url": "/assets/products/puf/white.png",
+          "publicId": "",
+          "alt": "White"
+        },
+        "displayOrder": 6,
+        "color": "White"
+      }
+    ]
+  },
+  {
+    "slug": "clay-ceiling-tiles",
+    "name": "Clay Ceiling Tiles",
+    "status": "published",
+    "displayOrder": 6,
+    "breadcrumbLabel": "Clay Ceiling Tiles",
+    "detailHeading": "Clay Ceiling Tiles",
+    "sectionOrder": [
+      "hero",
+      "overview",
+      "applications",
+      "specifications"
+    ],
+    "cards": {
+      "listing": {
+        "order": 6,
+        "title": "Clay Ceiling Tiles",
+        "description": "Natural clay ceiling solutions that improve comfort and architectural character.",
+        "image": {
+          "url": "/assets/products/clay-ceiling.png",
+          "publicId": "",
+          "alt": "Clay Ceiling Tiles"
+        }
+      },
+      "home": {
+        "order": 6,
+        "title": "Clay Ceiling Tiles",
+        "image": {
+          "url": "/assets/products/clay-ceiling.png",
+          "publicId": "",
+          "alt": "Clay Ceiling Tiles"
+        }
+      },
+      "about": {
+        "order": 6,
+        "title": "Clay Ceiling Tiles",
+        "description": "Natural clay ceiling solutions that improve comfort and aesthetics.",
+        "image": {
+          "url": "/assets/products/clay-ceiling.png",
+          "publicId": "",
+          "alt": "Clay Ceiling Tiles"
+        }
+      },
+      "footer": {
+        "order": 6,
+        "label": "Clay Ceiling Tiles"
+      }
+    },
+    "hero": {
+      "selectorType": "none",
+      "badges": [
+        "12 in × 8 in",
+        "18 mm Thickness",
+        "Natural Red"
+      ],
+      "alt": "Perroqueta Clay Ceiling Tile",
+      "fixedImage": {
+        "url": "/assets/products/clay-ceiling.png",
+        "publicId": "",
+        "alt": "Perroqueta Clay Ceiling Tile"
+      }
+    },
+    "overview": {
+      "eyebrow": "Product Overview",
+      "heading": "Natural Clay Ceiling Tiles with Timeless Character",
+      "paragraphs": [
+        "Perroqueta Clay Ceiling Tiles bring a warm, natural appearance to interior ceiling applications.",
+        "Their standard dimensions and natural red finish make them suitable for traditional, residential and architectural spaces."
+      ],
+      "highlight": {
+        "eyebrow": "Natural Finish",
+        "heading": "Simple. Warm. Timeless.",
+        "description": "The natural red finish creates a distinct clay aesthetic suitable for spaces that need a traditional architectural character."
+      },
+      "features": [
+        {
+          "title": "Natural Clay Material",
+          "description": "Made with natural clay for a warm and traditional ceiling appearance.",
+          "iconKey": "Leaf"
+        },
+        {
+          "title": "Classic Finish",
+          "description": "Natural red colour adds a distinctive traditional character to ceiling spaces.",
+          "iconKey": "Sparkles"
+        },
+        {
+          "title": "Durable Construction",
+          "description": "Designed for dependable use in suitable ceiling and architectural applications.",
+          "iconKey": "ShieldCheck"
+        },
+        {
+          "title": "Standard Tile Size",
+          "description": "Standard dimensions support planned installation across different ceiling layouts.",
+          "iconKey": "Wrench"
+        }
+      ]
+    },
+    "specifications": {
+      "eyebrow": "Technical Details",
+      "heading": "Clay Ceiling Tile Specifications",
+      "description": "Standard dimensions and product information for Perroqueta Clay Ceiling Tiles.",
+      "rows": [
+        {
+          "label": "Product",
+          "value": "Clay Ceiling Tiles"
+        },
+        {
+          "label": "Size",
+          "value": "12 in × 8 in"
+        },
+        {
+          "label": "Thickness",
+          "value": "18 mm"
+        },
+        {
+          "label": "Colour",
+          "value": "Natural Red"
+        }
+      ]
+    },
+    "applications": {
+      "eyebrow": "Applications",
+      "heading": "Designed for Natural Interior Spaces",
+      "description": "Clay Ceiling Tiles can be used in interior applications where a warm, traditional and natural finish is preferred.",
+      "items": [
+        {
+          "title": "Residential Interiors",
+          "description": "Suitable for homes that require a natural and traditional ceiling appearance.",
+          "iconKey": "Home"
+        },
+        {
+          "title": "Hotels & Resorts",
+          "description": "Adds a warm clay finish to hospitality and resort interior spaces.",
+          "iconKey": "Hotel"
+        },
+        {
+          "title": "Restaurants & Cafes",
+          "description": "Suitable for interior spaces designed around natural and traditional themes.",
+          "iconKey": "Coffee"
+        },
+        {
+          "title": "Heritage-Style Projects",
+          "description": "Can support architectural projects where traditional clay aesthetics are important.",
+          "iconKey": "Landmark"
+        },
+        {
+          "title": "Architectural Interiors",
+          "description": "Suitable for selected interior ceiling applications and decorative spaces.",
+          "iconKey": "Building2"
+        },
+        {
+          "title": "Eco-Themed Spaces",
+          "description": "Works well in spaces designed around natural materials and earthy finishes.",
+          "iconKey": "Trees"
+        }
+      ]
+    },
+    "seo": {
+      "metaTitle": "Clay Ceiling Tiles",
+      "metaDescription": "Explore Perroqueta clay ceiling tiles with natural red finish for interior and architectural applications."
+    }
+  },
+  {
+    "slug": "terracotta-clay-jali",
+    "name": "Terracotta Clay Jali",
+    "status": "published",
+    "displayOrder": 7,
+    "breadcrumbLabel": "Terracotta Clay Jali",
+    "detailHeading": "Terracotta Clay Jali",
+    "sectionOrder": [
+      "hero",
+      "overview",
+      "applications",
+      "specifications"
+    ],
+    "cards": {
+      "listing": {
+        "order": 7,
+        "title": "Terracotta Clay Jali",
+        "description": "Architectural clay jali designed for ventilation, natural light and visual appeal.",
+        "image": {
+          "url": "/assets/products/Jali/Diamond.png",
+          "publicId": "",
+          "alt": "Terracotta Clay Jali"
+        }
+      },
+      "home": {
+        "order": 7,
+        "title": "Terracotta Clay Jali",
+        "image": {
+          "url": "/assets/products/terracotta-jali.png",
+          "publicId": "",
+          "alt": "Terracotta Clay Jali"
+        }
+      },
+      "about": {
+        "order": 7,
+        "title": "Terracotta Clay Jali",
+        "description": "Architectural clay jali designed for ventilation, light and visual appeal.",
+        "image": {
+          "url": "/assets/products/terracotta-jali.png",
+          "publicId": "",
+          "alt": "Terracotta Clay Jali"
+        }
+      },
+      "footer": {
+        "order": 7,
+        "label": "Terracotta Clay Jali"
+      }
+    },
+    "hero": {
+      "selectorType": "options",
+      "badges": [
+        "Terracotta"
+      ],
+      "defaultOptionId": "meadows",
+      "alt": "Perroqueta Terracotta Clay Jali {label}"
+    },
+    "overview": {
+      "eyebrow": "Product Overview",
+      "heading": "Natural ceiling Screens for Architectural Spaces",
+      "paragraphs": [
+        "Perroqueta Terracotta Clay Jali brings natural clay character to architectural screening and decorative applications.",
+        "The modular format can be arranged in repeating patterns for façades, partitions and other architectural elements."
+      ],
+      "highlight": {
+        "eyebrow": "Natural Architecture",
+        "heading": "Light, Air and Clay Character",
+        "description": "Terracotta Clay Jali can be used to create decorative screens that balance openness with architectural identity."
+      },
+      "features": [
+        {
+          "title": "Natural Ventilation",
+          "description": "Open jali patterns can support airflow while maintaining a decorative architectural screen.",
+          "iconKey": "Wind"
+        },
+        {
+          "title": "Filtered Daylight",
+          "description": "Jali patterns allow controlled daylight to enter while creating interesting light and shadow.",
+          "iconKey": "SunMedium"
+        },
+        {
+          "title": "Modular Design",
+          "description": "Standard 200 × 200 mm modules support repeatable architectural patterns.",
+          "iconKey": "Blocks"
+        },
+        {
+          "title": "Natural Clay Finish",
+          "description": "The natural red terracotta finish adds warmth and character to architectural spaces.",
+          "iconKey": "Sparkles"
+        }
+      ]
+    },
+    "specifications": {
+      "eyebrow": "Technical Details",
+      "heading": "Terracotta Clay Jali Specifications",
+      "description": "Standard product information for Perroqueta Terracotta Clay Jali.",
+      "rows": [
+        {
+          "label": "Product",
+          "value": "Terracotta Clay Jali"
+        },
+        {
+          "label": "Material",
+          "value": "Terracotta"
+        },
+        {
+          "label": "Size",
+          "value": "12 × 8 inch"
+        },
+        {
+          "label": "Thickness",
+          "value": "18 mm"
+        },
+        {
+          "label": "Colour",
+          "value": "Natural Red"
+        }
+      ]
+    },
+    "applications": {
+      "eyebrow": "Applications",
+      "heading": "Designed for Architectural Screening",
+      "description": "Terracotta Clay Jali can be used in architectural applications that require decorative screening with a natural clay finish.",
+      "items": [
+        {
+          "title": "Building Facades",
+          "description": "Suitable for decorative external screening and architectural facade elements.",
+          "iconKey": "Building2"
+        },
+        {
+          "title": "Partitions",
+          "description": "Can be used to create semi-open architectural partitions and decorative screens.",
+          "iconKey": "PanelsTopLeft"
+        },
+        {
+          "title": "Residential Spaces",
+          "description": "Suitable for homes, courtyards and selected residential architectural applications.",
+          "iconKey": "Home"
+        },
+        {
+          "title": "Hotels & Resorts",
+          "description": "Adds natural clay character to hospitality and resort design concepts.",
+          "iconKey": "Hotel"
+        },
+        {
+          "title": "Institutional Projects",
+          "description": "Can be incorporated into architectural screens for institutional buildings.",
+          "iconKey": "Landmark"
+        },
+        {
+          "title": "Commercial Spaces",
+          "description": "Suitable for selected commercial interiors and exterior design applications.",
+          "iconKey": "Store"
+        }
+      ]
+    },
+    "seo": {
+      "metaTitle": "Terracotta Clay Jali",
+      "metaDescription": "Explore Perroqueta Terracotta Clay Jali for architectural screens, facades and decorative applications."
+    },
+    "options": [
+      {
+        "id": "meadows",
+        "label": "Meadows",
+        "image": {
+          "url": "/assets/products/Jali/Meadows.png",
+          "publicId": "",
+          "alt": "Meadows"
+        },
+        "displayOrder": 1,
+        "design": "Meadows",
+        "size": "12 x 8 inch",
+        "color": "Natural Red"
+      },
+      {
+        "id": "chain",
+        "label": "Chain",
+        "image": {
+          "url": "/assets/products/Jali/Chain.png",
+          "publicId": "",
+          "alt": "Chain"
+        },
+        "displayOrder": 2,
+        "design": "Chain",
+        "size": "12 x 8 inch",
+        "color": "Natural Red"
+      },
+      {
+        "id": "diamond",
+        "label": "Diamond",
+        "image": {
+          "url": "/assets/products/Jali/Diamond.png",
+          "publicId": "",
+          "alt": "Diamond"
+        },
+        "displayOrder": 3,
+        "design": "Diamond",
+        "size": "12 x 8 inch",
+        "color": "Natural Red"
+      }
+    ]
+  },
+  {
+    "slug": "solar-structures",
+    "name": "Solar Structures",
+    "status": "published",
+    "displayOrder": 8,
+    "breadcrumbLabel": "Solar Structures",
+    "detailHeading": "Solar Structures",
+    "sectionOrder": [
+      "hero",
+      "overview",
+      "applications",
+      "specifications"
+    ],
+    "cards": {
+      "listing": {
+        "order": 8,
+        "title": "Solar Structures",
+        "description": "Strong structural solutions engineered for reliable solar installations.",
+        "image": {
+          "url": "/assets/products/solar.png",
+          "publicId": "",
+          "alt": "Solar Structures"
+        }
+      },
+      "home": {
+        "order": 8,
+        "title": "Solar Structures",
+        "image": {
+          "url": "/assets/products/solar.png",
+          "publicId": "",
+          "alt": "Solar Structures"
+        }
+      },
+      "about": {
+        "order": 8,
+        "title": "Solar Structures",
+        "description": "Strong and reliable structural solutions engineered for solar projects.",
+        "image": {
+          "url": "/assets/products/solar.png",
+          "publicId": "",
+          "alt": "Solar Structures"
+        }
+      },
+      "footer": {
+        "order": 8,
+        "label": "Solar Structures"
+      }
+    },
+    "hero": {
+      "selectorType": "none",
+      "badges": [
+        "Ground Mounted",
+        "Rooftop"
+      ],
+      "alt": "Perroqueta Solar Structure",
+      "fixedImage": {
+        "url": "/assets/products/solar.png",
+        "publicId": "",
+        "alt": "Perroqueta Solar Structure"
+      }
+    },
+    "overview": {
+      "eyebrow": "Product Overview",
+      "heading": "Reliable Structures for Solar Installations",
+      "paragraphs": [
+        "Perroqueta Solar Structures are designed to support solar panel installations across rooftop and ground-mounted applications.",
+        "The structure can be configured according to site conditions, panel layout and project installation requirements."
+      ],
+      "highlight": {
+        "eyebrow": "Built for Solar Projects",
+        "heading": "Support That Matches the Installation",
+        "description": "Available for both rooftop and ground-mounted solar structure applications."
+      },
+      "features": [
+        {
+          "title": "Solar Support Structure",
+          "description": "Designed to support solar module installation for rooftop and ground-mounted systems.",
+          "iconKey": "Sun"
+        },
+        {
+          "title": "Flexible Configuration",
+          "description": "Suitable for different panel layouts and project-based solar structure requirements.",
+          "iconKey": "PanelsTopLeft"
+        },
+        {
+          "title": "Strong Structural Support",
+          "description": "Built to provide reliable support for solar panel installations across multiple project types.",
+          "iconKey": "ShieldCheck"
+        },
+        {
+          "title": "Installation Friendly",
+          "description": "Designed for practical assembly and installation based on project requirements.",
+          "iconKey": "Wrench"
+        }
+      ]
+    },
+    "specifications": {
+      "eyebrow": "Technical Details",
+      "heading": "Solar Structure Specifications",
+      "description": "Available solar structure configurations for Perroqueta solar installation projects.",
+      "rows": [
+        {
+          "label": "Product",
+          "value": "Solar Structures"
+        },
+        {
+          "label": "Structure Type",
+          "value": "Ground Mounted Solar Structure"
+        },
+        {
+          "label": "Alternative Type",
+          "value": "Rooftop Solar Structure"
+        },
+        {
+          "label": "Configuration",
+          "value": "As per project requirement"
+        }
+      ]
+    },
+    "applications": {
+      "eyebrow": "Applications",
+      "heading": "Built for Different Solar Installations",
+      "description": "Solar structures can support both rooftop and ground-mounted installations across different project environments.",
+      "items": [
+        {
+          "title": "Ground Mounted Solar",
+          "description": "Suitable for solar structures installed on open ground and utility-scale sites.",
+          "iconKey": "LandPlot"
+        },
+        {
+          "title": "Rooftop Solar",
+          "description": "Suitable for rooftop solar panel mounting applications.",
+          "iconKey": "PanelsTopLeft"
+        },
+        {
+          "title": "Industrial Buildings",
+          "description": "Can support solar installations on industrial and manufacturing facilities.",
+          "iconKey": "Factory"
+        },
+        {
+          "title": "Warehouses",
+          "description": "Suitable for warehouse rooftops and related solar installation projects.",
+          "iconKey": "Warehouse"
+        },
+        {
+          "title": "Commercial Buildings",
+          "description": "Can be used for commercial rooftop and project-based solar structures.",
+          "iconKey": "Building2"
+        },
+        {
+          "title": "Residential Projects",
+          "description": "Suitable for selected residential rooftop solar mounting requirements.",
+          "iconKey": "Home"
+        }
+      ]
+    },
+    "seo": {
+      "metaTitle": "Solar Structures",
+      "metaDescription": "Explore Perroqueta rooftop and ground-mounted solar structure solutions."
+    }
+  }
+]

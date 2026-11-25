@@ -1,73 +1,28 @@
-import {
-  Home,
-  Hotel,
-  Store,
-  Building2,
-  BriefcaseBusiness,
-  UtensilsCrossed,
-} from "lucide-react";
+import { getProductIcon } from "../productIcons";
 
-const applications = [
-  {
-    icon: Home,
-    title: "Residential Interiors",
-    description:
-      "Suitable for living rooms, bedrooms, TV walls and decorative home interiors.",
-  },
-  {
-    icon: Hotel,
-    title: "Hotels & Resorts",
-    description:
-      "Ideal for reception areas, rooms and hospitality interior wall finishes.",
-  },
-  {
-    icon: Store,
-    title: "Retail Spaces",
-    description:
-      "Suitable for shops, showrooms and display areas requiring decorative wall treatment.",
-  },
-  {
-    icon: BriefcaseBusiness,
-    title: "Office Interiors",
-    description:
-      "Can be used in cabins, reception areas, meeting rooms and workspace interiors.",
-  },
-  {
-    icon: UtensilsCrossed,
-    title: "Restaurants & Cafes",
-    description:
-      "Adds a modern decorative finish to dining and hospitality environments.",
-  },
-  {
-    icon: Building2,
-    title: "Commercial Interiors",
-    description:
-      "Suitable for a wide range of modern commercial interior applications.",
-  },
-];
+export default function WPCApplications({ product }) {
+  const { applications } = product;
 
-export default function WPCApplications() {
   return (
     <section className="w-full bg-white py-16 sm:py-20">
       <div className="mx-auto w-full max-w-[1600px] px-5 sm:px-8 lg:px-12 xl:px-[62px]">
         <div className="max-w-[760px]">
           <p className="text-[13px] font-bold uppercase tracking-[0.05em] text-[#6030C6]">
-            Applications
+            {applications.eyebrow}
           </p>
 
           <h2 className="mt-3 text-[30px] font-bold leading-tight text-[#171717] sm:text-[36px]">
-            Designed for Modern Interior Spaces
+            {applications.heading}
           </h2>
 
           <p className="mt-4 max-w-[680px] text-[15px] leading-7 text-[#666666]">
-            WPC wall panels can be used across residential and commercial
-            interiors where decorative wall finishes are required.
+            {applications.description}
           </p>
         </div>
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {applications.map((item) => {
-            const Icon = item.icon;
+          {applications.items.map((item) => {
+            const Icon = getProductIcon(item.iconKey);
 
             return (
               <div

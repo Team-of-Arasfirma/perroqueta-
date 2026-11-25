@@ -1,21 +1,24 @@
+import ProductDetail from "@/components/Products/ProductDetail";
+import { getProductMetadata, requirePublishedProduct } from "@/lib/publicProducts";
 import SolarHero from "@/components/Products/Solar/SolarHero";
 import SolarOverview from "@/components/Products/Solar/SolarOverview";
 import SolarApplications from "@/components/Products/Solar/SolarApplications";
 import SolarSpecifications from "@/components/Products/Solar/SolarSpecifications";
 
-export const metadata = {
-  title: "Solar Structures",
-  description:
-    "Explore Perroqueta rooftop and ground-mounted solar structure solutions.",
+const slug = "solar-structures";
+const sections = {
+  hero: SolarHero,
+  overview: SolarOverview,
+  specifications: SolarSpecifications,
+  applications: SolarApplications,
 };
 
-export default function SolarStructuresPage() {
-  return (
-    <main className="bg-white">
-      <SolarHero />
-      <SolarOverview />
-      <SolarApplications />
-      <SolarSpecifications />
-    </main>
-  );
+export function generateMetadata() {
+  return getProductMetadata(slug);
+}
+
+export default async function SolarStructuresPage() {
+  const product = await requirePublishedProduct(slug);
+
+  return <ProductDetail product={product} sections={sections} originalSelector="none" />;
 }

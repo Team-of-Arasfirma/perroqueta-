@@ -4,50 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 
-const products = [
-  {
-    title: "UPVC Roofing Solutions",
-    image: "/assets/products/upv1.png",
-    href: "/products/upvc-roofing-sheets",
-  },
-  {
-    title: "Stone Coated Roofing",
-    image: "/assets/products/stone-coated.png",
-    href: "/products/stone-coated-roofing",
-  },
-  {
-    title: "Ceramic Roofing Tiles",
-    image: "/assets/products/ceramic.png",
-    href: "/products/ceramic-roofing-tiles",
-  },
-  {
-    title: "WPC Interior Wall Panels",
-    image: "/assets/products/wpc/wpc-1.png",
-    href: "/products/wpc-interior-wall-panels",
-  },
-  {
-    title: "PUF Panels",
-    image: "/assets/products/puf/Roofpanel1.png",
-    href: "/products/puf-panels",
-  },
-  {
-    title: "Clay Ceiling Tiles",
-    image: "/assets/products/clay-ceiling.png",
-    href: "/products/clay-ceiling-tiles",
-  },
-  {
-    title: "Terracotta Clay Jali",
-    image: "/assets/products/terracotta-jali.png",
-    href: "/products/terracotta-clay-jali",
-  },
-  {
-    title: "Solar Structures",
-    image: "/assets/products/solar.png",
-    href: "/products/solar-structures",
-  },
-];
-
-export default function ProductsSection() {
+export default function ProductsSection({ products }) {
   const scrollRef = useRef(null);
 
   const scrollCards = (direction) => {
@@ -109,7 +66,7 @@ export default function ProductsSection() {
           >
             {products.map((product) => (
               <Link
-                key={product.title}
+                key={product.slug}
                 href={product.href}
                 className="group block w-[78vw] max-w-[260px] shrink-0 snap-start overflow-hidden rounded-[18px] border border-[#E8E1F3] bg-white shadow-[0_8px_24px_rgba(49,29,91,0.06)] transition duration-300 hover:-translate-y-1 hover:border-[#D7C8F3] hover:shadow-[0_16px_32px_rgba(49,29,91,0.12)] sm:w-[260px]"
               >
@@ -117,7 +74,7 @@ export default function ProductsSection() {
                 <div className="relative h-[214px] w-full overflow-hidden bg-[#FAF8FD]">
                   <Image
                     src={product.image}
-                    alt={product.title}
+                    alt={product.alt}
                     fill
                     sizes="(max-width: 640px) 78vw, 260px"
                     loading="lazy"

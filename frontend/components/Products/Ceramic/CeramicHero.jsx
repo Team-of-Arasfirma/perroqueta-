@@ -2,34 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { byDisplayOrder, productText } from "../productPresentation";
 import { useState } from "react";
 import CeramicTiltViewer from "./CeramicTiltViewer";
 
-const colors = [
-  {
-    id: "red",
-    name: "Red",
-    image: "/assets/products/Ceramic/red.png",
-  },
-  {
-    id: "brown",
-    name: "Brown",
-    image: "/assets/products/Ceramic/brown.png",
-  },
-  {
-    id: "pattern",
-    name: "Pattern",
-    image: "/assets/products/Ceramic/pattern.png",
-  },
-  {
-    id: "grey",
-    name: "Grey",
-    image: "/assets/products/Ceramic/grey.png",
-  },
-];
-
-export default function CeramicHero() {
-  const [selectedColor, setSelectedColor] = useState("red");
+export default function CeramicHero({ product }) {
+  const colors = byDisplayOrder(product.options);
+  const [selectedColor, setSelectedColor] = useState(product.hero.defaultOptionId);
 
   const currentColor =
     colors.find((color) => color.id === selectedColor) || colors[0];
@@ -49,14 +28,14 @@ export default function CeramicHero() {
           <span className="text-[#999999]">&gt;</span>
 
           <span className="font-medium text-[#6030C6]">
-            Ceramic Roofing Tiles
+            {product.breadcrumbLabel}
           </span>
         </div>
 
         {/* Product Title */}
         <div className="mt-8 flex flex-col items-center sm:mt-10">
           <h1 className="pointer-events-none text-center font-serif text-[46px] font-normal leading-none text-[#C4C0C0] sm:text-[62px] lg:text-[74px]">
-            Ceramic Roofing Tiles
+            {product.detailHeading}
           </h1>
         </div>
 
@@ -64,8 +43,8 @@ export default function CeramicHero() {
         <div className="mt-8 flex flex-col items-center sm:mt-10">
           <div className="w-full max-w-[760px]">
             <CeramicTiltViewer
-              image={currentColor.image}
-              alt={`Ceramic Roofing Tile - ${currentColor.name}`}
+              image={currentColor.image.url}
+              alt={currentColor.image.alt || productText(product.hero.alt, { label: currentColor.label }) || product.name}
             />
           </div>
 
@@ -80,7 +59,7 @@ export default function CeramicHero() {
                   type="button"
                   onClick={() => setSelectedColor(color.id)}
                   className="group flex flex-col items-center"
-                  aria-label={`Select ${color.name}`}
+                  aria-label={`Select ${color.label}`}
                 >
                   <div
                     className={`relative h-[66px] w-[66px] overflow-hidden rounded-[8px] border-2 bg-white transition-all duration-300 sm:h-[72px] sm:w-[72px] ${
@@ -90,8 +69,8 @@ export default function CeramicHero() {
                     }`}
                   >
                     <Image
-                      src={color.image}
-                      alt={color.name}
+                      src={(color.thumbnail ?? color.image).url}
+                      alt={color.thumbnail?.alt || color.label}
                       fill
                       sizes="72px"
                       className="object-cover"
@@ -113,7 +92,7 @@ export default function CeramicHero() {
                         : "text-[#555555]"
                     }`}
                   >
-                    {color.name}
+                    {color.label}
                   </span>
                 </button>
               );

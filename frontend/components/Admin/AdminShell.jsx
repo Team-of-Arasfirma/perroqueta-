@@ -27,7 +27,7 @@ import { hasPermission, isSuperAdmin } from "@/lib/adminPermissions";
 
 const menuItems = [
   { label: "Dashboard", href: "/admin", Icon: LayoutDashboard, moduleName: "dashboard", action: "view" },
-  { label: "Products", href: "/admin/products", Icon: Package },
+  { label: "Products", href: "/admin/products", Icon: Package, moduleName: "products", action: "view" },
   { label: "Projects", href: "/admin/projects", Icon: FolderKanban, moduleName: "projects", action: "view" },
   { label: "Blogs", href: "/admin/blogs", Icon: FileText, moduleName: "blogs", action: "view" },
   { label: "Careers", href: "/admin/careers", Icon: BriefcaseBusiness, moduleName: "careers", action: "view" },
@@ -46,10 +46,6 @@ function Sidebar({ open, onClose, collapsed, onCollapse }) {
   const visibleItems = useMemo(
     () =>
       menuItems.filter((item) => {
-        if (item.label === "Products") {
-          return true;
-        }
-
         if (item.superAdminOnly) {
           return isSuperAdmin(user);
         }

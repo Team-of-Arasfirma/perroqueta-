@@ -1,74 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const products = [
-  {
-    id: 1,
-    title: "UPVC Roofing Sheets",
-    image: "/assets/products/upv1.png",
-    description:
-      "Corrosion-resistant and lightweight roofing sheets designed for long-term performance.",
-    href: "/products/upvc-roofing-sheets",
-  },
-  {
-    id: 2,
-    title: "Stone Coated Roofing",
-    image: "/assets/products/stone-coated.png",
-    description:
-      "Premium roofing solution combining elegant appearance with strength and weather resistance.",
-    href: "/products/stone-coated-roofing",
-  },
-  {
-    id: 3,
-    title: "Ceramic Roofing Tiles",
-    image: "/assets/products/ceramic.png",
-    description:
-      "Classic roofing tiles offering durability, aesthetics and low maintenance.",
-    href: "/products/ceramic-roofing-tiles",
-  },
-  {
-    id: 4,
-    title: "AKIMU WPC Interior Wall Panels",
-    image: "/assets/products/wpc/wpc-1.png",
-    description:
-      "Premium WPC interior wall panels by AKIMU, offering a stylish and durable finish for modern interiors.",
-    href: "/products/wpc-interior-wall-panels",
-  },
-  {
-    id: 5,
-    title: "PUF Panels",
-    image: "/assets/products/puf.png",
-    description:
-      "High-performance insulated panels designed for thermal efficiency and durability.",
-    href: "/products/puf-panels",
-  },
-  {
-    id: 6,
-    title: "Terracotta Clay Jali",
-    image: "/assets/products/clay-ceiling.png",
-    description:
-      "Natural clay ceiling solutions that improve comfort and architectural character.",
-    href: "/products/clay-ceiling-tiles",
-  },
-  {
-    id: 7,
-    title: "Clay Ceiling Tiles",
-    image: "/assets/products/Jali/Diamond.png",
-    description:
-      "Architectural clay jali designed for ventilation, natural light and visual appeal.",
-    href: "/products/terracotta-clay-jali",
-  },
-  {
-    id: 8,
-    title: "Solar Structures",
-    image: "/assets/products/solar.png",
-    description:
-      "Strong structural solutions engineered for reliable solar installations.",
-    href: "/products/solar-structures",
-  },
-];
-
-export default function ProductGrid() {
+export default function ProductGrid({ products }) {
   return (
     <section className="w-full bg-white py-16 sm:py-20">
       <div className="mx-auto w-full max-w-[1600px] px-5 sm:px-8 lg:px-12 xl:px-[62px]">
@@ -85,14 +18,14 @@ export default function ProductGrid() {
         <div className="grid auto-rows-fr gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {products.map((product) => (
             <Link
-              key={product.id}
+              key={product.slug}
               href={product.href}
               className="group flex min-w-0 flex-col overflow-hidden rounded-[16px] border border-[#EAEAEA] bg-white transition duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
               <div className="relative h-[220px] w-full shrink-0 overflow-hidden bg-[#F7F7F7]">
                 <Image
                   src={product.image}
-                  alt={product.title}
+                  alt={product.alt}
                   fill
                   sizes="(min-width: 1600px) 351px, (min-width: 1280px) calc((100vw - 196px) / 4), (min-width: 1024px) calc((100vw - 144px) / 3), (min-width: 640px) calc((100vw - 88px) / 2), calc(100vw - 40px)"
                   className="object-contain p-4 transition-transform duration-500 group-hover:scale-[1.04]"

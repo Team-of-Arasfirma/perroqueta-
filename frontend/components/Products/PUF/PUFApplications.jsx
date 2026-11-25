@@ -1,73 +1,28 @@
-import {
-  Snowflake,
-  Factory,
-  Warehouse,
-  Building2,
-  Store,
-  Boxes,
-} from "lucide-react";
+import { getProductIcon } from "../productIcons";
 
-const applications = [
-  {
-    icon: Snowflake,
-    title: "Cold Storage",
-    description:
-      "Suitable for insulated cold storage building applications.",
-  },
-  {
-    icon: Factory,
-    title: "Industrial Buildings",
-    description:
-      "Can be used in factories and industrial structures requiring insulated panels.",
-  },
-  {
-    icon: Warehouse,
-    title: "Warehouses",
-    description:
-      "Suitable for warehouse walls and roofing based on project requirements.",
-  },
-  {
-    icon: Boxes,
-    title: "Storage Facilities",
-    description:
-      "Supports insulated storage and controlled-environment building applications.",
-  },
-  {
-    icon: Store,
-    title: "Commercial Buildings",
-    description:
-      "Suitable for selected commercial construction and insulated enclosure requirements.",
-  },
-  {
-    icon: Building2,
-    title: "Prefabricated Structures",
-    description:
-      "Can be integrated into modular and prefabricated building systems.",
-  },
-];
+export default function PUFApplications({ product }) {
+  const { applications } = product;
 
-export default function PUFApplications() {
   return (
     <section className="w-full bg-white py-16 sm:py-20">
       <div className="mx-auto w-full max-w-[1600px] px-5 sm:px-8 lg:px-12 xl:px-[62px]">
         <div className="max-w-[760px]">
           <p className="text-[13px] font-bold uppercase tracking-[0.05em] text-[#6030C6]">
-            Applications
+            {applications.eyebrow}
           </p>
 
           <h2 className="mt-3 text-[30px] font-bold leading-tight text-[#171717] sm:text-[36px]">
-            Designed for Insulated Building Applications
+            {applications.heading}
           </h2>
 
           <p className="mt-4 max-w-[680px] text-[15px] leading-7 text-[#666666]">
-            PUF panels can be used across industrial, commercial and
-            temperature-controlled building projects.
+            {applications.description}
           </p>
         </div>
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {applications.map((item) => {
-            const Icon = item.icon;
+          {applications.items.map((item) => {
+            const Icon = getProductIcon(item.iconKey);
 
             return (
               <div
