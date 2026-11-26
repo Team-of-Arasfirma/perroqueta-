@@ -6,8 +6,6 @@ import { useEffect, useState } from "react";
 const API_BASE =
   process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
 
-const PROJECTS_PER_PAGE = 12;
-
 const resolveImageSrc = (image) => {
   if (!image) return "";
 
@@ -29,7 +27,6 @@ const resolveImageSrc = (image) => {
 };
 
 function ProjectList() {
-  const [currentPage, setCurrentPage] = useState(1);
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -60,7 +57,6 @@ function ProjectList() {
           : data.projects || [];
 
         setProjects(projectData);
-        setCurrentPage(1);
       } catch (loadError) {
         setError(
           loadError.message || "Failed to load projects"
@@ -72,34 +68,6 @@ function ProjectList() {
 
     loadProjects();
   }, []);
-
-  const totalPages = Math.ceil(
-    projects.length / PROJECTS_PER_PAGE
-  );
-
-  const startIndex =
-    (currentPage - 1) * PROJECTS_PER_PAGE;
-
-  const currentProjects = projects.slice(
-    startIndex,
-    startIndex + PROJECTS_PER_PAGE
-  );
-
-  const handlePageChange = (pageNumber) => {
-    if (
-      pageNumber < 1 ||
-      pageNumber > totalPages
-    ) {
-      return;
-    }
-
-    setCurrentPage(pageNumber);
-
-    window.scrollTo({
-      top: 420,
-      behavior: "smooth",
-    });
-  };
 
   return (
     <section className="w-full bg-white py-14 sm:py-16 lg:py-20">
@@ -114,17 +82,35 @@ function ProjectList() {
               {error}
             </p>
           </div>
-        ) : currentProjects.length === 0 ? (
+        ) : projects.length === 0 ? (
           <div className="flex min-h-[300px] items-center justify-center">
             <p className="text-[14px] text-[#777777]">
               No projects available.
             </p>
           </div>
         ) : (
-          <>
-            {/* Project Grid */}
-            <div className="grid grid-cols-2 gap-4 sm:gap-5 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
-              {currentProjects.map((project) => {
+          <div
+            className="
+              max-h-[560px]
+              overflow-y-auto
+              overflow-x-hidden
+              pr-1
+
+              sm:max-h-[650px]
+              sm:pr-2
+
+              lg:max-h-[760px]
+
+              [&::-webkit-scrollbar]:w-[6px]
+              [&::-webkit-scrollbar-track]:rounded-full
+              [&::-webkit-scrollbar-track]:bg-[#F3F0F8]
+              [&::-webkit-scrollbar-thumb]:rounded-full
+              [&::-webkit-scrollbar-thumb]:bg-[#6030C6]/40
+              hover:[&::-webkit-scrollbar-thumb]:bg-[#6030C6]/60
+            "
+          >
+            <div className="grid grid-cols-2 gap-4 pb-2 sm:gap-5 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
+              {projects.map((project) => {
                 const imageSrc = resolveImageSrc(
                   project.image
                 );
@@ -134,7 +120,7 @@ function ProjectList() {
                     key={project._id}
                     className="group overflow-hidden rounded-[14px] border border-[#E8E8E8] bg-white shadow-[0_4px_18px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(0,0,0,0.09)]"
                   >
-                    {/* 1200 x 1200 Image */}
+                    {/* Project Image */}
                     <div className="relative aspect-square w-full overflow-hidden bg-[#F7F7F7]">
                       {project.status && (
                         <span
@@ -149,6 +135,7 @@ function ProjectList() {
                           {project.status}
                         </span>
                       )}
+
                       {imageSrc ? (
                         <Image
                           src={imageSrc}
@@ -190,6 +177,7 @@ function ProjectList() {
                             aria-hidden="true"
                           >
                             <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" />
+
                             <circle
                               cx="12"
                               cy="10"
@@ -207,68 +195,7 @@ function ProjectList() {
                 );
               })}
             </div>
-
-            {/* Pagination */}
-            {totalPages > 1 && (
-              <div className="mt-12 flex flex-wrap items-center justify-center gap-2">
-                <button
-                  type="button"
-                  onClick={() =>
-                    handlePageChange(
-                      currentPage - 1
-                    )
-                  }
-                  disabled={currentPage === 1}
-                  className="rounded-lg border border-[#DDD7E8] bg-white px-4 py-2 text-[13px] font-semibold text-[#6030C6] transition hover:bg-[#F7F3FF] disabled:cursor-not-allowed disabled:opacity-40"
-                >
-                  Prev
-                </button>
-
-                {Array.from(
-                  { length: totalPages },
-                  (_, index) => {
-                    const pageNumber =
-                      index + 1;
-
-                    return (
-                      <button
-                        key={pageNumber}
-                        type="button"
-                        onClick={() =>
-                          handlePageChange(
-                            pageNumber
-                          )
-                        }
-                        className={`flex h-10 w-10 items-center justify-center rounded-lg text-[13px] font-semibold transition ${
-                          currentPage ===
-                          pageNumber
-                            ? "bg-[#6030C6] text-white"
-                            : "border border-[#DDD7E8] bg-white text-[#6030C6] hover:bg-[#F7F3FF]"
-                        }`}
-                      >
-                        {pageNumber}
-                      </button>
-                    );
-                  }
-                )}
-
-                <button
-                  type="button"
-                  onClick={() =>
-                    handlePageChange(
-                      currentPage + 1
-                    )
-                  }
-                  disabled={
-                    currentPage === totalPages
-                  }
-                  className="rounded-lg border border-[#DDD7E8] bg-white px-4 py-2 text-[13px] font-semibold text-[#6030C6] transition hover:bg-[#F7F3FF] disabled:cursor-not-allowed disabled:opacity-40"
-                >
-                  Next
-                </button>
-              </div>
-            )}
-          </>
+          </div>
         )}
       </div>
     </section>
